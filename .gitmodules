@@ -1,0 +1,21 @@
+[submodule "cosmos-proto/target"]
+	path = cosmos-proto/target
+	url = https://github.com/cosmos/cosmos-proto
+[submodule "cosmos-sdk/target"]
+	path = cosmos-sdk/target
+	url = https://github.com/cosmos/cosmos-sdk
+[submodule "cosmwasm-wasmd/target"]
+	path = cosmwasm-wasmd/target
+	url = https://github.com/cosmwasm/wasmd
+[submodule "terra-classic-core/target"]
+	path = terra-classic-core/target
+	url = https://github.com/terra-money/classic-core
+[submodule "terra-alliance/target"]
+	path = terra-alliance/target
+	url = https://github.com/terra-money/alliance
+[submodule "sei-chain/target"]
+	path = sei-chain/target
+	url = https://github.com/sei-protocol/sei-chain
+[submodule "tendermint/target"]
+	path = tendermint/target
+	url = https://github.com/tendermint/tendermint
