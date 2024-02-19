@@ -13,6 +13,26 @@ import kr.jadekim.protobuf.converter.mapper.ProtobufTypeMapper
 import kr.jadekim.protobuf.util.asJavaType
 import kr.jadekim.protobuf.util.asKotlinType
 
+public object StoreCodeAuthorizationJvmConverter :
+    ProtobufTypeMapper<StoreCodeAuthorization, Authz.StoreCodeAuthorization> {
+  public override val descriptor: Descriptors.Descriptor =
+      Authz.StoreCodeAuthorization.getDescriptor()
+
+  public override val parser: Parser<Authz.StoreCodeAuthorization> =
+      Authz.StoreCodeAuthorization.parser()
+
+  public override fun convert(obj: Authz.StoreCodeAuthorization): StoreCodeAuthorization =
+      StoreCodeAuthorization(
+  	grants = obj.getGrantsList().map { CodeGrantJvmConverter.convert(it) },
+  )
+
+  public override fun convert(obj: StoreCodeAuthorization): Authz.StoreCodeAuthorization {
+    val builder = Authz.StoreCodeAuthorization.newBuilder()
+    builder.addAllGrants(obj.grants.map { CodeGrantJvmConverter.convert(it) })
+    return builder.build()
+  }
+}
+
 public object ContractExecutionAuthorizationJvmConverter :
     ProtobufTypeMapper<ContractExecutionAuthorization, Authz.ContractExecutionAuthorization> {
   public override val descriptor: Descriptors.Descriptor =
@@ -51,6 +71,24 @@ public object ContractMigrationAuthorizationJvmConverter :
       Authz.ContractMigrationAuthorization {
     val builder = Authz.ContractMigrationAuthorization.newBuilder()
     builder.addAllGrants(obj.grants.map { ContractGrantJvmConverter.convert(it) })
+    return builder.build()
+  }
+}
+
+public object CodeGrantJvmConverter : ProtobufTypeMapper<CodeGrant, Authz.CodeGrant> {
+  public override val descriptor: Descriptors.Descriptor = Authz.CodeGrant.getDescriptor()
+
+  public override val parser: Parser<Authz.CodeGrant> = Authz.CodeGrant.parser()
+
+  public override fun convert(obj: Authz.CodeGrant): CodeGrant = CodeGrant(
+  	codeHash = obj.getCodeHash().toByteArray(),
+  	instantiatePermission = AccessConfigJvmConverter.convert(obj.getInstantiatePermission()),
+  )
+
+  public override fun convert(obj: CodeGrant): Authz.CodeGrant {
+    val builder = Authz.CodeGrant.newBuilder()
+    builder.setCodeHash(ByteString.copyFrom(obj.codeHash))
+    builder.setInstantiatePermission(AccessConfigJvmConverter.convert(obj.instantiatePermission))
     return builder.build()
   }
 }

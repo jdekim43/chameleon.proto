@@ -9,6 +9,17 @@ import kr.jadekim.protobuf.`annotation`.GeneratorVersion
 import kr.jadekim.protobuf.converter.ProtobufConverter
 import kr.jadekim.protobuf.converter.parseProtobuf
 
+public expect object StoreCodeAuthorizationConverter : ProtobufConverter<StoreCodeAuthorization>
+
+public fun StoreCodeAuthorization.toAny(): Any = Any(StoreCodeAuthorization.TYPE_URL,
+    with(StoreCodeAuthorizationConverter) { toByteArray() })
+
+public fun Any.parse(converter: ProtobufConverter<StoreCodeAuthorization>): StoreCodeAuthorization {
+  if (typeUrl != StoreCodeAuthorization.TYPE_URL) throw
+      IllegalStateException("Please check the type_url")
+  return value.parseProtobuf(converter)
+}
+
 public expect object ContractExecutionAuthorizationConverter :
     ProtobufConverter<ContractExecutionAuthorization>
 
@@ -34,6 +45,16 @@ public fun Any.parse(converter: ProtobufConverter<ContractMigrationAuthorization
     ContractMigrationAuthorization {
   if (typeUrl != ContractMigrationAuthorization.TYPE_URL) throw
       IllegalStateException("Please check the type_url")
+  return value.parseProtobuf(converter)
+}
+
+public expect object CodeGrantConverter : ProtobufConverter<CodeGrant>
+
+public fun CodeGrant.toAny(): Any = Any(CodeGrant.TYPE_URL, with(CodeGrantConverter) { toByteArray()
+    })
+
+public fun Any.parse(converter: ProtobufConverter<CodeGrant>): CodeGrant {
+  if (typeUrl != CodeGrant.TYPE_URL) throw IllegalStateException("Please check the type_url")
   return value.parseProtobuf(converter)
 }
 

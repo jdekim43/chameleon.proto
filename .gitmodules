@@ -19,3 +19,6 @@
 [submodule "tendermint/target"]
 	path = tendermint/target
 	url = https://github.com/tendermint/tendermint
+[submodule "injective-core/target"]
+	path = injective-core/target
+	url = https://github.com/OpenDeFiFoundation/injective-core

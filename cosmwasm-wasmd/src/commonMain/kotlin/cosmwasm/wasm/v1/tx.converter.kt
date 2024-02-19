@@ -311,3 +311,111 @@ public fun Any.parse(converter: ProtobufConverter<MsgStoreAndInstantiateContract
       IllegalStateException("Please check the type_url")
   return value.parseProtobuf(converter)
 }
+
+public expect object MsgAddCodeUploadParamsAddressesConverter :
+    ProtobufConverter<MsgAddCodeUploadParamsAddresses>
+
+public fun MsgAddCodeUploadParamsAddresses.toAny(): Any =
+    Any(MsgAddCodeUploadParamsAddresses.TYPE_URL, with(MsgAddCodeUploadParamsAddressesConverter) {
+    toByteArray() })
+
+public fun Any.parse(converter: ProtobufConverter<MsgAddCodeUploadParamsAddresses>):
+    MsgAddCodeUploadParamsAddresses {
+  if (typeUrl != MsgAddCodeUploadParamsAddresses.TYPE_URL) throw
+      IllegalStateException("Please check the type_url")
+  return value.parseProtobuf(converter)
+}
+
+public expect object MsgAddCodeUploadParamsAddressesResponseConverter :
+    ProtobufConverter<MsgAddCodeUploadParamsAddressesResponse>
+
+public fun MsgAddCodeUploadParamsAddressesResponse.toAny(): Any =
+    Any(MsgAddCodeUploadParamsAddressesResponse.TYPE_URL,
+    with(MsgAddCodeUploadParamsAddressesResponseConverter) { toByteArray() })
+
+public fun Any.parse(converter: ProtobufConverter<MsgAddCodeUploadParamsAddressesResponse>):
+    MsgAddCodeUploadParamsAddressesResponse {
+  if (typeUrl != MsgAddCodeUploadParamsAddressesResponse.TYPE_URL) throw
+      IllegalStateException("Please check the type_url")
+  return value.parseProtobuf(converter)
+}
+
+public expect object MsgRemoveCodeUploadParamsAddressesConverter :
+    ProtobufConverter<MsgRemoveCodeUploadParamsAddresses>
+
+public fun MsgRemoveCodeUploadParamsAddresses.toAny(): Any =
+    Any(MsgRemoveCodeUploadParamsAddresses.TYPE_URL,
+    with(MsgRemoveCodeUploadParamsAddressesConverter) { toByteArray() })
+
+public fun Any.parse(converter: ProtobufConverter<MsgRemoveCodeUploadParamsAddresses>):
+    MsgRemoveCodeUploadParamsAddresses {
+  if (typeUrl != MsgRemoveCodeUploadParamsAddresses.TYPE_URL) throw
+      IllegalStateException("Please check the type_url")
+  return value.parseProtobuf(converter)
+}
+
+public expect object MsgRemoveCodeUploadParamsAddressesResponseConverter :
+    ProtobufConverter<MsgRemoveCodeUploadParamsAddressesResponse>
+
+public fun MsgRemoveCodeUploadParamsAddressesResponse.toAny(): Any =
+    Any(MsgRemoveCodeUploadParamsAddressesResponse.TYPE_URL,
+    with(MsgRemoveCodeUploadParamsAddressesResponseConverter) { toByteArray() })
+
+public fun Any.parse(converter: ProtobufConverter<MsgRemoveCodeUploadParamsAddressesResponse>):
+    MsgRemoveCodeUploadParamsAddressesResponse {
+  if (typeUrl != MsgRemoveCodeUploadParamsAddressesResponse.TYPE_URL) throw
+      IllegalStateException("Please check the type_url")
+  return value.parseProtobuf(converter)
+}
+
+public expect object MsgStoreAndMigrateContractConverter :
+    ProtobufConverter<MsgStoreAndMigrateContract>
+
+public fun MsgStoreAndMigrateContract.toAny(): Any = Any(MsgStoreAndMigrateContract.TYPE_URL,
+    with(MsgStoreAndMigrateContractConverter) { toByteArray() })
+
+public fun Any.parse(converter: ProtobufConverter<MsgStoreAndMigrateContract>):
+    MsgStoreAndMigrateContract {
+  if (typeUrl != MsgStoreAndMigrateContract.TYPE_URL) throw
+      IllegalStateException("Please check the type_url")
+  return value.parseProtobuf(converter)
+}
+
+public expect object MsgStoreAndMigrateContractResponseConverter :
+    ProtobufConverter<MsgStoreAndMigrateContractResponse>
+
+public fun MsgStoreAndMigrateContractResponse.toAny(): Any =
+    Any(MsgStoreAndMigrateContractResponse.TYPE_URL,
+    with(MsgStoreAndMigrateContractResponseConverter) { toByteArray() })
+
+public fun Any.parse(converter: ProtobufConverter<MsgStoreAndMigrateContractResponse>):
+    MsgStoreAndMigrateContractResponse {
+  if (typeUrl != MsgStoreAndMigrateContractResponse.TYPE_URL) throw
+      IllegalStateException("Please check the type_url")
+  return value.parseProtobuf(converter)
+}
+
+public expect object MsgUpdateContractLabelConverter : ProtobufConverter<MsgUpdateContractLabel>
+
+public fun MsgUpdateContractLabel.toAny(): Any = Any(MsgUpdateContractLabel.TYPE_URL,
+    with(MsgUpdateContractLabelConverter) { toByteArray() })
+
+public fun Any.parse(converter: ProtobufConverter<MsgUpdateContractLabel>): MsgUpdateContractLabel {
+  if (typeUrl != MsgUpdateContractLabel.TYPE_URL) throw
+      IllegalStateException("Please check the type_url")
+  return value.parseProtobuf(converter)
+}
+
+public expect object MsgUpdateContractLabelResponseConverter :
+    ProtobufConverter<MsgUpdateContractLabelResponse>
+
+public fun MsgUpdateContractLabelResponse.toAny(): Any =
+    Any(MsgUpdateContractLabelResponse.TYPE_URL, with(MsgUpdateContractLabelResponseConverter) {
+    toByteArray() })
+
+public fun Any.parse(converter: ProtobufConverter<MsgUpdateContractLabelResponse>):
+    MsgUpdateContractLabelResponse {
+  if (typeUrl != MsgUpdateContractLabelResponse.TYPE_URL) throw
+      IllegalStateException("Please check the type_url")
+  return value.parseProtobuf(converter)
+}

@@ -421,6 +421,130 @@ public final class MsgGrpc {
     return getStoreAndInstantiateContractMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses,
+      cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse> getRemoveCodeUploadParamsAddressesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "RemoveCodeUploadParamsAddresses",
+      requestType = cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses.class,
+      responseType = cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses,
+      cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse> getRemoveCodeUploadParamsAddressesMethod() {
+    io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses, cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse> getRemoveCodeUploadParamsAddressesMethod;
+    if ((getRemoveCodeUploadParamsAddressesMethod = MsgGrpc.getRemoveCodeUploadParamsAddressesMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getRemoveCodeUploadParamsAddressesMethod = MsgGrpc.getRemoveCodeUploadParamsAddressesMethod) == null) {
+          MsgGrpc.getRemoveCodeUploadParamsAddressesMethod = getRemoveCodeUploadParamsAddressesMethod =
+              io.grpc.MethodDescriptor.<cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses, cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "RemoveCodeUploadParamsAddresses"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("RemoveCodeUploadParamsAddresses"))
+              .build();
+        }
+      }
+    }
+    return getRemoveCodeUploadParamsAddressesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses,
+      cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse> getAddCodeUploadParamsAddressesMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "AddCodeUploadParamsAddresses",
+      requestType = cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses.class,
+      responseType = cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses,
+      cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse> getAddCodeUploadParamsAddressesMethod() {
+    io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses, cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse> getAddCodeUploadParamsAddressesMethod;
+    if ((getAddCodeUploadParamsAddressesMethod = MsgGrpc.getAddCodeUploadParamsAddressesMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getAddCodeUploadParamsAddressesMethod = MsgGrpc.getAddCodeUploadParamsAddressesMethod) == null) {
+          MsgGrpc.getAddCodeUploadParamsAddressesMethod = getAddCodeUploadParamsAddressesMethod =
+              io.grpc.MethodDescriptor.<cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses, cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "AddCodeUploadParamsAddresses"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("AddCodeUploadParamsAddresses"))
+              .build();
+        }
+      }
+    }
+    return getAddCodeUploadParamsAddressesMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract,
+      cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse> getStoreAndMigrateContractMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "StoreAndMigrateContract",
+      requestType = cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract.class,
+      responseType = cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract,
+      cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse> getStoreAndMigrateContractMethod() {
+    io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract, cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse> getStoreAndMigrateContractMethod;
+    if ((getStoreAndMigrateContractMethod = MsgGrpc.getStoreAndMigrateContractMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getStoreAndMigrateContractMethod = MsgGrpc.getStoreAndMigrateContractMethod) == null) {
+          MsgGrpc.getStoreAndMigrateContractMethod = getStoreAndMigrateContractMethod =
+              io.grpc.MethodDescriptor.<cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract, cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "StoreAndMigrateContract"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("StoreAndMigrateContract"))
+              .build();
+        }
+      }
+    }
+    return getStoreAndMigrateContractMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel,
+      cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse> getUpdateContractLabelMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateContractLabel",
+      requestType = cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel.class,
+      responseType = cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel,
+      cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse> getUpdateContractLabelMethod() {
+    io.grpc.MethodDescriptor<cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel, cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse> getUpdateContractLabelMethod;
+    if ((getUpdateContractLabelMethod = MsgGrpc.getUpdateContractLabelMethod) == null) {
+      synchronized (MsgGrpc.class) {
+        if ((getUpdateContractLabelMethod = MsgGrpc.getUpdateContractLabelMethod) == null) {
+          MsgGrpc.getUpdateContractLabelMethod = getUpdateContractLabelMethod =
+              io.grpc.MethodDescriptor.<cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel, cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "UpdateContractLabel"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new MsgMethodDescriptorSupplier("UpdateContractLabel"))
+              .build();
+        }
+      }
+    }
+    return getUpdateContractLabelMethod;
+  }
+
   /**
    * Creates a new async stub that supports all call types for the service
    */
@@ -526,7 +650,7 @@ public final class MsgGrpc {
 
     /**
      * <pre>
-     * UpdateAdmin sets a new   admin for a smart contract
+     * UpdateAdmin sets a new admin for a smart contract
      * </pre>
      */
     default void updateAdmin(cosmwasm.wasm.v1.Tx.MsgUpdateAdmin request,
@@ -612,6 +736,53 @@ public final class MsgGrpc {
     default void storeAndInstantiateContract(cosmwasm.wasm.v1.Tx.MsgStoreAndInstantiateContract request,
         io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgStoreAndInstantiateContractResponse> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStoreAndInstantiateContractMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * RemoveCodeUploadParamsAddresses defines a governance operation for
+     * removing addresses from code upload params.
+     * The authority is defined in the keeper.
+     * </pre>
+     */
+    default void removeCodeUploadParamsAddresses(cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses request,
+        io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getRemoveCodeUploadParamsAddressesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * AddCodeUploadParamsAddresses defines a governance operation for
+     * adding addresses to code upload params.
+     * The authority is defined in the keeper.
+     * </pre>
+     */
+    default void addCodeUploadParamsAddresses(cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses request,
+        io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getAddCodeUploadParamsAddressesMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * StoreAndMigrateContract defines a governance operation for storing
+     * and migrating the contract. The authority is defined in the keeper.
+     * Since: 0.42
+     * </pre>
+     */
+    default void storeAndMigrateContract(cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract request,
+        io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getStoreAndMigrateContractMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateContractLabel sets a new label for a smart contract
+     * Since: 0.43
+     * </pre>
+     */
+    default void updateContractLabel(cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel request,
+        io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(getUpdateContractLabelMethod(), responseObserver);
     }
   }
 
@@ -707,7 +878,7 @@ public final class MsgGrpc {
 
     /**
      * <pre>
-     * UpdateAdmin sets a new   admin for a smart contract
+     * UpdateAdmin sets a new admin for a smart contract
      * </pre>
      */
     public void updateAdmin(cosmwasm.wasm.v1.Tx.MsgUpdateAdmin request,
@@ -802,6 +973,57 @@ public final class MsgGrpc {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getStoreAndInstantiateContractMethod(), getCallOptions()), request, responseObserver);
     }
+
+    /**
+     * <pre>
+     * RemoveCodeUploadParamsAddresses defines a governance operation for
+     * removing addresses from code upload params.
+     * The authority is defined in the keeper.
+     * </pre>
+     */
+    public void removeCodeUploadParamsAddresses(cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses request,
+        io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getRemoveCodeUploadParamsAddressesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * AddCodeUploadParamsAddresses defines a governance operation for
+     * adding addresses to code upload params.
+     * The authority is defined in the keeper.
+     * </pre>
+     */
+    public void addCodeUploadParamsAddresses(cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses request,
+        io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getAddCodeUploadParamsAddressesMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * StoreAndMigrateContract defines a governance operation for storing
+     * and migrating the contract. The authority is defined in the keeper.
+     * Since: 0.42
+     * </pre>
+     */
+    public void storeAndMigrateContract(cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract request,
+        io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getStoreAndMigrateContractMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * UpdateContractLabel sets a new label for a smart contract
+     * Since: 0.43
+     * </pre>
+     */
+    public void updateContractLabel(cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel request,
+        io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateContractLabelMethod(), getCallOptions()), request, responseObserver);
+    }
   }
 
   /**
@@ -877,7 +1099,7 @@ public final class MsgGrpc {
 
     /**
      * <pre>
-     * UpdateAdmin sets a new   admin for a smart contract
+     * UpdateAdmin sets a new admin for a smart contract
      * </pre>
      */
     public cosmwasm.wasm.v1.Tx.MsgUpdateAdminResponse updateAdmin(cosmwasm.wasm.v1.Tx.MsgUpdateAdmin request) {
@@ -964,6 +1186,53 @@ public final class MsgGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getStoreAndInstantiateContractMethod(), getCallOptions(), request);
     }
+
+    /**
+     * <pre>
+     * RemoveCodeUploadParamsAddresses defines a governance operation for
+     * removing addresses from code upload params.
+     * The authority is defined in the keeper.
+     * </pre>
+     */
+    public cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse removeCodeUploadParamsAddresses(cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getRemoveCodeUploadParamsAddressesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * AddCodeUploadParamsAddresses defines a governance operation for
+     * adding addresses to code upload params.
+     * The authority is defined in the keeper.
+     * </pre>
+     */
+    public cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse addCodeUploadParamsAddresses(cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getAddCodeUploadParamsAddressesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * StoreAndMigrateContract defines a governance operation for storing
+     * and migrating the contract. The authority is defined in the keeper.
+     * Since: 0.42
+     * </pre>
+     */
+    public cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse storeAndMigrateContract(cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getStoreAndMigrateContractMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateContractLabel sets a new label for a smart contract
+     * Since: 0.43
+     * </pre>
+     */
+    public cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse updateContractLabel(cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateContractLabelMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -1044,7 +1313,7 @@ public final class MsgGrpc {
 
     /**
      * <pre>
-     * UpdateAdmin sets a new   admin for a smart contract
+     * UpdateAdmin sets a new admin for a smart contract
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<cosmwasm.wasm.v1.Tx.MsgUpdateAdminResponse> updateAdmin(
@@ -1139,6 +1408,57 @@ public final class MsgGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getStoreAndInstantiateContractMethod(), getCallOptions()), request);
     }
+
+    /**
+     * <pre>
+     * RemoveCodeUploadParamsAddresses defines a governance operation for
+     * removing addresses from code upload params.
+     * The authority is defined in the keeper.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse> removeCodeUploadParamsAddresses(
+        cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getRemoveCodeUploadParamsAddressesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * AddCodeUploadParamsAddresses defines a governance operation for
+     * adding addresses to code upload params.
+     * The authority is defined in the keeper.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse> addCodeUploadParamsAddresses(
+        cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getAddCodeUploadParamsAddressesMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * StoreAndMigrateContract defines a governance operation for storing
+     * and migrating the contract. The authority is defined in the keeper.
+     * Since: 0.42
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse> storeAndMigrateContract(
+        cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getStoreAndMigrateContractMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * UpdateContractLabel sets a new label for a smart contract
+     * Since: 0.43
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse> updateContractLabel(
+        cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateContractLabelMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_STORE_CODE = 0;
@@ -1154,6 +1474,10 @@ public final class MsgGrpc {
   private static final int METHODID_PIN_CODES = 10;
   private static final int METHODID_UNPIN_CODES = 11;
   private static final int METHODID_STORE_AND_INSTANTIATE_CONTRACT = 12;
+  private static final int METHODID_REMOVE_CODE_UPLOAD_PARAMS_ADDRESSES = 13;
+  private static final int METHODID_ADD_CODE_UPLOAD_PARAMS_ADDRESSES = 14;
+  private static final int METHODID_STORE_AND_MIGRATE_CONTRACT = 15;
+  private static final int METHODID_UPDATE_CONTRACT_LABEL = 16;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -1223,6 +1547,22 @@ public final class MsgGrpc {
         case METHODID_STORE_AND_INSTANTIATE_CONTRACT:
           serviceImpl.storeAndInstantiateContract((cosmwasm.wasm.v1.Tx.MsgStoreAndInstantiateContract) request,
               (io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgStoreAndInstantiateContractResponse>) responseObserver);
+          break;
+        case METHODID_REMOVE_CODE_UPLOAD_PARAMS_ADDRESSES:
+          serviceImpl.removeCodeUploadParamsAddresses((cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses) request,
+              (io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse>) responseObserver);
+          break;
+        case METHODID_ADD_CODE_UPLOAD_PARAMS_ADDRESSES:
+          serviceImpl.addCodeUploadParamsAddresses((cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses) request,
+              (io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse>) responseObserver);
+          break;
+        case METHODID_STORE_AND_MIGRATE_CONTRACT:
+          serviceImpl.storeAndMigrateContract((cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract) request,
+              (io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse>) responseObserver);
+          break;
+        case METHODID_UPDATE_CONTRACT_LABEL:
+          serviceImpl.updateContractLabel((cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel) request,
+              (io.grpc.stub.StreamObserver<cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -1333,6 +1673,34 @@ public final class MsgGrpc {
               cosmwasm.wasm.v1.Tx.MsgStoreAndInstantiateContract,
               cosmwasm.wasm.v1.Tx.MsgStoreAndInstantiateContractResponse>(
                 service, METHODID_STORE_AND_INSTANTIATE_CONTRACT)))
+        .addMethod(
+          getRemoveCodeUploadParamsAddressesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses,
+              cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse>(
+                service, METHODID_REMOVE_CODE_UPLOAD_PARAMS_ADDRESSES)))
+        .addMethod(
+          getAddCodeUploadParamsAddressesMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses,
+              cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse>(
+                service, METHODID_ADD_CODE_UPLOAD_PARAMS_ADDRESSES)))
+        .addMethod(
+          getStoreAndMigrateContractMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract,
+              cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse>(
+                service, METHODID_STORE_AND_MIGRATE_CONTRACT)))
+        .addMethod(
+          getUpdateContractLabelMethod(),
+          io.grpc.stub.ServerCalls.asyncUnaryCall(
+            new MethodHandlers<
+              cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel,
+              cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse>(
+                service, METHODID_UPDATE_CONTRACT_LABEL)))
         .build();
   }
 
@@ -1394,6 +1762,10 @@ public final class MsgGrpc {
               .addMethod(getPinCodesMethod())
               .addMethod(getUnpinCodesMethod())
               .addMethod(getStoreAndInstantiateContractMethod())
+              .addMethod(getRemoveCodeUploadParamsAddressesMethod())
+              .addMethod(getAddCodeUploadParamsAddressesMethod())
+              .addMethod(getStoreAndMigrateContractMethod())
+              .addMethod(getUpdateContractLabelMethod())
               .build();
         }
       }

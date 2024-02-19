@@ -72,6 +72,22 @@ public object MsgJvm {
       MethodDescriptor<Tx.MsgStoreAndInstantiateContract, Tx.MsgStoreAndInstantiateContractResponse>
       = MsgGrpc.getStoreAndInstantiateContractMethod()!!
 
+  private val removeCodeUploadParamsAddressesDescriptor:
+      MethodDescriptor<Tx.MsgRemoveCodeUploadParamsAddresses, Tx.MsgRemoveCodeUploadParamsAddressesResponse>
+      = MsgGrpc.getRemoveCodeUploadParamsAddressesMethod()!!
+
+  private val addCodeUploadParamsAddressesDescriptor:
+      MethodDescriptor<Tx.MsgAddCodeUploadParamsAddresses, Tx.MsgAddCodeUploadParamsAddressesResponse>
+      = MsgGrpc.getAddCodeUploadParamsAddressesMethod()!!
+
+  private val storeAndMigrateContractDescriptor:
+      MethodDescriptor<Tx.MsgStoreAndMigrateContract, Tx.MsgStoreAndMigrateContractResponse> =
+      MsgGrpc.getStoreAndMigrateContractMethod()!!
+
+  private val updateContractLabelDescriptor:
+      MethodDescriptor<Tx.MsgUpdateContractLabel, Tx.MsgUpdateContractLabelResponse> =
+      MsgGrpc.getUpdateContractLabelMethod()!!
+
   public abstract class Server(
     coroutineContext: CoroutineContext = EmptyCoroutineContext,
   ) : AbstractCoroutineServerImpl(context = coroutineContext), Msg.Interface {
@@ -125,6 +141,24 @@ public object MsgJvm {
         fun storeAndInstantiateContract(request: MsgStoreAndInstantiateContract):
         MsgStoreAndInstantiateContractResponse = throw
         StatusException(Status.UNIMPLEMENTED.withDescription("Method cosmwasm.wasm.v1.Msg.StoreAndInstantiateContract is unimplemented"))
+
+    public open override suspend
+        fun removeCodeUploadParamsAddresses(request: MsgRemoveCodeUploadParamsAddresses):
+        MsgRemoveCodeUploadParamsAddressesResponse = throw
+        StatusException(Status.UNIMPLEMENTED.withDescription("Method cosmwasm.wasm.v1.Msg.RemoveCodeUploadParamsAddresses is unimplemented"))
+
+    public open override suspend
+        fun addCodeUploadParamsAddresses(request: MsgAddCodeUploadParamsAddresses):
+        MsgAddCodeUploadParamsAddressesResponse = throw
+        StatusException(Status.UNIMPLEMENTED.withDescription("Method cosmwasm.wasm.v1.Msg.AddCodeUploadParamsAddresses is unimplemented"))
+
+    public open override suspend fun storeAndMigrateContract(request: MsgStoreAndMigrateContract):
+        MsgStoreAndMigrateContractResponse = throw
+        StatusException(Status.UNIMPLEMENTED.withDescription("Method cosmwasm.wasm.v1.Msg.StoreAndMigrateContract is unimplemented"))
+
+    public open override suspend fun updateContractLabel(request: MsgUpdateContractLabel):
+        MsgUpdateContractLabelResponse = throw
+        StatusException(Status.UNIMPLEMENTED.withDescription("Method cosmwasm.wasm.v1.Msg.UpdateContractLabel is unimplemented"))
 
     public override fun bindService(): ServerServiceDefinition =
         ServerServiceDefinition.builder(descriptor)
@@ -240,6 +274,42 @@ public object MsgJvm {
     				descriptor = storeAndInstantiateContractDescriptor,
     				implementation = {
         MsgStoreAndInstantiateContractResponseJvmConverter.convert(storeAndInstantiateContract(MsgStoreAndInstantiateContractJvmConverter.convert(it)))
+        },
+    			)
+    		)
+    		.addMethod(
+    			ServerCalls.unaryServerMethodDefinition(
+    				context = this.context,
+    				descriptor = removeCodeUploadParamsAddressesDescriptor,
+    				implementation = {
+        MsgRemoveCodeUploadParamsAddressesResponseJvmConverter.convert(removeCodeUploadParamsAddresses(MsgRemoveCodeUploadParamsAddressesJvmConverter.convert(it)))
+        },
+    			)
+    		)
+    		.addMethod(
+    			ServerCalls.unaryServerMethodDefinition(
+    				context = this.context,
+    				descriptor = addCodeUploadParamsAddressesDescriptor,
+    				implementation = {
+        MsgAddCodeUploadParamsAddressesResponseJvmConverter.convert(addCodeUploadParamsAddresses(MsgAddCodeUploadParamsAddressesJvmConverter.convert(it)))
+        },
+    			)
+    		)
+    		.addMethod(
+    			ServerCalls.unaryServerMethodDefinition(
+    				context = this.context,
+    				descriptor = storeAndMigrateContractDescriptor,
+    				implementation = {
+        MsgStoreAndMigrateContractResponseJvmConverter.convert(storeAndMigrateContract(MsgStoreAndMigrateContractJvmConverter.convert(it)))
+        },
+    			)
+    		)
+    		.addMethod(
+    			ServerCalls.unaryServerMethodDefinition(
+    				context = this.context,
+    				descriptor = updateContractLabelDescriptor,
+    				implementation = {
+        MsgUpdateContractLabelResponseJvmConverter.convert(updateContractLabel(MsgUpdateContractLabelJvmConverter.convert(it)))
         },
     			)
     		)
@@ -408,6 +478,60 @@ public object MsgJvm {
     		ClientCalls.unaryRpc(
     			option.channel, storeAndInstantiateContractDescriptor,
     			MsgStoreAndInstantiateContractJvmConverter.convert(request),
+    			option.callOptions, metadata,
+    		),
+    	)
+
+    public override suspend
+        fun removeCodeUploadParamsAddresses(request: MsgRemoveCodeUploadParamsAddresses):
+        MsgRemoveCodeUploadParamsAddressesResponse = removeCodeUploadParamsAddresses(request,
+        Metadata())
+
+    public suspend fun removeCodeUploadParamsAddresses(request: MsgRemoveCodeUploadParamsAddresses,
+        metadata: Metadata): MsgRemoveCodeUploadParamsAddressesResponse =
+        MsgRemoveCodeUploadParamsAddressesResponseJvmConverter.convert(
+    		ClientCalls.unaryRpc(
+    			option.channel, removeCodeUploadParamsAddressesDescriptor,
+    			MsgRemoveCodeUploadParamsAddressesJvmConverter.convert(request),
+    			option.callOptions, metadata,
+    		),
+    	)
+
+    public override suspend
+        fun addCodeUploadParamsAddresses(request: MsgAddCodeUploadParamsAddresses):
+        MsgAddCodeUploadParamsAddressesResponse = addCodeUploadParamsAddresses(request, Metadata())
+
+    public suspend fun addCodeUploadParamsAddresses(request: MsgAddCodeUploadParamsAddresses,
+        metadata: Metadata): MsgAddCodeUploadParamsAddressesResponse =
+        MsgAddCodeUploadParamsAddressesResponseJvmConverter.convert(
+    		ClientCalls.unaryRpc(
+    			option.channel, addCodeUploadParamsAddressesDescriptor,
+    			MsgAddCodeUploadParamsAddressesJvmConverter.convert(request),
+    			option.callOptions, metadata,
+    		),
+    	)
+
+    public override suspend fun storeAndMigrateContract(request: MsgStoreAndMigrateContract):
+        MsgStoreAndMigrateContractResponse = storeAndMigrateContract(request, Metadata())
+
+    public suspend fun storeAndMigrateContract(request: MsgStoreAndMigrateContract,
+        metadata: Metadata): MsgStoreAndMigrateContractResponse =
+        MsgStoreAndMigrateContractResponseJvmConverter.convert(
+    		ClientCalls.unaryRpc(
+    			option.channel, storeAndMigrateContractDescriptor,
+    			MsgStoreAndMigrateContractJvmConverter.convert(request),
+    			option.callOptions, metadata,
+    		),
+    	)
+
+    public override suspend fun updateContractLabel(request: MsgUpdateContractLabel):
+        MsgUpdateContractLabelResponse = updateContractLabel(request, Metadata())
+
+    public suspend fun updateContractLabel(request: MsgUpdateContractLabel, metadata: Metadata):
+        MsgUpdateContractLabelResponse = MsgUpdateContractLabelResponseJvmConverter.convert(
+    		ClientCalls.unaryRpc(
+    			option.channel, updateContractLabelDescriptor,
+    			MsgUpdateContractLabelJvmConverter.convert(request),
     			option.callOptions, metadata,
     		),
     	)

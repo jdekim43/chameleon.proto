@@ -24,6 +24,38 @@ import kr.jadekim.protobuf.kotlinx.ProtobufConverterEncoder
 import kr.jadekim.protobuf.kotlinx.ProtobufMapperDecoder
 import kr.jadekim.protobuf.type.ProtobufMessage
 
+@Serializable(with = StoreCodeAuthorization.KotlinxSerializer::class)
+@SerialName(value = StoreCodeAuthorization.TYPE_URL)
+public data class StoreCodeAuthorization(
+  @ProtobufIndex(index = 1)
+  public val grants: List<CodeGrant>,
+) : ProtobufMessage {
+  public companion object {
+    public const val TYPE_URL: String = "/cosmwasm.wasm.v1.StoreCodeAuthorization"
+  }
+
+  public object KotlinxSerializer : KSerializer<StoreCodeAuthorization> {
+    private val delegator: KSerializer<StoreCodeAuthorization> = StoreCodeAuthorization.serializer()
+
+    public override val descriptor: SerialDescriptor = delegator.descriptor
+
+    public override fun serialize(encoder: Encoder, `value`: StoreCodeAuthorization): Unit {
+      if (encoder is ProtobufConverterEncoder) {
+        encoder.encodeValue(StoreCodeAuthorizationConverter.serialize(value))
+        return
+      }
+      delegator.serialize(encoder, value)
+    }
+
+    public override fun deserialize(decoder: Decoder): StoreCodeAuthorization {
+      if (decoder is ProtobufMapperDecoder) {
+        return StoreCodeAuthorizationConverter.deserialize(decoder.decodeByteArray())
+      }
+      return delegator.deserialize(decoder)
+    }
+  }
+}
+
 @Serializable(with = ContractExecutionAuthorization.KotlinxSerializer::class)
 @SerialName(value = ContractExecutionAuthorization.TYPE_URL)
 public data class ContractExecutionAuthorization(
@@ -84,6 +116,40 @@ public data class ContractMigrationAuthorization(
     public override fun deserialize(decoder: Decoder): ContractMigrationAuthorization {
       if (decoder is ProtobufMapperDecoder) {
         return ContractMigrationAuthorizationConverter.deserialize(decoder.decodeByteArray())
+      }
+      return delegator.deserialize(decoder)
+    }
+  }
+}
+
+@Serializable(with = CodeGrant.KotlinxSerializer::class)
+@SerialName(value = CodeGrant.TYPE_URL)
+public data class CodeGrant(
+  @ProtobufIndex(index = 1)
+  public val codeHash: ByteArray,
+  @ProtobufIndex(index = 2)
+  public val instantiatePermission: AccessConfig,
+) : ProtobufMessage {
+  public companion object {
+    public const val TYPE_URL: String = "/cosmwasm.wasm.v1.CodeGrant"
+  }
+
+  public object KotlinxSerializer : KSerializer<CodeGrant> {
+    private val delegator: KSerializer<CodeGrant> = CodeGrant.serializer()
+
+    public override val descriptor: SerialDescriptor = delegator.descriptor
+
+    public override fun serialize(encoder: Encoder, `value`: CodeGrant): Unit {
+      if (encoder is ProtobufConverterEncoder) {
+        encoder.encodeValue(CodeGrantConverter.serialize(value))
+        return
+      }
+      delegator.serialize(encoder, value)
+    }
+
+    public override fun deserialize(decoder: Decoder): CodeGrant {
+      if (decoder is ProtobufMapperDecoder) {
+        return CodeGrantConverter.deserialize(decoder.decodeByteArray())
       }
       return delegator.deserialize(decoder)
     }

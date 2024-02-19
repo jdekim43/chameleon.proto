@@ -86,3 +86,32 @@ public actual object MsgStoreAndInstantiateContractConverter :
 public actual object MsgStoreAndInstantiateContractResponseConverter :
     ProtobufConverter<MsgStoreAndInstantiateContractResponse> by
     MsgStoreAndInstantiateContractResponseJvmConverter
+
+public actual object MsgAddCodeUploadParamsAddressesConverter :
+    ProtobufConverter<MsgAddCodeUploadParamsAddresses> by
+    MsgAddCodeUploadParamsAddressesJvmConverter
+
+public actual object MsgAddCodeUploadParamsAddressesResponseConverter :
+    ProtobufConverter<MsgAddCodeUploadParamsAddressesResponse> by
+    MsgAddCodeUploadParamsAddressesResponseJvmConverter
+
+public actual object MsgRemoveCodeUploadParamsAddressesConverter :
+    ProtobufConverter<MsgRemoveCodeUploadParamsAddresses> by
+    MsgRemoveCodeUploadParamsAddressesJvmConverter
+
+public actual object MsgRemoveCodeUploadParamsAddressesResponseConverter :
+    ProtobufConverter<MsgRemoveCodeUploadParamsAddressesResponse> by
+    MsgRemoveCodeUploadParamsAddressesResponseJvmConverter
+
+public actual object MsgStoreAndMigrateContractConverter :
+    ProtobufConverter<MsgStoreAndMigrateContract> by MsgStoreAndMigrateContractJvmConverter
+
+public actual object MsgStoreAndMigrateContractResponseConverter :
+    ProtobufConverter<MsgStoreAndMigrateContractResponse> by
+    MsgStoreAndMigrateContractResponseJvmConverter
+
+public actual object MsgUpdateContractLabelConverter : ProtobufConverter<MsgUpdateContractLabel> by
+    MsgUpdateContractLabelJvmConverter
+
+public actual object MsgUpdateContractLabelResponseConverter :
+    ProtobufConverter<MsgUpdateContractLabelResponse> by MsgUpdateContractLabelResponseJvmConverter

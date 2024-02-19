@@ -41,15 +41,6 @@ public final class Types {
     ACCESS_TYPE_NOBODY(1),
     /**
      * <pre>
-     * AccessTypeOnlyAddress restricted to a single address
-     * Deprecated: use AccessTypeAnyOfAddresses instead
-     * </pre>
-     *
-     * <code>ACCESS_TYPE_ONLY_ADDRESS = 2 [(.gogoproto.enumvalue_customname) = "AccessTypeOnlyAddress"];</code>
-     */
-    ACCESS_TYPE_ONLY_ADDRESS(2),
-    /**
-     * <pre>
      * AccessTypeEverybody unrestricted
      * </pre>
      *
@@ -83,15 +74,6 @@ public final class Types {
      * <code>ACCESS_TYPE_NOBODY = 1 [(.gogoproto.enumvalue_customname) = "AccessTypeNobody"];</code>
      */
     public static final int ACCESS_TYPE_NOBODY_VALUE = 1;
-    /**
-     * <pre>
-     * AccessTypeOnlyAddress restricted to a single address
-     * Deprecated: use AccessTypeAnyOfAddresses instead
-     * </pre>
-     *
-     * <code>ACCESS_TYPE_ONLY_ADDRESS = 2 [(.gogoproto.enumvalue_customname) = "AccessTypeOnlyAddress"];</code>
-     */
-    public static final int ACCESS_TYPE_ONLY_ADDRESS_VALUE = 2;
     /**
      * <pre>
      * AccessTypeEverybody unrestricted
@@ -136,7 +118,6 @@ public final class Types {
       switch (value) {
         case 0: return ACCESS_TYPE_UNSPECIFIED;
         case 1: return ACCESS_TYPE_NOBODY;
-        case 2: return ACCESS_TYPE_ONLY_ADDRESS;
         case 3: return ACCESS_TYPE_EVERYBODY;
         case 4: return ACCESS_TYPE_ANY_OF_ADDRESSES;
         default: return null;
@@ -856,28 +837,6 @@ public final class Types {
     cosmwasm.wasm.v1.Types.AccessType getPermission();
 
     /**
-     * <pre>
-     * Address
-     * Deprecated: replaced by addresses
-     * </pre>
-     *
-     * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
-     * @return The address.
-     */
-    java.lang.String getAddress();
-    /**
-     * <pre>
-     * Address
-     * Deprecated: replaced by addresses
-     * </pre>
-     *
-     * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
-     * @return The bytes for address.
-     */
-    com.google.protobuf.ByteString
-        getAddressBytes();
-
-    /**
      * <code>repeated string addresses = 3 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
      * @return A list containing the addresses.
      */
@@ -920,7 +879,6 @@ public final class Types {
     }
     private AccessConfig() {
       permission_ = 0;
-      address_ = "";
       addresses_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
     }
@@ -961,55 +919,6 @@ public final class Types {
     @java.lang.Override public cosmwasm.wasm.v1.Types.AccessType getPermission() {
       cosmwasm.wasm.v1.Types.AccessType result = cosmwasm.wasm.v1.Types.AccessType.forNumber(permission_);
       return result == null ? cosmwasm.wasm.v1.Types.AccessType.UNRECOGNIZED : result;
-    }
-
-    public static final int ADDRESS_FIELD_NUMBER = 2;
-    @SuppressWarnings("serial")
-    private volatile java.lang.Object address_ = "";
-    /**
-     * <pre>
-     * Address
-     * Deprecated: replaced by addresses
-     * </pre>
-     *
-     * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
-     * @return The address.
-     */
-    @java.lang.Override
-    public java.lang.String getAddress() {
-      java.lang.Object ref = address_;
-      if (ref instanceof java.lang.String) {
-        return (java.lang.String) ref;
-      } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        address_ = s;
-        return s;
-      }
-    }
-    /**
-     * <pre>
-     * Address
-     * Deprecated: replaced by addresses
-     * </pre>
-     *
-     * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
-     * @return The bytes for address.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString
-        getAddressBytes() {
-      java.lang.Object ref = address_;
-      if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
-        address_ = b;
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
     }
 
     public static final int ADDRESSES_FIELD_NUMBER = 3;
@@ -1066,9 +975,6 @@ public final class Types {
       if (permission_ != cosmwasm.wasm.v1.Types.AccessType.ACCESS_TYPE_UNSPECIFIED.getNumber()) {
         output.writeEnum(1, permission_);
       }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
-        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, address_);
-      }
       for (int i = 0; i < addresses_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, addresses_.getRaw(i));
       }
@@ -1084,9 +990,6 @@ public final class Types {
       if (permission_ != cosmwasm.wasm.v1.Types.AccessType.ACCESS_TYPE_UNSPECIFIED.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, permission_);
-      }
-      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(address_)) {
-        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, address_);
       }
       {
         int dataSize = 0;
@@ -1112,8 +1015,6 @@ public final class Types {
       cosmwasm.wasm.v1.Types.AccessConfig other = (cosmwasm.wasm.v1.Types.AccessConfig) obj;
 
       if (permission_ != other.permission_) return false;
-      if (!getAddress()
-          .equals(other.getAddress())) return false;
       if (!getAddressesList()
           .equals(other.getAddressesList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
@@ -1129,8 +1030,6 @@ public final class Types {
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PERMISSION_FIELD_NUMBER;
       hash = (53 * hash) + permission_;
-      hash = (37 * hash) + ADDRESS_FIELD_NUMBER;
-      hash = (53 * hash) + getAddress().hashCode();
       if (getAddressesCount() > 0) {
         hash = (37 * hash) + ADDRESSES_FIELD_NUMBER;
         hash = (53 * hash) + getAddressesList().hashCode();
@@ -1269,7 +1168,6 @@ public final class Types {
         super.clear();
         bitField0_ = 0;
         permission_ = 0;
-        address_ = "";
         addresses_ =
             com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
@@ -1309,9 +1207,6 @@ public final class Types {
           result.permission_ = permission_;
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
-          result.address_ = address_;
-        }
-        if (((from_bitField0_ & 0x00000004) != 0)) {
           addresses_.makeImmutable();
           result.addresses_ = addresses_;
         }
@@ -1332,15 +1227,10 @@ public final class Types {
         if (other.permission_ != 0) {
           setPermissionValue(other.getPermissionValue());
         }
-        if (!other.getAddress().isEmpty()) {
-          address_ = other.address_;
-          bitField0_ |= 0x00000002;
-          onChanged();
-        }
         if (!other.addresses_.isEmpty()) {
           if (addresses_.isEmpty()) {
             addresses_ = other.addresses_;
-            bitField0_ |= 0x00000004;
+            bitField0_ |= 0x00000002;
           } else {
             ensureAddressesIsMutable();
             addresses_.addAll(other.addresses_);
@@ -1378,11 +1268,6 @@ public final class Types {
                 bitField0_ |= 0x00000001;
                 break;
               } // case 8
-              case 18: {
-                address_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
-                break;
-              } // case 18
               case 26: {
                 java.lang.String s = input.readStringRequireUtf8();
                 ensureAddressesIsMutable();
@@ -1459,110 +1344,13 @@ public final class Types {
         return this;
       }
 
-      private java.lang.Object address_ = "";
-      /**
-       * <pre>
-       * Address
-       * Deprecated: replaced by addresses
-       * </pre>
-       *
-       * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
-       * @return The address.
-       */
-      public java.lang.String getAddress() {
-        java.lang.Object ref = address_;
-        if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
-          java.lang.String s = bs.toStringUtf8();
-          address_ = s;
-          return s;
-        } else {
-          return (java.lang.String) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Address
-       * Deprecated: replaced by addresses
-       * </pre>
-       *
-       * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
-       * @return The bytes for address.
-       */
-      public com.google.protobuf.ByteString
-          getAddressBytes() {
-        java.lang.Object ref = address_;
-        if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
-          address_ = b;
-          return b;
-        } else {
-          return (com.google.protobuf.ByteString) ref;
-        }
-      }
-      /**
-       * <pre>
-       * Address
-       * Deprecated: replaced by addresses
-       * </pre>
-       *
-       * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
-       * @param value The address to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAddress(
-          java.lang.String value) {
-        if (value == null) { throw new NullPointerException(); }
-        address_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Address
-       * Deprecated: replaced by addresses
-       * </pre>
-       *
-       * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
-       * @return This builder for chaining.
-       */
-      public Builder clearAddress() {
-        address_ = getDefaultInstance().getAddress();
-        bitField0_ = (bitField0_ & ~0x00000002);
-        onChanged();
-        return this;
-      }
-      /**
-       * <pre>
-       * Address
-       * Deprecated: replaced by addresses
-       * </pre>
-       *
-       * <code>string address = 2 [(.gogoproto.moretags) = "yaml:&#92;"address&#92;""];</code>
-       * @param value The bytes for address to set.
-       * @return This builder for chaining.
-       */
-      public Builder setAddressBytes(
-          com.google.protobuf.ByteString value) {
-        if (value == null) { throw new NullPointerException(); }
-        checkByteStringIsUtf8(value);
-        address_ = value;
-        bitField0_ |= 0x00000002;
-        onChanged();
-        return this;
-      }
-
       private com.google.protobuf.LazyStringArrayList addresses_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
       private void ensureAddressesIsMutable() {
         if (!addresses_.isModifiable()) {
           addresses_ = new com.google.protobuf.LazyStringArrayList(addresses_);
         }
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
       }
       /**
        * <code>repeated string addresses = 3 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
@@ -1608,7 +1396,7 @@ public final class Types {
         if (value == null) { throw new NullPointerException(); }
         ensureAddressesIsMutable();
         addresses_.set(index, value);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1622,7 +1410,7 @@ public final class Types {
         if (value == null) { throw new NullPointerException(); }
         ensureAddressesIsMutable();
         addresses_.add(value);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1636,7 +1424,7 @@ public final class Types {
         ensureAddressesIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, addresses_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -1647,7 +1435,7 @@ public final class Types {
       public Builder clearAddresses() {
         addresses_ =
           com.google.protobuf.LazyStringArrayList.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);;
+        bitField0_ = (bitField0_ & ~0x00000002);;
         onChanged();
         return this;
       }
@@ -1662,7 +1450,7 @@ public final class Types {
         checkByteStringIsUtf8(value);
         ensureAddressesIsMutable();
         addresses_.add(value);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -7112,56 +6900,54 @@ public final class Types {
       "oproto/gogo.proto\032\031google/protobuf/any.p" +
       "roto\032\021amino/amino.proto\"V\n\017AccessTypePar" +
       "am\022=\n\005value\030\001 \001(\0162\034.cosmwasm.wasm.v1.Acc" +
-      "essTypeB\020\362\336\037\014yaml:\"value\":\004\230\240\037\001\"\253\001\n\014Acce" +
+      "essTypeB\020\362\336\037\014yaml:\"value\":\004\230\240\037\001\"\214\001\n\014Acce" +
       "ssConfig\022G\n\npermission\030\001 \001(\0162\034.cosmwasm." +
       "wasm.v1.AccessTypeB\025\362\336\037\021yaml:\"permission" +
-      "\"\022#\n\007address\030\002 \001(\tB\022\362\336\037\016yaml:\"address\"\022\'" +
-      "\n\taddresses\030\003 \003(\tB\024\362\336\037\020yaml:\"addresses\":" +
-      "\004\230\240\037\001\"\343\001\n\006Params\022b\n\022code_upload_access\030\001" +
-      " \001(\0132\036.cosmwasm.wasm.v1.AccessConfigB&\310\336" +
-      "\037\000\362\336\037\031yaml:\"code_upload_access\"\250\347\260*\001\022o\n\036" +
-      "instantiate_default_permission\030\002 \001(\0162\034.c" +
-      "osmwasm.wasm.v1.AccessTypeB)\362\336\037%yaml:\"in" +
-      "stantiate_default_permission\":\004\230\240\037\000\"\201\001\n\010" +
-      "CodeInfo\022\021\n\tcode_hash\030\001 \001(\014\022\017\n\007creator\030\002" +
-      " \001(\t\022E\n\022instantiate_config\030\005 \001(\0132\036.cosmw" +
-      "asm.wasm.v1.AccessConfigB\t\310\336\037\000\250\347\260*\001J\004\010\003\020" +
-      "\004J\004\010\004\020\005\"\220\002\n\014ContractInfo\022\033\n\007code_id\030\001 \001(" +
-      "\004B\n\342\336\037\006CodeID\022\017\n\007creator\030\002 \001(\t\022\r\n\005admin\030" +
-      "\003 \001(\t\022\r\n\005label\030\004 \001(\t\0225\n\007created\030\005 \001(\0132$." +
-      "cosmwasm.wasm.v1.AbsoluteTxPosition\022\"\n\013i" +
-      "bc_port_id\030\006 \001(\tB\r\342\336\037\tIBCPortID\022S\n\texten" +
-      "sion\030\007 \001(\0132\024.google.protobuf.AnyB*\312\264-&co" +
-      "smwasm.wasm.v1.ContractInfoExtension:\004\350\240" +
-      "\037\001\"\332\001\n\030ContractCodeHistoryEntry\022E\n\topera" +
-      "tion\030\001 \001(\01622.cosmwasm.wasm.v1.ContractCo" +
-      "deHistoryOperationType\022\033\n\007code_id\030\002 \001(\004B" +
-      "\n\342\336\037\006CodeID\0225\n\007updated\030\003 \001(\0132$.cosmwasm." +
-      "wasm.v1.AbsoluteTxPosition\022#\n\003msg\030\004 \001(\014B" +
-      "\026\372\336\037\022RawContractMessage\"<\n\022AbsoluteTxPos" +
-      "ition\022\024\n\014block_height\030\001 \001(\004\022\020\n\010tx_index\030" +
-      "\002 \001(\004\"Y\n\005Model\022A\n\003key\030\001 \001(\014B4\372\336\0370github." +
-      "com/cometbft/cometbft/libs/bytes.HexByte" +
-      "s\022\r\n\005value\030\002 \001(\014*\251\002\n\nAccessType\0226\n\027ACCES" +
-      "S_TYPE_UNSPECIFIED\020\000\032\031\212\235 \025AccessTypeUnsp" +
-      "ecified\022,\n\022ACCESS_TYPE_NOBODY\020\001\032\024\212\235 \020Acc" +
-      "essTypeNobody\0227\n\030ACCESS_TYPE_ONLY_ADDRES" +
-      "S\020\002\032\031\212\235 \025AccessTypeOnlyAddress\0222\n\025ACCESS" +
-      "_TYPE_EVERYBODY\020\003\032\027\212\235 \023AccessTypeEverybo" +
-      "dy\022>\n\034ACCESS_TYPE_ANY_OF_ADDRESSES\020\004\032\034\212\235" +
-      " \030AccessTypeAnyOfAddresses\032\010\210\243\036\000\250\244\036\000*\246\003\n" +
-      " ContractCodeHistoryOperationType\022e\n0CON" +
-      "TRACT_CODE_HISTORY_OPERATION_TYPE_UNSPEC" +
-      "IFIED\020\000\032/\212\235 +ContractCodeHistoryOperatio" +
-      "nTypeUnspecified\022W\n)CONTRACT_CODE_HISTOR" +
-      "Y_OPERATION_TYPE_INIT\020\001\032(\212\235 $ContractCod" +
-      "eHistoryOperationTypeInit\022]\n,CONTRACT_CO" +
-      "DE_HISTORY_OPERATION_TYPE_MIGRATE\020\002\032+\212\235 " +
-      "\'ContractCodeHistoryOperationTypeMigrate" +
-      "\022]\n,CONTRACT_CODE_HISTORY_OPERATION_TYPE" +
-      "_GENESIS\020\003\032+\212\235 \'ContractCodeHistoryOpera" +
-      "tionTypeGenesis\032\004\210\243\036\000B0Z&github.com/Cosm" +
-      "Wasm/wasmd/x/wasm/types\310\341\036\000\250\342\036\001b\006proto3"
+      "\"\022\'\n\taddresses\030\003 \003(\tB\024\362\336\037\020yaml:\"addresse" +
+      "s\":\004\230\240\037\001J\004\010\002\020\003\"\343\001\n\006Params\022b\n\022code_upload" +
+      "_access\030\001 \001(\0132\036.cosmwasm.wasm.v1.AccessC" +
+      "onfigB&\310\336\037\000\362\336\037\031yaml:\"code_upload_access\"" +
+      "\250\347\260*\001\022o\n\036instantiate_default_permission\030" +
+      "\002 \001(\0162\034.cosmwasm.wasm.v1.AccessTypeB)\362\336\037" +
+      "%yaml:\"instantiate_default_permission\":\004" +
+      "\230\240\037\000\"\201\001\n\010CodeInfo\022\021\n\tcode_hash\030\001 \001(\014\022\017\n\007" +
+      "creator\030\002 \001(\t\022E\n\022instantiate_config\030\005 \001(" +
+      "\0132\036.cosmwasm.wasm.v1.AccessConfigB\t\310\336\037\000\250" +
+      "\347\260*\001J\004\010\003\020\004J\004\010\004\020\005\"\220\002\n\014ContractInfo\022\033\n\007cod" +
+      "e_id\030\001 \001(\004B\n\342\336\037\006CodeID\022\017\n\007creator\030\002 \001(\t\022" +
+      "\r\n\005admin\030\003 \001(\t\022\r\n\005label\030\004 \001(\t\0225\n\007created" +
+      "\030\005 \001(\0132$.cosmwasm.wasm.v1.AbsoluteTxPosi" +
+      "tion\022\"\n\013ibc_port_id\030\006 \001(\tB\r\342\336\037\tIBCPortID" +
+      "\022S\n\textension\030\007 \001(\0132\024.google.protobuf.An" +
+      "yB*\312\264-&cosmwasm.wasm.v1.ContractInfoExte" +
+      "nsion:\004\350\240\037\001\"\332\001\n\030ContractCodeHistoryEntry" +
+      "\022E\n\toperation\030\001 \001(\01622.cosmwasm.wasm.v1.C" +
+      "ontractCodeHistoryOperationType\022\033\n\007code_" +
+      "id\030\002 \001(\004B\n\342\336\037\006CodeID\0225\n\007updated\030\003 \001(\0132$." +
+      "cosmwasm.wasm.v1.AbsoluteTxPosition\022#\n\003m" +
+      "sg\030\004 \001(\014B\026\372\336\037\022RawContractMessage\"<\n\022Abso" +
+      "luteTxPosition\022\024\n\014block_height\030\001 \001(\004\022\020\n\010" +
+      "tx_index\030\002 \001(\004\"Y\n\005Model\022A\n\003key\030\001 \001(\014B4\372\336" +
+      "\0370github.com/cometbft/cometbft/libs/byte" +
+      "s.HexBytes\022\r\n\005value\030\002 \001(\014*\366\001\n\nAccessType" +
+      "\0226\n\027ACCESS_TYPE_UNSPECIFIED\020\000\032\031\212\235 \025Acces" +
+      "sTypeUnspecified\022,\n\022ACCESS_TYPE_NOBODY\020\001" +
+      "\032\024\212\235 \020AccessTypeNobody\0222\n\025ACCESS_TYPE_EV" +
+      "ERYBODY\020\003\032\027\212\235 \023AccessTypeEverybody\022>\n\034AC" +
+      "CESS_TYPE_ANY_OF_ADDRESSES\020\004\032\034\212\235 \030Access" +
+      "TypeAnyOfAddresses\032\010\210\243\036\000\250\244\036\000\"\004\010\002\020\002*\246\003\n C" +
+      "ontractCodeHistoryOperationType\022e\n0CONTR" +
+      "ACT_CODE_HISTORY_OPERATION_TYPE_UNSPECIF" +
+      "IED\020\000\032/\212\235 +ContractCodeHistoryOperationT" +
+      "ypeUnspecified\022W\n)CONTRACT_CODE_HISTORY_" +
+      "OPERATION_TYPE_INIT\020\001\032(\212\235 $ContractCodeH" +
+      "istoryOperationTypeInit\022]\n,CONTRACT_CODE" +
+      "_HISTORY_OPERATION_TYPE_MIGRATE\020\002\032+\212\235 \'C" +
+      "ontractCodeHistoryOperationTypeMigrate\022]" +
+      "\n,CONTRACT_CODE_HISTORY_OPERATION_TYPE_G" +
+      "ENESIS\020\003\032+\212\235 \'ContractCodeHistoryOperati" +
+      "onTypeGenesis\032\004\210\243\036\000B0Z&github.com/CosmWa" +
+      "sm/wasmd/x/wasm/types\310\341\036\000\250\342\036\001b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -7182,7 +6968,7 @@ public final class Types {
     internal_static_cosmwasm_wasm_v1_AccessConfig_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmwasm_wasm_v1_AccessConfig_descriptor,
-        new java.lang.String[] { "Permission", "Address", "Addresses", });
+        new java.lang.String[] { "Permission", "Addresses", });
     internal_static_cosmwasm_wasm_v1_Params_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_cosmwasm_wasm_v1_Params_fieldAccessorTable = new

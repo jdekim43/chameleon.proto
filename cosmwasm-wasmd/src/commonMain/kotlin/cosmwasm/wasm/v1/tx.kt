@@ -939,3 +939,283 @@ public data class MsgStoreAndInstantiateContractResponse(
     }
   }
 }
+
+@Serializable(with = MsgAddCodeUploadParamsAddresses.KotlinxSerializer::class)
+@SerialName(value = MsgAddCodeUploadParamsAddresses.TYPE_URL)
+public data class MsgAddCodeUploadParamsAddresses(
+  @ProtobufIndex(index = 1)
+  public val authority: String,
+  @ProtobufIndex(index = 2)
+  public val addresses: List<String>,
+) : ProtobufMessage {
+  public companion object {
+    public const val TYPE_URL: String = "/cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddresses"
+  }
+
+  public object KotlinxSerializer : KSerializer<MsgAddCodeUploadParamsAddresses> {
+    private val delegator: KSerializer<MsgAddCodeUploadParamsAddresses> =
+        MsgAddCodeUploadParamsAddresses.serializer()
+
+    public override val descriptor: SerialDescriptor = delegator.descriptor
+
+    public override fun serialize(encoder: Encoder, `value`: MsgAddCodeUploadParamsAddresses):
+        Unit {
+      if (encoder is ProtobufConverterEncoder) {
+        encoder.encodeValue(MsgAddCodeUploadParamsAddressesConverter.serialize(value))
+        return
+      }
+      delegator.serialize(encoder, value)
+    }
+
+    public override fun deserialize(decoder: Decoder): MsgAddCodeUploadParamsAddresses {
+      if (decoder is ProtobufMapperDecoder) {
+        return MsgAddCodeUploadParamsAddressesConverter.deserialize(decoder.decodeByteArray())
+      }
+      return delegator.deserialize(decoder)
+    }
+  }
+}
+
+@Serializable(with = MsgAddCodeUploadParamsAddressesResponse.KotlinxSerializer::class)
+@SerialName(value = MsgAddCodeUploadParamsAddressesResponse.TYPE_URL)
+public class MsgAddCodeUploadParamsAddressesResponse() : ProtobufMessage {
+  public companion object {
+    public const val TYPE_URL: String = "/cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddressesResponse"
+  }
+
+  public object KotlinxSerializer : KSerializer<MsgAddCodeUploadParamsAddressesResponse> {
+    private val delegator: KSerializer<MsgAddCodeUploadParamsAddressesResponse> =
+        MsgAddCodeUploadParamsAddressesResponse.serializer()
+
+    public override val descriptor: SerialDescriptor = delegator.descriptor
+
+    public override fun serialize(encoder: Encoder,
+        `value`: MsgAddCodeUploadParamsAddressesResponse): Unit {
+      if (encoder is ProtobufConverterEncoder) {
+        encoder.encodeValue(MsgAddCodeUploadParamsAddressesResponseConverter.serialize(value))
+        return
+      }
+      delegator.serialize(encoder, value)
+    }
+
+    public override fun deserialize(decoder: Decoder): MsgAddCodeUploadParamsAddressesResponse {
+      if (decoder is ProtobufMapperDecoder) {
+        return MsgAddCodeUploadParamsAddressesResponseConverter.deserialize(decoder.decodeByteArray())
+      }
+      return delegator.deserialize(decoder)
+    }
+  }
+}
+
+@Serializable(with = MsgRemoveCodeUploadParamsAddresses.KotlinxSerializer::class)
+@SerialName(value = MsgRemoveCodeUploadParamsAddresses.TYPE_URL)
+public data class MsgRemoveCodeUploadParamsAddresses(
+  @ProtobufIndex(index = 1)
+  public val authority: String,
+  @ProtobufIndex(index = 2)
+  public val addresses: List<String>,
+) : ProtobufMessage {
+  public companion object {
+    public const val TYPE_URL: String = "/cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddresses"
+  }
+
+  public object KotlinxSerializer : KSerializer<MsgRemoveCodeUploadParamsAddresses> {
+    private val delegator: KSerializer<MsgRemoveCodeUploadParamsAddresses> =
+        MsgRemoveCodeUploadParamsAddresses.serializer()
+
+    public override val descriptor: SerialDescriptor = delegator.descriptor
+
+    public override fun serialize(encoder: Encoder, `value`: MsgRemoveCodeUploadParamsAddresses):
+        Unit {
+      if (encoder is ProtobufConverterEncoder) {
+        encoder.encodeValue(MsgRemoveCodeUploadParamsAddressesConverter.serialize(value))
+        return
+      }
+      delegator.serialize(encoder, value)
+    }
+
+    public override fun deserialize(decoder: Decoder): MsgRemoveCodeUploadParamsAddresses {
+      if (decoder is ProtobufMapperDecoder) {
+        return MsgRemoveCodeUploadParamsAddressesConverter.deserialize(decoder.decodeByteArray())
+      }
+      return delegator.deserialize(decoder)
+    }
+  }
+}
+
+@Serializable(with = MsgRemoveCodeUploadParamsAddressesResponse.KotlinxSerializer::class)
+@SerialName(value = MsgRemoveCodeUploadParamsAddressesResponse.TYPE_URL)
+public class MsgRemoveCodeUploadParamsAddressesResponse() : ProtobufMessage {
+  public companion object {
+    public const val TYPE_URL: String =
+        "/cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddressesResponse"
+  }
+
+  public object KotlinxSerializer : KSerializer<MsgRemoveCodeUploadParamsAddressesResponse> {
+    private val delegator: KSerializer<MsgRemoveCodeUploadParamsAddressesResponse> =
+        MsgRemoveCodeUploadParamsAddressesResponse.serializer()
+
+    public override val descriptor: SerialDescriptor = delegator.descriptor
+
+    public override fun serialize(encoder: Encoder,
+        `value`: MsgRemoveCodeUploadParamsAddressesResponse): Unit {
+      if (encoder is ProtobufConverterEncoder) {
+        encoder.encodeValue(MsgRemoveCodeUploadParamsAddressesResponseConverter.serialize(value))
+        return
+      }
+      delegator.serialize(encoder, value)
+    }
+
+    public override fun deserialize(decoder: Decoder): MsgRemoveCodeUploadParamsAddressesResponse {
+      if (decoder is ProtobufMapperDecoder) {
+        return MsgRemoveCodeUploadParamsAddressesResponseConverter.deserialize(decoder.decodeByteArray())
+      }
+      return delegator.deserialize(decoder)
+    }
+  }
+}
+
+@Serializable(with = MsgStoreAndMigrateContract.KotlinxSerializer::class)
+@SerialName(value = MsgStoreAndMigrateContract.TYPE_URL)
+public data class MsgStoreAndMigrateContract(
+  @ProtobufIndex(index = 1)
+  public val authority: String,
+  @ProtobufIndex(index = 2)
+  public val wasmByteCode: ByteArray,
+  @ProtobufIndex(index = 3)
+  public val instantiatePermission: AccessConfig,
+  @ProtobufIndex(index = 4)
+  public val contract: String,
+  @ProtobufIndex(index = 5)
+  public val msg: ByteArray,
+) : ProtobufMessage {
+  public companion object {
+    public const val TYPE_URL: String = "/cosmwasm.wasm.v1.MsgStoreAndMigrateContract"
+  }
+
+  public object KotlinxSerializer : KSerializer<MsgStoreAndMigrateContract> {
+    private val delegator: KSerializer<MsgStoreAndMigrateContract> =
+        MsgStoreAndMigrateContract.serializer()
+
+    public override val descriptor: SerialDescriptor = delegator.descriptor
+
+    public override fun serialize(encoder: Encoder, `value`: MsgStoreAndMigrateContract): Unit {
+      if (encoder is ProtobufConverterEncoder) {
+        encoder.encodeValue(MsgStoreAndMigrateContractConverter.serialize(value))
+        return
+      }
+      delegator.serialize(encoder, value)
+    }
+
+    public override fun deserialize(decoder: Decoder): MsgStoreAndMigrateContract {
+      if (decoder is ProtobufMapperDecoder) {
+        return MsgStoreAndMigrateContractConverter.deserialize(decoder.decodeByteArray())
+      }
+      return delegator.deserialize(decoder)
+    }
+  }
+}
+
+@Serializable(with = MsgStoreAndMigrateContractResponse.KotlinxSerializer::class)
+@SerialName(value = MsgStoreAndMigrateContractResponse.TYPE_URL)
+public data class MsgStoreAndMigrateContractResponse(
+  @ProtobufIndex(index = 1)
+  public val codeId: ULong,
+  @ProtobufIndex(index = 2)
+  public val checksum: ByteArray,
+  @ProtobufIndex(index = 3)
+  public val `data`: ByteArray,
+) : ProtobufMessage {
+  public companion object {
+    public const val TYPE_URL: String = "/cosmwasm.wasm.v1.MsgStoreAndMigrateContractResponse"
+  }
+
+  public object KotlinxSerializer : KSerializer<MsgStoreAndMigrateContractResponse> {
+    private val delegator: KSerializer<MsgStoreAndMigrateContractResponse> =
+        MsgStoreAndMigrateContractResponse.serializer()
+
+    public override val descriptor: SerialDescriptor = delegator.descriptor
+
+    public override fun serialize(encoder: Encoder, `value`: MsgStoreAndMigrateContractResponse):
+        Unit {
+      if (encoder is ProtobufConverterEncoder) {
+        encoder.encodeValue(MsgStoreAndMigrateContractResponseConverter.serialize(value))
+        return
+      }
+      delegator.serialize(encoder, value)
+    }
+
+    public override fun deserialize(decoder: Decoder): MsgStoreAndMigrateContractResponse {
+      if (decoder is ProtobufMapperDecoder) {
+        return MsgStoreAndMigrateContractResponseConverter.deserialize(decoder.decodeByteArray())
+      }
+      return delegator.deserialize(decoder)
+    }
+  }
+}
+
+@Serializable(with = MsgUpdateContractLabel.KotlinxSerializer::class)
+@SerialName(value = MsgUpdateContractLabel.TYPE_URL)
+public data class MsgUpdateContractLabel(
+  @ProtobufIndex(index = 1)
+  public val sender: String,
+  @ProtobufIndex(index = 2)
+  public val newLabel: String,
+  @ProtobufIndex(index = 3)
+  public val contract: String,
+) : ProtobufMessage {
+  public companion object {
+    public const val TYPE_URL: String = "/cosmwasm.wasm.v1.MsgUpdateContractLabel"
+  }
+
+  public object KotlinxSerializer : KSerializer<MsgUpdateContractLabel> {
+    private val delegator: KSerializer<MsgUpdateContractLabel> = MsgUpdateContractLabel.serializer()
+
+    public override val descriptor: SerialDescriptor = delegator.descriptor
+
+    public override fun serialize(encoder: Encoder, `value`: MsgUpdateContractLabel): Unit {
+      if (encoder is ProtobufConverterEncoder) {
+        encoder.encodeValue(MsgUpdateContractLabelConverter.serialize(value))
+        return
+      }
+      delegator.serialize(encoder, value)
+    }
+
+    public override fun deserialize(decoder: Decoder): MsgUpdateContractLabel {
+      if (decoder is ProtobufMapperDecoder) {
+        return MsgUpdateContractLabelConverter.deserialize(decoder.decodeByteArray())
+      }
+      return delegator.deserialize(decoder)
+    }
+  }
+}
+
+@Serializable(with = MsgUpdateContractLabelResponse.KotlinxSerializer::class)
+@SerialName(value = MsgUpdateContractLabelResponse.TYPE_URL)
+public class MsgUpdateContractLabelResponse() : ProtobufMessage {
+  public companion object {
+    public const val TYPE_URL: String = "/cosmwasm.wasm.v1.MsgUpdateContractLabelResponse"
+  }
+
+  public object KotlinxSerializer : KSerializer<MsgUpdateContractLabelResponse> {
+    private val delegator: KSerializer<MsgUpdateContractLabelResponse> =
+        MsgUpdateContractLabelResponse.serializer()
+
+    public override val descriptor: SerialDescriptor = delegator.descriptor
+
+    public override fun serialize(encoder: Encoder, `value`: MsgUpdateContractLabelResponse): Unit {
+      if (encoder is ProtobufConverterEncoder) {
+        encoder.encodeValue(MsgUpdateContractLabelResponseConverter.serialize(value))
+        return
+      }
+      delegator.serialize(encoder, value)
+    }
+
+    public override fun deserialize(decoder: Decoder): MsgUpdateContractLabelResponse {
+      if (decoder is ProtobufMapperDecoder) {
+        return MsgUpdateContractLabelResponseConverter.deserialize(decoder.decodeByteArray())
+      }
+      return delegator.deserialize(decoder)
+    }
+  }
+}

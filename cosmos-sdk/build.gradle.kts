@@ -35,6 +35,14 @@ kotlin {
 //                }
             }
         }
+
+        val jvmMain by getting {
+            dependencies {
+                val protobufVersion: String by project
+
+                implementation("com.google.protobuf:protobuf-java-util:$protobufVersion")
+            }
+        }
     }
 }
 

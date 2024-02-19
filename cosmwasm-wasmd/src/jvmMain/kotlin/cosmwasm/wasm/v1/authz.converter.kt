@@ -6,11 +6,16 @@ package cosmwasm.wasm.v1
 import kr.jadekim.protobuf.`annotation`.GeneratorVersion
 import kr.jadekim.protobuf.converter.ProtobufConverter
 
+public actual object StoreCodeAuthorizationConverter : ProtobufConverter<StoreCodeAuthorization> by
+    StoreCodeAuthorizationJvmConverter
+
 public actual object ContractExecutionAuthorizationConverter :
     ProtobufConverter<ContractExecutionAuthorization> by ContractExecutionAuthorizationJvmConverter
 
 public actual object ContractMigrationAuthorizationConverter :
     ProtobufConverter<ContractMigrationAuthorization> by ContractMigrationAuthorizationJvmConverter
+
+public actual object CodeGrantConverter : ProtobufConverter<CodeGrant> by CodeGrantJvmConverter
 
 public actual object ContractGrantConverter : ProtobufConverter<ContractGrant> by
     ContractGrantJvmConverter

@@ -569,3 +569,183 @@ public object MsgStoreAndInstantiateContractResponseJvmConverter :
     return builder.build()
   }
 }
+
+public object MsgAddCodeUploadParamsAddressesJvmConverter :
+    ProtobufTypeMapper<MsgAddCodeUploadParamsAddresses, Tx.MsgAddCodeUploadParamsAddresses> {
+  public override val descriptor: Descriptors.Descriptor =
+      Tx.MsgAddCodeUploadParamsAddresses.getDescriptor()
+
+  public override val parser: Parser<Tx.MsgAddCodeUploadParamsAddresses> =
+      Tx.MsgAddCodeUploadParamsAddresses.parser()
+
+  public override fun convert(obj: Tx.MsgAddCodeUploadParamsAddresses):
+      MsgAddCodeUploadParamsAddresses = MsgAddCodeUploadParamsAddresses(
+  	authority = obj.getAuthority(),
+  	addresses = obj.getAddressesList().map { it },
+  )
+
+  public override fun convert(obj: MsgAddCodeUploadParamsAddresses):
+      Tx.MsgAddCodeUploadParamsAddresses {
+    val builder = Tx.MsgAddCodeUploadParamsAddresses.newBuilder()
+    builder.setAuthority(obj.authority)
+    builder.addAllAddresses(obj.addresses.map { it })
+    return builder.build()
+  }
+}
+
+public object MsgAddCodeUploadParamsAddressesResponseJvmConverter :
+    ProtobufTypeMapper<MsgAddCodeUploadParamsAddressesResponse, Tx.MsgAddCodeUploadParamsAddressesResponse>
+    {
+  public override val descriptor: Descriptors.Descriptor =
+      Tx.MsgAddCodeUploadParamsAddressesResponse.getDescriptor()
+
+  public override val parser: Parser<Tx.MsgAddCodeUploadParamsAddressesResponse> =
+      Tx.MsgAddCodeUploadParamsAddressesResponse.parser()
+
+  public override fun convert(obj: Tx.MsgAddCodeUploadParamsAddressesResponse):
+      MsgAddCodeUploadParamsAddressesResponse = MsgAddCodeUploadParamsAddressesResponse(
+  )
+
+  public override fun convert(obj: MsgAddCodeUploadParamsAddressesResponse):
+      Tx.MsgAddCodeUploadParamsAddressesResponse {
+    val builder = Tx.MsgAddCodeUploadParamsAddressesResponse.newBuilder()
+    return builder.build()
+  }
+}
+
+public object MsgRemoveCodeUploadParamsAddressesJvmConverter :
+    ProtobufTypeMapper<MsgRemoveCodeUploadParamsAddresses, Tx.MsgRemoveCodeUploadParamsAddresses> {
+  public override val descriptor: Descriptors.Descriptor =
+      Tx.MsgRemoveCodeUploadParamsAddresses.getDescriptor()
+
+  public override val parser: Parser<Tx.MsgRemoveCodeUploadParamsAddresses> =
+      Tx.MsgRemoveCodeUploadParamsAddresses.parser()
+
+  public override fun convert(obj: Tx.MsgRemoveCodeUploadParamsAddresses):
+      MsgRemoveCodeUploadParamsAddresses = MsgRemoveCodeUploadParamsAddresses(
+  	authority = obj.getAuthority(),
+  	addresses = obj.getAddressesList().map { it },
+  )
+
+  public override fun convert(obj: MsgRemoveCodeUploadParamsAddresses):
+      Tx.MsgRemoveCodeUploadParamsAddresses {
+    val builder = Tx.MsgRemoveCodeUploadParamsAddresses.newBuilder()
+    builder.setAuthority(obj.authority)
+    builder.addAllAddresses(obj.addresses.map { it })
+    return builder.build()
+  }
+}
+
+public object MsgRemoveCodeUploadParamsAddressesResponseJvmConverter :
+    ProtobufTypeMapper<MsgRemoveCodeUploadParamsAddressesResponse, Tx.MsgRemoveCodeUploadParamsAddressesResponse>
+    {
+  public override val descriptor: Descriptors.Descriptor =
+      Tx.MsgRemoveCodeUploadParamsAddressesResponse.getDescriptor()
+
+  public override val parser: Parser<Tx.MsgRemoveCodeUploadParamsAddressesResponse> =
+      Tx.MsgRemoveCodeUploadParamsAddressesResponse.parser()
+
+  public override fun convert(obj: Tx.MsgRemoveCodeUploadParamsAddressesResponse):
+      MsgRemoveCodeUploadParamsAddressesResponse = MsgRemoveCodeUploadParamsAddressesResponse(
+  )
+
+  public override fun convert(obj: MsgRemoveCodeUploadParamsAddressesResponse):
+      Tx.MsgRemoveCodeUploadParamsAddressesResponse {
+    val builder = Tx.MsgRemoveCodeUploadParamsAddressesResponse.newBuilder()
+    return builder.build()
+  }
+}
+
+public object MsgStoreAndMigrateContractJvmConverter :
+    ProtobufTypeMapper<MsgStoreAndMigrateContract, Tx.MsgStoreAndMigrateContract> {
+  public override val descriptor: Descriptors.Descriptor =
+      Tx.MsgStoreAndMigrateContract.getDescriptor()
+
+  public override val parser: Parser<Tx.MsgStoreAndMigrateContract> =
+      Tx.MsgStoreAndMigrateContract.parser()
+
+  public override fun convert(obj: Tx.MsgStoreAndMigrateContract): MsgStoreAndMigrateContract =
+      MsgStoreAndMigrateContract(
+  	authority = obj.getAuthority(),
+  	wasmByteCode = obj.getWasmByteCode().toByteArray(),
+  	instantiatePermission = AccessConfigJvmConverter.convert(obj.getInstantiatePermission()),
+  	contract = obj.getContract(),
+  	msg = obj.getMsg().toByteArray(),
+  )
+
+  public override fun convert(obj: MsgStoreAndMigrateContract): Tx.MsgStoreAndMigrateContract {
+    val builder = Tx.MsgStoreAndMigrateContract.newBuilder()
+    builder.setAuthority(obj.authority)
+    builder.setWasmByteCode(ByteString.copyFrom(obj.wasmByteCode))
+    builder.setInstantiatePermission(AccessConfigJvmConverter.convert(obj.instantiatePermission))
+    builder.setContract(obj.contract)
+    builder.setMsg(ByteString.copyFrom(obj.msg))
+    return builder.build()
+  }
+}
+
+public object MsgStoreAndMigrateContractResponseJvmConverter :
+    ProtobufTypeMapper<MsgStoreAndMigrateContractResponse, Tx.MsgStoreAndMigrateContractResponse> {
+  public override val descriptor: Descriptors.Descriptor =
+      Tx.MsgStoreAndMigrateContractResponse.getDescriptor()
+
+  public override val parser: Parser<Tx.MsgStoreAndMigrateContractResponse> =
+      Tx.MsgStoreAndMigrateContractResponse.parser()
+
+  public override fun convert(obj: Tx.MsgStoreAndMigrateContractResponse):
+      MsgStoreAndMigrateContractResponse = MsgStoreAndMigrateContractResponse(
+  	codeId = obj.getCodeId().asKotlinType,
+  	checksum = obj.getChecksum().toByteArray(),
+  	`data` = obj.getData().toByteArray(),
+  )
+
+  public override fun convert(obj: MsgStoreAndMigrateContractResponse):
+      Tx.MsgStoreAndMigrateContractResponse {
+    val builder = Tx.MsgStoreAndMigrateContractResponse.newBuilder()
+    builder.setCodeId(obj.codeId.asJavaType)
+    builder.setChecksum(ByteString.copyFrom(obj.checksum))
+    builder.setData(ByteString.copyFrom(obj.`data`))
+    return builder.build()
+  }
+}
+
+public object MsgUpdateContractLabelJvmConverter :
+    ProtobufTypeMapper<MsgUpdateContractLabel, Tx.MsgUpdateContractLabel> {
+  public override val descriptor: Descriptors.Descriptor = Tx.MsgUpdateContractLabel.getDescriptor()
+
+  public override val parser: Parser<Tx.MsgUpdateContractLabel> = Tx.MsgUpdateContractLabel.parser()
+
+  public override fun convert(obj: Tx.MsgUpdateContractLabel): MsgUpdateContractLabel =
+      MsgUpdateContractLabel(
+  	sender = obj.getSender(),
+  	newLabel = obj.getNewLabel(),
+  	contract = obj.getContract(),
+  )
+
+  public override fun convert(obj: MsgUpdateContractLabel): Tx.MsgUpdateContractLabel {
+    val builder = Tx.MsgUpdateContractLabel.newBuilder()
+    builder.setSender(obj.sender)
+    builder.setNewLabel(obj.newLabel)
+    builder.setContract(obj.contract)
+    return builder.build()
+  }
+}
+
+public object MsgUpdateContractLabelResponseJvmConverter :
+    ProtobufTypeMapper<MsgUpdateContractLabelResponse, Tx.MsgUpdateContractLabelResponse> {
+  public override val descriptor: Descriptors.Descriptor =
+      Tx.MsgUpdateContractLabelResponse.getDescriptor()
+
+  public override val parser: Parser<Tx.MsgUpdateContractLabelResponse> =
+      Tx.MsgUpdateContractLabelResponse.parser()
+
+  public override fun convert(obj: Tx.MsgUpdateContractLabelResponse):
+      MsgUpdateContractLabelResponse = MsgUpdateContractLabelResponse(
+  )
+
+  public override fun convert(obj: MsgUpdateContractLabelResponse):
+      Tx.MsgUpdateContractLabelResponse {
+    val builder = Tx.MsgUpdateContractLabelResponse.newBuilder()
+    return builder.build()
+  }
+}

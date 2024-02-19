@@ -43,6 +43,20 @@ public actual object Msg : GrpcService<Msg.Interface, Msg.Server, Msg.Client> {
 
     public actual suspend fun storeAndInstantiateContract(request: MsgStoreAndInstantiateContract):
         MsgStoreAndInstantiateContractResponse
+
+    public actual suspend
+        fun removeCodeUploadParamsAddresses(request: MsgRemoveCodeUploadParamsAddresses):
+        MsgRemoveCodeUploadParamsAddressesResponse
+
+    public actual suspend
+        fun addCodeUploadParamsAddresses(request: MsgAddCodeUploadParamsAddresses):
+        MsgAddCodeUploadParamsAddressesResponse
+
+    public actual suspend fun storeAndMigrateContract(request: MsgStoreAndMigrateContract):
+        MsgStoreAndMigrateContractResponse
+
+    public actual suspend fun updateContractLabel(request: MsgUpdateContractLabel):
+        MsgUpdateContractLabelResponse
   }
 
   public actual abstract class Server actual constructor(

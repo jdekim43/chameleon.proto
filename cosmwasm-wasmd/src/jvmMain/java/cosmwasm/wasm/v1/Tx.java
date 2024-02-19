@@ -21182,6 +21182,5466 @@ public final class Tx {
 
   }
 
+  public interface MsgAddCodeUploadParamsAddressesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddresses)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    java.lang.String getAuthority();
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    com.google.protobuf.ByteString
+        getAuthorityBytes();
+
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @return A list containing the addresses.
+     */
+    java.util.List<java.lang.String>
+        getAddressesList();
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @return The count of addresses.
+     */
+    int getAddressesCount();
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @param index The index of the element to return.
+     * @return The addresses at the given index.
+     */
+    java.lang.String getAddresses(int index);
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the addresses at the given index.
+     */
+    com.google.protobuf.ByteString
+        getAddressesBytes(int index);
+  }
+  /**
+   * <pre>
+   * MsgAddCodeUploadParamsAddresses is the
+   * MsgAddCodeUploadParamsAddresses request type.
+   * </pre>
+   *
+   * Protobuf type {@code cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddresses}
+   */
+  public static final class MsgAddCodeUploadParamsAddresses extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddresses)
+      MsgAddCodeUploadParamsAddressesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgAddCodeUploadParamsAddresses.newBuilder() to construct.
+    private MsgAddCodeUploadParamsAddresses(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgAddCodeUploadParamsAddresses() {
+      authority_ = "";
+      addresses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgAddCodeUploadParamsAddresses();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddresses_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddresses_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses.class, cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses.Builder.class);
+    }
+
+    public static final int AUTHORITY_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object authority_ = "";
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    @java.lang.Override
+    public java.lang.String getAuthority() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authority_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAuthorityBytes() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authority_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESSES_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList addresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @return A list containing the addresses.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAddressesList() {
+      return addresses_;
+    }
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @return The count of addresses.
+     */
+    public int getAddressesCount() {
+      return addresses_.size();
+    }
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @param index The index of the element to return.
+     * @return The addresses at the given index.
+     */
+    public java.lang.String getAddresses(int index) {
+      return addresses_.get(index);
+    }
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the addresses at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAddressesBytes(int index) {
+      return addresses_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authority_);
+      }
+      for (int i = 0; i < addresses_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, addresses_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authority_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < addresses_.size(); i++) {
+          dataSize += computeStringSizeNoTag(addresses_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAddressesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses)) {
+        return super.equals(obj);
+      }
+      cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses other = (cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses) obj;
+
+      if (!getAuthority()
+          .equals(other.getAuthority())) return false;
+      if (!getAddressesList()
+          .equals(other.getAddressesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthority().hashCode();
+      if (getAddressesCount() > 0) {
+        hash = (37 * hash) + ADDRESSES_FIELD_NUMBER;
+        hash = (53 * hash) + getAddressesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgAddCodeUploadParamsAddresses is the
+     * MsgAddCodeUploadParamsAddresses request type.
+     * </pre>
+     *
+     * Protobuf type {@code cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddresses}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddresses)
+        cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddresses_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddresses_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses.class, cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses.Builder.class);
+      }
+
+      // Construct using cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        authority_ = "";
+        addresses_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddresses_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses getDefaultInstanceForType() {
+        return cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses build() {
+        cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses buildPartial() {
+        cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses result = new cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.authority_ = authority_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          addresses_.makeImmutable();
+          result.addresses_ = addresses_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses) {
+          return mergeFrom((cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses other) {
+        if (other == cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses.getDefaultInstance()) return this;
+        if (!other.getAuthority().isEmpty()) {
+          authority_ = other.authority_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.addresses_.isEmpty()) {
+          if (addresses_.isEmpty()) {
+            addresses_ = other.addresses_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureAddressesIsMutable();
+            addresses_.addAll(other.addresses_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                authority_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAddressesIsMutable();
+                addresses_.add(s);
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object authority_ = "";
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The authority.
+       */
+      public java.lang.String getAuthority() {
+        java.lang.Object ref = authority_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          authority_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for authority.
+       */
+      public com.google.protobuf.ByteString
+          getAuthorityBytes() {
+        java.lang.Object ref = authority_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          authority_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthority(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        authority_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthority() {
+        authority_ = getDefaultInstance().getAuthority();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthorityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        authority_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList addresses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureAddressesIsMutable() {
+        if (!addresses_.isModifiable()) {
+          addresses_ = new com.google.protobuf.LazyStringArrayList(addresses_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @return A list containing the addresses.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getAddressesList() {
+        addresses_.makeImmutable();
+        return addresses_;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @return The count of addresses.
+       */
+      public int getAddressesCount() {
+        return addresses_.size();
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param index The index of the element to return.
+       * @return The addresses at the given index.
+       */
+      public java.lang.String getAddresses(int index) {
+        return addresses_.get(index);
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the addresses at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getAddressesBytes(int index) {
+        return addresses_.getByteString(index);
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param index The index to set the value at.
+       * @param value The addresses to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddresses(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureAddressesIsMutable();
+        addresses_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param value The addresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAddresses(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureAddressesIsMutable();
+        addresses_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param values The addresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAddresses(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureAddressesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, addresses_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddresses() {
+        addresses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param value The bytes of the addresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAddressesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureAddressesIsMutable();
+        addresses_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddresses)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddresses)
+    private static final cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses();
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgAddCodeUploadParamsAddresses>
+        PARSER = new com.google.protobuf.AbstractParser<MsgAddCodeUploadParamsAddresses>() {
+      @java.lang.Override
+      public MsgAddCodeUploadParamsAddresses parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgAddCodeUploadParamsAddresses> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgAddCodeUploadParamsAddresses> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddresses getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgAddCodeUploadParamsAddressesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddressesResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgAddCodeUploadParamsAddressesResponse defines the response
+   * structure for executing a MsgAddCodeUploadParamsAddresses message.
+   * </pre>
+   *
+   * Protobuf type {@code cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddressesResponse}
+   */
+  public static final class MsgAddCodeUploadParamsAddressesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddressesResponse)
+      MsgAddCodeUploadParamsAddressesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgAddCodeUploadParamsAddressesResponse.newBuilder() to construct.
+    private MsgAddCodeUploadParamsAddressesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgAddCodeUploadParamsAddressesResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgAddCodeUploadParamsAddressesResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddressesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddressesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse.class, cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse)) {
+        return super.equals(obj);
+      }
+      cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse other = (cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgAddCodeUploadParamsAddressesResponse defines the response
+     * structure for executing a MsgAddCodeUploadParamsAddresses message.
+     * </pre>
+     *
+     * Protobuf type {@code cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddressesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddressesResponse)
+        cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddressesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddressesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse.class, cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse.Builder.class);
+      }
+
+      // Construct using cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddressesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse getDefaultInstanceForType() {
+        return cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse build() {
+        cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse buildPartial() {
+        cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse result = new cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse) {
+          return mergeFrom((cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse other) {
+        if (other == cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddressesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmwasm.wasm.v1.MsgAddCodeUploadParamsAddressesResponse)
+    private static final cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse();
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgAddCodeUploadParamsAddressesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgAddCodeUploadParamsAddressesResponse>() {
+      @java.lang.Override
+      public MsgAddCodeUploadParamsAddressesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgAddCodeUploadParamsAddressesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgAddCodeUploadParamsAddressesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Tx.MsgAddCodeUploadParamsAddressesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgRemoveCodeUploadParamsAddressesOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddresses)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    java.lang.String getAuthority();
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    com.google.protobuf.ByteString
+        getAuthorityBytes();
+
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @return A list containing the addresses.
+     */
+    java.util.List<java.lang.String>
+        getAddressesList();
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @return The count of addresses.
+     */
+    int getAddressesCount();
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @param index The index of the element to return.
+     * @return The addresses at the given index.
+     */
+    java.lang.String getAddresses(int index);
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the addresses at the given index.
+     */
+    com.google.protobuf.ByteString
+        getAddressesBytes(int index);
+  }
+  /**
+   * <pre>
+   * MsgRemoveCodeUploadParamsAddresses is the
+   * MsgRemoveCodeUploadParamsAddresses request type.
+   * </pre>
+   *
+   * Protobuf type {@code cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddresses}
+   */
+  public static final class MsgRemoveCodeUploadParamsAddresses extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddresses)
+      MsgRemoveCodeUploadParamsAddressesOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgRemoveCodeUploadParamsAddresses.newBuilder() to construct.
+    private MsgRemoveCodeUploadParamsAddresses(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgRemoveCodeUploadParamsAddresses() {
+      authority_ = "";
+      addresses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgRemoveCodeUploadParamsAddresses();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddresses_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddresses_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses.class, cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses.Builder.class);
+    }
+
+    public static final int AUTHORITY_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object authority_ = "";
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    @java.lang.Override
+    public java.lang.String getAuthority() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authority_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAuthorityBytes() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authority_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ADDRESSES_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList addresses_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @return A list containing the addresses.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getAddressesList() {
+      return addresses_;
+    }
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @return The count of addresses.
+     */
+    public int getAddressesCount() {
+      return addresses_.size();
+    }
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @param index The index of the element to return.
+     * @return The addresses at the given index.
+     */
+    public java.lang.String getAddresses(int index) {
+      return addresses_.get(index);
+    }
+    /**
+     * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+     * @param index The index of the value to return.
+     * @return The bytes of the addresses at the given index.
+     */
+    public com.google.protobuf.ByteString
+        getAddressesBytes(int index) {
+      return addresses_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authority_);
+      }
+      for (int i = 0; i < addresses_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, addresses_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authority_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < addresses_.size(); i++) {
+          dataSize += computeStringSizeNoTag(addresses_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAddressesList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses)) {
+        return super.equals(obj);
+      }
+      cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses other = (cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses) obj;
+
+      if (!getAuthority()
+          .equals(other.getAuthority())) return false;
+      if (!getAddressesList()
+          .equals(other.getAddressesList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthority().hashCode();
+      if (getAddressesCount() > 0) {
+        hash = (37 * hash) + ADDRESSES_FIELD_NUMBER;
+        hash = (53 * hash) + getAddressesList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgRemoveCodeUploadParamsAddresses is the
+     * MsgRemoveCodeUploadParamsAddresses request type.
+     * </pre>
+     *
+     * Protobuf type {@code cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddresses}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddresses)
+        cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddresses_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddresses_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses.class, cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses.Builder.class);
+      }
+
+      // Construct using cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        authority_ = "";
+        addresses_ =
+            com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddresses_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses getDefaultInstanceForType() {
+        return cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses build() {
+        cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses buildPartial() {
+        cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses result = new cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.authority_ = authority_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          addresses_.makeImmutable();
+          result.addresses_ = addresses_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses) {
+          return mergeFrom((cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses other) {
+        if (other == cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses.getDefaultInstance()) return this;
+        if (!other.getAuthority().isEmpty()) {
+          authority_ = other.authority_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.addresses_.isEmpty()) {
+          if (addresses_.isEmpty()) {
+            addresses_ = other.addresses_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureAddressesIsMutable();
+            addresses_.addAll(other.addresses_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                authority_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureAddressesIsMutable();
+                addresses_.add(s);
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object authority_ = "";
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The authority.
+       */
+      public java.lang.String getAuthority() {
+        java.lang.Object ref = authority_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          authority_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for authority.
+       */
+      public com.google.protobuf.ByteString
+          getAuthorityBytes() {
+        java.lang.Object ref = authority_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          authority_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthority(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        authority_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthority() {
+        authority_ = getDefaultInstance().getAuthority();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthorityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        authority_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList addresses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      private void ensureAddressesIsMutable() {
+        if (!addresses_.isModifiable()) {
+          addresses_ = new com.google.protobuf.LazyStringArrayList(addresses_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @return A list containing the addresses.
+       */
+      public com.google.protobuf.ProtocolStringList
+          getAddressesList() {
+        addresses_.makeImmutable();
+        return addresses_;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @return The count of addresses.
+       */
+      public int getAddressesCount() {
+        return addresses_.size();
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param index The index of the element to return.
+       * @return The addresses at the given index.
+       */
+      public java.lang.String getAddresses(int index) {
+        return addresses_.get(index);
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param index The index of the value to return.
+       * @return The bytes of the addresses at the given index.
+       */
+      public com.google.protobuf.ByteString
+          getAddressesBytes(int index) {
+        return addresses_.getByteString(index);
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param index The index to set the value at.
+       * @param value The addresses to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAddresses(
+          int index, java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureAddressesIsMutable();
+        addresses_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param value The addresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAddresses(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        ensureAddressesIsMutable();
+        addresses_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param values The addresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAddresses(
+          java.lang.Iterable<java.lang.String> values) {
+        ensureAddressesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, addresses_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAddresses() {
+        addresses_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string addresses = 2 [(.gogoproto.moretags) = "yaml:&#92;"addresses&#92;""];</code>
+       * @param value The bytes of the addresses to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAddressesBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        ensureAddressesIsMutable();
+        addresses_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddresses)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddresses)
+    private static final cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses();
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgRemoveCodeUploadParamsAddresses>
+        PARSER = new com.google.protobuf.AbstractParser<MsgRemoveCodeUploadParamsAddresses>() {
+      @java.lang.Override
+      public MsgRemoveCodeUploadParamsAddresses parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgRemoveCodeUploadParamsAddresses> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgRemoveCodeUploadParamsAddresses> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddresses getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgRemoveCodeUploadParamsAddressesResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddressesResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgRemoveCodeUploadParamsAddressesResponse defines the response
+   * structure for executing a MsgRemoveCodeUploadParamsAddresses message.
+   * </pre>
+   *
+   * Protobuf type {@code cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddressesResponse}
+   */
+  public static final class MsgRemoveCodeUploadParamsAddressesResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddressesResponse)
+      MsgRemoveCodeUploadParamsAddressesResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgRemoveCodeUploadParamsAddressesResponse.newBuilder() to construct.
+    private MsgRemoveCodeUploadParamsAddressesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgRemoveCodeUploadParamsAddressesResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgRemoveCodeUploadParamsAddressesResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddressesResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddressesResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse.class, cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse)) {
+        return super.equals(obj);
+      }
+      cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse other = (cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgRemoveCodeUploadParamsAddressesResponse defines the response
+     * structure for executing a MsgRemoveCodeUploadParamsAddresses message.
+     * </pre>
+     *
+     * Protobuf type {@code cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddressesResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddressesResponse)
+        cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddressesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddressesResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse.class, cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse.Builder.class);
+      }
+
+      // Construct using cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddressesResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse getDefaultInstanceForType() {
+        return cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse build() {
+        cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse buildPartial() {
+        cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse result = new cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse) {
+          return mergeFrom((cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse other) {
+        if (other == cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddressesResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmwasm.wasm.v1.MsgRemoveCodeUploadParamsAddressesResponse)
+    private static final cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse();
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgRemoveCodeUploadParamsAddressesResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgRemoveCodeUploadParamsAddressesResponse>() {
+      @java.lang.Override
+      public MsgRemoveCodeUploadParamsAddressesResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgRemoveCodeUploadParamsAddressesResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgRemoveCodeUploadParamsAddressesResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Tx.MsgRemoveCodeUploadParamsAddressesResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgStoreAndMigrateContractOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmwasm.wasm.v1.MsgStoreAndMigrateContract)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    java.lang.String getAuthority();
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    com.google.protobuf.ByteString
+        getAuthorityBytes();
+
+    /**
+     * <pre>
+     * WASMByteCode can be raw or gzip compressed
+     * </pre>
+     *
+     * <code>bytes wasm_byte_code = 2 [(.gogoproto.customname) = "WASMByteCode"];</code>
+     * @return The wasmByteCode.
+     */
+    com.google.protobuf.ByteString getWasmByteCode();
+
+    /**
+     * <pre>
+     * InstantiatePermission to apply on contract creation, optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+     * @return Whether the instantiatePermission field is set.
+     */
+    boolean hasInstantiatePermission();
+    /**
+     * <pre>
+     * InstantiatePermission to apply on contract creation, optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+     * @return The instantiatePermission.
+     */
+    cosmwasm.wasm.v1.Types.AccessConfig getInstantiatePermission();
+    /**
+     * <pre>
+     * InstantiatePermission to apply on contract creation, optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+     */
+    cosmwasm.wasm.v1.Types.AccessConfigOrBuilder getInstantiatePermissionOrBuilder();
+
+    /**
+     * <pre>
+     * Contract is the address of the smart contract
+     * </pre>
+     *
+     * <code>string contract = 4;</code>
+     * @return The contract.
+     */
+    java.lang.String getContract();
+    /**
+     * <pre>
+     * Contract is the address of the smart contract
+     * </pre>
+     *
+     * <code>string contract = 4;</code>
+     * @return The bytes for contract.
+     */
+    com.google.protobuf.ByteString
+        getContractBytes();
+
+    /**
+     * <pre>
+     * Msg json encoded message to be passed to the contract on migration
+     * </pre>
+     *
+     * <code>bytes msg = 5 [(.gogoproto.casttype) = "RawContractMessage"];</code>
+     * @return The msg.
+     */
+    com.google.protobuf.ByteString getMsg();
+  }
+  /**
+   * <pre>
+   * MsgStoreAndMigrateContract is the MsgStoreAndMigrateContract
+   * request type.
+   *
+   * Since: 0.42
+   * </pre>
+   *
+   * Protobuf type {@code cosmwasm.wasm.v1.MsgStoreAndMigrateContract}
+   */
+  public static final class MsgStoreAndMigrateContract extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1.MsgStoreAndMigrateContract)
+      MsgStoreAndMigrateContractOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgStoreAndMigrateContract.newBuilder() to construct.
+    private MsgStoreAndMigrateContract(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgStoreAndMigrateContract() {
+      authority_ = "";
+      wasmByteCode_ = com.google.protobuf.ByteString.EMPTY;
+      contract_ = "";
+      msg_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgStoreAndMigrateContract();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContract_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContract_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract.class, cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract.Builder.class);
+    }
+
+    public static final int AUTHORITY_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object authority_ = "";
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The authority.
+     */
+    @java.lang.Override
+    public java.lang.String getAuthority() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        authority_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Authority is the address of the governance account.
+     * </pre>
+     *
+     * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for authority.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getAuthorityBytes() {
+      java.lang.Object ref = authority_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        authority_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int WASM_BYTE_CODE_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString wasmByteCode_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * WASMByteCode can be raw or gzip compressed
+     * </pre>
+     *
+     * <code>bytes wasm_byte_code = 2 [(.gogoproto.customname) = "WASMByteCode"];</code>
+     * @return The wasmByteCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getWasmByteCode() {
+      return wasmByteCode_;
+    }
+
+    public static final int INSTANTIATE_PERMISSION_FIELD_NUMBER = 3;
+    private cosmwasm.wasm.v1.Types.AccessConfig instantiatePermission_;
+    /**
+     * <pre>
+     * InstantiatePermission to apply on contract creation, optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+     * @return Whether the instantiatePermission field is set.
+     */
+    @java.lang.Override
+    public boolean hasInstantiatePermission() {
+      return instantiatePermission_ != null;
+    }
+    /**
+     * <pre>
+     * InstantiatePermission to apply on contract creation, optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+     * @return The instantiatePermission.
+     */
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Types.AccessConfig getInstantiatePermission() {
+      return instantiatePermission_ == null ? cosmwasm.wasm.v1.Types.AccessConfig.getDefaultInstance() : instantiatePermission_;
+    }
+    /**
+     * <pre>
+     * InstantiatePermission to apply on contract creation, optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+     */
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Types.AccessConfigOrBuilder getInstantiatePermissionOrBuilder() {
+      return instantiatePermission_ == null ? cosmwasm.wasm.v1.Types.AccessConfig.getDefaultInstance() : instantiatePermission_;
+    }
+
+    public static final int CONTRACT_FIELD_NUMBER = 4;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object contract_ = "";
+    /**
+     * <pre>
+     * Contract is the address of the smart contract
+     * </pre>
+     *
+     * <code>string contract = 4;</code>
+     * @return The contract.
+     */
+    @java.lang.Override
+    public java.lang.String getContract() {
+      java.lang.Object ref = contract_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contract_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Contract is the address of the smart contract
+     * </pre>
+     *
+     * <code>string contract = 4;</code>
+     * @return The bytes for contract.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContractBytes() {
+      java.lang.Object ref = contract_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contract_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int MSG_FIELD_NUMBER = 5;
+    private com.google.protobuf.ByteString msg_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * Msg json encoded message to be passed to the contract on migration
+     * </pre>
+     *
+     * <code>bytes msg = 5 [(.gogoproto.casttype) = "RawContractMessage"];</code>
+     * @return The msg.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getMsg() {
+      return msg_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, authority_);
+      }
+      if (!wasmByteCode_.isEmpty()) {
+        output.writeBytes(2, wasmByteCode_);
+      }
+      if (instantiatePermission_ != null) {
+        output.writeMessage(3, getInstantiatePermission());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contract_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, contract_);
+      }
+      if (!msg_.isEmpty()) {
+        output.writeBytes(5, msg_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(authority_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, authority_);
+      }
+      if (!wasmByteCode_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, wasmByteCode_);
+      }
+      if (instantiatePermission_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(3, getInstantiatePermission());
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contract_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, contract_);
+      }
+      if (!msg_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, msg_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract)) {
+        return super.equals(obj);
+      }
+      cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract other = (cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract) obj;
+
+      if (!getAuthority()
+          .equals(other.getAuthority())) return false;
+      if (!getWasmByteCode()
+          .equals(other.getWasmByteCode())) return false;
+      if (hasInstantiatePermission() != other.hasInstantiatePermission()) return false;
+      if (hasInstantiatePermission()) {
+        if (!getInstantiatePermission()
+            .equals(other.getInstantiatePermission())) return false;
+      }
+      if (!getContract()
+          .equals(other.getContract())) return false;
+      if (!getMsg()
+          .equals(other.getMsg())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + AUTHORITY_FIELD_NUMBER;
+      hash = (53 * hash) + getAuthority().hashCode();
+      hash = (37 * hash) + WASM_BYTE_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getWasmByteCode().hashCode();
+      if (hasInstantiatePermission()) {
+        hash = (37 * hash) + INSTANTIATE_PERMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getInstantiatePermission().hashCode();
+      }
+      hash = (37 * hash) + CONTRACT_FIELD_NUMBER;
+      hash = (53 * hash) + getContract().hashCode();
+      hash = (37 * hash) + MSG_FIELD_NUMBER;
+      hash = (53 * hash) + getMsg().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgStoreAndMigrateContract is the MsgStoreAndMigrateContract
+     * request type.
+     *
+     * Since: 0.42
+     * </pre>
+     *
+     * Protobuf type {@code cosmwasm.wasm.v1.MsgStoreAndMigrateContract}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmwasm.wasm.v1.MsgStoreAndMigrateContract)
+        cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContract_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContract_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract.class, cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract.Builder.class);
+      }
+
+      // Construct using cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        authority_ = "";
+        wasmByteCode_ = com.google.protobuf.ByteString.EMPTY;
+        instantiatePermission_ = null;
+        if (instantiatePermissionBuilder_ != null) {
+          instantiatePermissionBuilder_.dispose();
+          instantiatePermissionBuilder_ = null;
+        }
+        contract_ = "";
+        msg_ = com.google.protobuf.ByteString.EMPTY;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContract_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract getDefaultInstanceForType() {
+        return cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract build() {
+        cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract buildPartial() {
+        cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract result = new cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.authority_ = authority_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.wasmByteCode_ = wasmByteCode_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.instantiatePermission_ = instantiatePermissionBuilder_ == null
+              ? instantiatePermission_
+              : instantiatePermissionBuilder_.build();
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.contract_ = contract_;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.msg_ = msg_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract) {
+          return mergeFrom((cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract other) {
+        if (other == cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract.getDefaultInstance()) return this;
+        if (!other.getAuthority().isEmpty()) {
+          authority_ = other.authority_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getWasmByteCode() != com.google.protobuf.ByteString.EMPTY) {
+          setWasmByteCode(other.getWasmByteCode());
+        }
+        if (other.hasInstantiatePermission()) {
+          mergeInstantiatePermission(other.getInstantiatePermission());
+        }
+        if (!other.getContract().isEmpty()) {
+          contract_ = other.contract_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        if (other.getMsg() != com.google.protobuf.ByteString.EMPTY) {
+          setMsg(other.getMsg());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                authority_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                wasmByteCode_ = input.readBytes();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                input.readMessage(
+                    getInstantiatePermissionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              case 34: {
+                contract_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+              case 42: {
+                msg_ = input.readBytes();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object authority_ = "";
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The authority.
+       */
+      public java.lang.String getAuthority() {
+        java.lang.Object ref = authority_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          authority_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for authority.
+       */
+      public com.google.protobuf.ByteString
+          getAuthorityBytes() {
+        java.lang.Object ref = authority_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          authority_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthority(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        authority_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearAuthority() {
+        authority_ = getDefaultInstance().getAuthority();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Authority is the address of the governance account.
+       * </pre>
+       *
+       * <code>string authority = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for authority to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAuthorityBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        authority_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString wasmByteCode_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * WASMByteCode can be raw or gzip compressed
+       * </pre>
+       *
+       * <code>bytes wasm_byte_code = 2 [(.gogoproto.customname) = "WASMByteCode"];</code>
+       * @return The wasmByteCode.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getWasmByteCode() {
+        return wasmByteCode_;
+      }
+      /**
+       * <pre>
+       * WASMByteCode can be raw or gzip compressed
+       * </pre>
+       *
+       * <code>bytes wasm_byte_code = 2 [(.gogoproto.customname) = "WASMByteCode"];</code>
+       * @param value The wasmByteCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWasmByteCode(com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        wasmByteCode_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * WASMByteCode can be raw or gzip compressed
+       * </pre>
+       *
+       * <code>bytes wasm_byte_code = 2 [(.gogoproto.customname) = "WASMByteCode"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearWasmByteCode() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        wasmByteCode_ = getDefaultInstance().getWasmByteCode();
+        onChanged();
+        return this;
+      }
+
+      private cosmwasm.wasm.v1.Types.AccessConfig instantiatePermission_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmwasm.wasm.v1.Types.AccessConfig, cosmwasm.wasm.v1.Types.AccessConfig.Builder, cosmwasm.wasm.v1.Types.AccessConfigOrBuilder> instantiatePermissionBuilder_;
+      /**
+       * <pre>
+       * InstantiatePermission to apply on contract creation, optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+       * @return Whether the instantiatePermission field is set.
+       */
+      public boolean hasInstantiatePermission() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+      /**
+       * <pre>
+       * InstantiatePermission to apply on contract creation, optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+       * @return The instantiatePermission.
+       */
+      public cosmwasm.wasm.v1.Types.AccessConfig getInstantiatePermission() {
+        if (instantiatePermissionBuilder_ == null) {
+          return instantiatePermission_ == null ? cosmwasm.wasm.v1.Types.AccessConfig.getDefaultInstance() : instantiatePermission_;
+        } else {
+          return instantiatePermissionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * InstantiatePermission to apply on contract creation, optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+       */
+      public Builder setInstantiatePermission(cosmwasm.wasm.v1.Types.AccessConfig value) {
+        if (instantiatePermissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          instantiatePermission_ = value;
+        } else {
+          instantiatePermissionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * InstantiatePermission to apply on contract creation, optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+       */
+      public Builder setInstantiatePermission(
+          cosmwasm.wasm.v1.Types.AccessConfig.Builder builderForValue) {
+        if (instantiatePermissionBuilder_ == null) {
+          instantiatePermission_ = builderForValue.build();
+        } else {
+          instantiatePermissionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * InstantiatePermission to apply on contract creation, optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+       */
+      public Builder mergeInstantiatePermission(cosmwasm.wasm.v1.Types.AccessConfig value) {
+        if (instantiatePermissionBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0) &&
+            instantiatePermission_ != null &&
+            instantiatePermission_ != cosmwasm.wasm.v1.Types.AccessConfig.getDefaultInstance()) {
+            getInstantiatePermissionBuilder().mergeFrom(value);
+          } else {
+            instantiatePermission_ = value;
+          }
+        } else {
+          instantiatePermissionBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * InstantiatePermission to apply on contract creation, optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+       */
+      public Builder clearInstantiatePermission() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        instantiatePermission_ = null;
+        if (instantiatePermissionBuilder_ != null) {
+          instantiatePermissionBuilder_.dispose();
+          instantiatePermissionBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * InstantiatePermission to apply on contract creation, optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+       */
+      public cosmwasm.wasm.v1.Types.AccessConfig.Builder getInstantiatePermissionBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getInstantiatePermissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * InstantiatePermission to apply on contract creation, optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+       */
+      public cosmwasm.wasm.v1.Types.AccessConfigOrBuilder getInstantiatePermissionOrBuilder() {
+        if (instantiatePermissionBuilder_ != null) {
+          return instantiatePermissionBuilder_.getMessageOrBuilder();
+        } else {
+          return instantiatePermission_ == null ?
+              cosmwasm.wasm.v1.Types.AccessConfig.getDefaultInstance() : instantiatePermission_;
+        }
+      }
+      /**
+       * <pre>
+       * InstantiatePermission to apply on contract creation, optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 3;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmwasm.wasm.v1.Types.AccessConfig, cosmwasm.wasm.v1.Types.AccessConfig.Builder, cosmwasm.wasm.v1.Types.AccessConfigOrBuilder> 
+          getInstantiatePermissionFieldBuilder() {
+        if (instantiatePermissionBuilder_ == null) {
+          instantiatePermissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmwasm.wasm.v1.Types.AccessConfig, cosmwasm.wasm.v1.Types.AccessConfig.Builder, cosmwasm.wasm.v1.Types.AccessConfigOrBuilder>(
+                  getInstantiatePermission(),
+                  getParentForChildren(),
+                  isClean());
+          instantiatePermission_ = null;
+        }
+        return instantiatePermissionBuilder_;
+      }
+
+      private java.lang.Object contract_ = "";
+      /**
+       * <pre>
+       * Contract is the address of the smart contract
+       * </pre>
+       *
+       * <code>string contract = 4;</code>
+       * @return The contract.
+       */
+      public java.lang.String getContract() {
+        java.lang.Object ref = contract_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contract_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Contract is the address of the smart contract
+       * </pre>
+       *
+       * <code>string contract = 4;</code>
+       * @return The bytes for contract.
+       */
+      public com.google.protobuf.ByteString
+          getContractBytes() {
+        java.lang.Object ref = contract_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contract_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Contract is the address of the smart contract
+       * </pre>
+       *
+       * <code>string contract = 4;</code>
+       * @param value The contract to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContract(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        contract_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Contract is the address of the smart contract
+       * </pre>
+       *
+       * <code>string contract = 4;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContract() {
+        contract_ = getDefaultInstance().getContract();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Contract is the address of the smart contract
+       * </pre>
+       *
+       * <code>string contract = 4;</code>
+       * @param value The bytes for contract to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContractBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        contract_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString msg_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * Msg json encoded message to be passed to the contract on migration
+       * </pre>
+       *
+       * <code>bytes msg = 5 [(.gogoproto.casttype) = "RawContractMessage"];</code>
+       * @return The msg.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getMsg() {
+        return msg_;
+      }
+      /**
+       * <pre>
+       * Msg json encoded message to be passed to the contract on migration
+       * </pre>
+       *
+       * <code>bytes msg = 5 [(.gogoproto.casttype) = "RawContractMessage"];</code>
+       * @param value The msg to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMsg(com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        msg_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Msg json encoded message to be passed to the contract on migration
+       * </pre>
+       *
+       * <code>bytes msg = 5 [(.gogoproto.casttype) = "RawContractMessage"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearMsg() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        msg_ = getDefaultInstance().getMsg();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmwasm.wasm.v1.MsgStoreAndMigrateContract)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmwasm.wasm.v1.MsgStoreAndMigrateContract)
+    private static final cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract();
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgStoreAndMigrateContract>
+        PARSER = new com.google.protobuf.AbstractParser<MsgStoreAndMigrateContract>() {
+      @java.lang.Override
+      public MsgStoreAndMigrateContract parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgStoreAndMigrateContract> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgStoreAndMigrateContract> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContract getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgStoreAndMigrateContractResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmwasm.wasm.v1.MsgStoreAndMigrateContractResponse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * CodeID is the reference to the stored WASM code
+     * </pre>
+     *
+     * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
+     */
+    long getCodeId();
+
+    /**
+     * <pre>
+     * Checksum is the sha256 hash of the stored code
+     * </pre>
+     *
+     * <code>bytes checksum = 2;</code>
+     * @return The checksum.
+     */
+    com.google.protobuf.ByteString getChecksum();
+
+    /**
+     * <pre>
+     * Data contains bytes to returned from the contract
+     * </pre>
+     *
+     * <code>bytes data = 3;</code>
+     * @return The data.
+     */
+    com.google.protobuf.ByteString getData();
+  }
+  /**
+   * <pre>
+   * MsgStoreAndMigrateContractResponse defines the response structure
+   * for executing a MsgStoreAndMigrateContract message.
+   *
+   * Since: 0.42
+   * </pre>
+   *
+   * Protobuf type {@code cosmwasm.wasm.v1.MsgStoreAndMigrateContractResponse}
+   */
+  public static final class MsgStoreAndMigrateContractResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1.MsgStoreAndMigrateContractResponse)
+      MsgStoreAndMigrateContractResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgStoreAndMigrateContractResponse.newBuilder() to construct.
+    private MsgStoreAndMigrateContractResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgStoreAndMigrateContractResponse() {
+      checksum_ = com.google.protobuf.ByteString.EMPTY;
+      data_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgStoreAndMigrateContractResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContractResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContractResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse.class, cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse.Builder.class);
+    }
+
+    public static final int CODE_ID_FIELD_NUMBER = 1;
+    private long codeId_ = 0L;
+    /**
+     * <pre>
+     * CodeID is the reference to the stored WASM code
+     * </pre>
+     *
+     * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+     * @return The codeId.
+     */
+    @java.lang.Override
+    public long getCodeId() {
+      return codeId_;
+    }
+
+    public static final int CHECKSUM_FIELD_NUMBER = 2;
+    private com.google.protobuf.ByteString checksum_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * Checksum is the sha256 hash of the stored code
+     * </pre>
+     *
+     * <code>bytes checksum = 2;</code>
+     * @return The checksum.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getChecksum() {
+      return checksum_;
+    }
+
+    public static final int DATA_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * Data contains bytes to returned from the contract
+     * </pre>
+     *
+     * <code>bytes data = 3;</code>
+     * @return The data.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getData() {
+      return data_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (codeId_ != 0L) {
+        output.writeUInt64(1, codeId_);
+      }
+      if (!checksum_.isEmpty()) {
+        output.writeBytes(2, checksum_);
+      }
+      if (!data_.isEmpty()) {
+        output.writeBytes(3, data_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (codeId_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeUInt64Size(1, codeId_);
+      }
+      if (!checksum_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, checksum_);
+      }
+      if (!data_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, data_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse)) {
+        return super.equals(obj);
+      }
+      cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse other = (cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse) obj;
+
+      if (getCodeId()
+          != other.getCodeId()) return false;
+      if (!getChecksum()
+          .equals(other.getChecksum())) return false;
+      if (!getData()
+          .equals(other.getData())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
+          getCodeId());
+      hash = (37 * hash) + CHECKSUM_FIELD_NUMBER;
+      hash = (53 * hash) + getChecksum().hashCode();
+      hash = (37 * hash) + DATA_FIELD_NUMBER;
+      hash = (53 * hash) + getData().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgStoreAndMigrateContractResponse defines the response structure
+     * for executing a MsgStoreAndMigrateContract message.
+     *
+     * Since: 0.42
+     * </pre>
+     *
+     * Protobuf type {@code cosmwasm.wasm.v1.MsgStoreAndMigrateContractResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmwasm.wasm.v1.MsgStoreAndMigrateContractResponse)
+        cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContractResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContractResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse.class, cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse.Builder.class);
+      }
+
+      // Construct using cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        codeId_ = 0L;
+        checksum_ = com.google.protobuf.ByteString.EMPTY;
+        data_ = com.google.protobuf.ByteString.EMPTY;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContractResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse getDefaultInstanceForType() {
+        return cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse build() {
+        cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse buildPartial() {
+        cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse result = new cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.codeId_ = codeId_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.checksum_ = checksum_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.data_ = data_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse) {
+          return mergeFrom((cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse other) {
+        if (other == cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse.getDefaultInstance()) return this;
+        if (other.getCodeId() != 0L) {
+          setCodeId(other.getCodeId());
+        }
+        if (other.getChecksum() != com.google.protobuf.ByteString.EMPTY) {
+          setChecksum(other.getChecksum());
+        }
+        if (other.getData() != com.google.protobuf.ByteString.EMPTY) {
+          setData(other.getData());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8: {
+                codeId_ = input.readUInt64();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
+              case 18: {
+                checksum_ = input.readBytes();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                data_ = input.readBytes();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private long codeId_ ;
+      /**
+       * <pre>
+       * CodeID is the reference to the stored WASM code
+       * </pre>
+       *
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return The codeId.
+       */
+      @java.lang.Override
+      public long getCodeId() {
+        return codeId_;
+      }
+      /**
+       * <pre>
+       * CodeID is the reference to the stored WASM code
+       * </pre>
+       *
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+       * @param value The codeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodeId(long value) {
+
+        codeId_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CodeID is the reference to the stored WASM code
+       * </pre>
+       *
+       * <code>uint64 code_id = 1 [(.gogoproto.customname) = "CodeID"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCodeId() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        codeId_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString checksum_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * Checksum is the sha256 hash of the stored code
+       * </pre>
+       *
+       * <code>bytes checksum = 2;</code>
+       * @return The checksum.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getChecksum() {
+        return checksum_;
+      }
+      /**
+       * <pre>
+       * Checksum is the sha256 hash of the stored code
+       * </pre>
+       *
+       * <code>bytes checksum = 2;</code>
+       * @param value The checksum to set.
+       * @return This builder for chaining.
+       */
+      public Builder setChecksum(com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checksum_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Checksum is the sha256 hash of the stored code
+       * </pre>
+       *
+       * <code>bytes checksum = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearChecksum() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        checksum_ = getDefaultInstance().getChecksum();
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString data_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * Data contains bytes to returned from the contract
+       * </pre>
+       *
+       * <code>bytes data = 3;</code>
+       * @return The data.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getData() {
+        return data_;
+      }
+      /**
+       * <pre>
+       * Data contains bytes to returned from the contract
+       * </pre>
+       *
+       * <code>bytes data = 3;</code>
+       * @param value The data to set.
+       * @return This builder for chaining.
+       */
+      public Builder setData(com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        data_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Data contains bytes to returned from the contract
+       * </pre>
+       *
+       * <code>bytes data = 3;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearData() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        data_ = getDefaultInstance().getData();
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmwasm.wasm.v1.MsgStoreAndMigrateContractResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmwasm.wasm.v1.MsgStoreAndMigrateContractResponse)
+    private static final cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse();
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgStoreAndMigrateContractResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgStoreAndMigrateContractResponse>() {
+      @java.lang.Override
+      public MsgStoreAndMigrateContractResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgStoreAndMigrateContractResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgStoreAndMigrateContractResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Tx.MsgStoreAndMigrateContractResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgUpdateContractLabelOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmwasm.wasm.v1.MsgUpdateContractLabel)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Sender is the that actor that signed the messages
+     * </pre>
+     *
+     * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The sender.
+     */
+    java.lang.String getSender();
+    /**
+     * <pre>
+     * Sender is the that actor that signed the messages
+     * </pre>
+     *
+     * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for sender.
+     */
+    com.google.protobuf.ByteString
+        getSenderBytes();
+
+    /**
+     * <pre>
+     * NewLabel string to be set
+     * </pre>
+     *
+     * <code>string new_label = 2;</code>
+     * @return The newLabel.
+     */
+    java.lang.String getNewLabel();
+    /**
+     * <pre>
+     * NewLabel string to be set
+     * </pre>
+     *
+     * <code>string new_label = 2;</code>
+     * @return The bytes for newLabel.
+     */
+    com.google.protobuf.ByteString
+        getNewLabelBytes();
+
+    /**
+     * <pre>
+     * Contract is the address of the smart contract
+     * </pre>
+     *
+     * <code>string contract = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The contract.
+     */
+    java.lang.String getContract();
+    /**
+     * <pre>
+     * Contract is the address of the smart contract
+     * </pre>
+     *
+     * <code>string contract = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for contract.
+     */
+    com.google.protobuf.ByteString
+        getContractBytes();
+  }
+  /**
+   * <pre>
+   * MsgUpdateContractLabel sets a new label for a smart contract
+   * </pre>
+   *
+   * Protobuf type {@code cosmwasm.wasm.v1.MsgUpdateContractLabel}
+   */
+  public static final class MsgUpdateContractLabel extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1.MsgUpdateContractLabel)
+      MsgUpdateContractLabelOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgUpdateContractLabel.newBuilder() to construct.
+    private MsgUpdateContractLabel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgUpdateContractLabel() {
+      sender_ = "";
+      newLabel_ = "";
+      contract_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgUpdateContractLabel();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabel_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabel_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel.class, cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel.Builder.class);
+    }
+
+    public static final int SENDER_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sender_ = "";
+    /**
+     * <pre>
+     * Sender is the that actor that signed the messages
+     * </pre>
+     *
+     * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The sender.
+     */
+    @java.lang.Override
+    public java.lang.String getSender() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sender_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Sender is the that actor that signed the messages
+     * </pre>
+     *
+     * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for sender.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getSenderBytes() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        sender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int NEW_LABEL_FIELD_NUMBER = 2;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object newLabel_ = "";
+    /**
+     * <pre>
+     * NewLabel string to be set
+     * </pre>
+     *
+     * <code>string new_label = 2;</code>
+     * @return The newLabel.
+     */
+    @java.lang.Override
+    public java.lang.String getNewLabel() {
+      java.lang.Object ref = newLabel_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        newLabel_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * NewLabel string to be set
+     * </pre>
+     *
+     * <code>string new_label = 2;</code>
+     * @return The bytes for newLabel.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getNewLabelBytes() {
+      java.lang.Object ref = newLabel_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        newLabel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CONTRACT_FIELD_NUMBER = 3;
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object contract_ = "";
+    /**
+     * <pre>
+     * Contract is the address of the smart contract
+     * </pre>
+     *
+     * <code>string contract = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The contract.
+     */
+    @java.lang.Override
+    public java.lang.String getContract() {
+      java.lang.Object ref = contract_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        contract_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     * Contract is the address of the smart contract
+     * </pre>
+     *
+     * <code>string contract = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+     * @return The bytes for contract.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString
+        getContractBytes() {
+      java.lang.Object ref = contract_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        contract_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sender_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, sender_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newLabel_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, newLabel_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contract_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, contract_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sender_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, sender_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(newLabel_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, newLabel_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(contract_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, contract_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel)) {
+        return super.equals(obj);
+      }
+      cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel other = (cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel) obj;
+
+      if (!getSender()
+          .equals(other.getSender())) return false;
+      if (!getNewLabel()
+          .equals(other.getNewLabel())) return false;
+      if (!getContract()
+          .equals(other.getContract())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SENDER_FIELD_NUMBER;
+      hash = (53 * hash) + getSender().hashCode();
+      hash = (37 * hash) + NEW_LABEL_FIELD_NUMBER;
+      hash = (53 * hash) + getNewLabel().hashCode();
+      hash = (37 * hash) + CONTRACT_FIELD_NUMBER;
+      hash = (53 * hash) + getContract().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgUpdateContractLabel sets a new label for a smart contract
+     * </pre>
+     *
+     * Protobuf type {@code cosmwasm.wasm.v1.MsgUpdateContractLabel}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmwasm.wasm.v1.MsgUpdateContractLabel)
+        cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabel_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabel_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel.class, cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel.Builder.class);
+      }
+
+      // Construct using cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        sender_ = "";
+        newLabel_ = "";
+        contract_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabel_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel getDefaultInstanceForType() {
+        return cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel build() {
+        cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel buildPartial() {
+        cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel result = new cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.sender_ = sender_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.newLabel_ = newLabel_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.contract_ = contract_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel) {
+          return mergeFrom((cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel other) {
+        if (other == cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel.getDefaultInstance()) return this;
+        if (!other.getSender().isEmpty()) {
+          sender_ = other.sender_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (!other.getNewLabel().isEmpty()) {
+          newLabel_ = other.newLabel_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (!other.getContract().isEmpty()) {
+          contract_ = other.contract_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                sender_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                newLabel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              case 26: {
+                contract_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.lang.Object sender_ = "";
+      /**
+       * <pre>
+       * Sender is the that actor that signed the messages
+       * </pre>
+       *
+       * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The sender.
+       */
+      public java.lang.String getSender() {
+        java.lang.Object ref = sender_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sender_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Sender is the that actor that signed the messages
+       * </pre>
+       *
+       * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for sender.
+       */
+      public com.google.protobuf.ByteString
+          getSenderBytes() {
+        java.lang.Object ref = sender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          sender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Sender is the that actor that signed the messages
+       * </pre>
+       *
+       * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The sender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSender(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        sender_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Sender is the that actor that signed the messages
+       * </pre>
+       *
+       * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearSender() {
+        sender_ = getDefaultInstance().getSender();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Sender is the that actor that signed the messages
+       * </pre>
+       *
+       * <code>string sender = 1 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for sender to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        sender_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object newLabel_ = "";
+      /**
+       * <pre>
+       * NewLabel string to be set
+       * </pre>
+       *
+       * <code>string new_label = 2;</code>
+       * @return The newLabel.
+       */
+      public java.lang.String getNewLabel() {
+        java.lang.Object ref = newLabel_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          newLabel_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * NewLabel string to be set
+       * </pre>
+       *
+       * <code>string new_label = 2;</code>
+       * @return The bytes for newLabel.
+       */
+      public com.google.protobuf.ByteString
+          getNewLabelBytes() {
+        java.lang.Object ref = newLabel_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          newLabel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * NewLabel string to be set
+       * </pre>
+       *
+       * <code>string new_label = 2;</code>
+       * @param value The newLabel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNewLabel(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        newLabel_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * NewLabel string to be set
+       * </pre>
+       *
+       * <code>string new_label = 2;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearNewLabel() {
+        newLabel_ = getDefaultInstance().getNewLabel();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * NewLabel string to be set
+       * </pre>
+       *
+       * <code>string new_label = 2;</code>
+       * @param value The bytes for newLabel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setNewLabelBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        newLabel_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object contract_ = "";
+      /**
+       * <pre>
+       * Contract is the address of the smart contract
+       * </pre>
+       *
+       * <code>string contract = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The contract.
+       */
+      public java.lang.String getContract() {
+        java.lang.Object ref = contract_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          contract_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Contract is the address of the smart contract
+       * </pre>
+       *
+       * <code>string contract = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return The bytes for contract.
+       */
+      public com.google.protobuf.ByteString
+          getContractBytes() {
+        java.lang.Object ref = contract_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          contract_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       * Contract is the address of the smart contract
+       * </pre>
+       *
+       * <code>string contract = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The contract to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContract(
+          java.lang.String value) {
+        if (value == null) { throw new NullPointerException(); }
+        contract_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Contract is the address of the smart contract
+       * </pre>
+       *
+       * <code>string contract = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearContract() {
+        contract_ = getDefaultInstance().getContract();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * Contract is the address of the smart contract
+       * </pre>
+       *
+       * <code>string contract = 3 [(.cosmos_proto.scalar) = "cosmos.AddressString"];</code>
+       * @param value The bytes for contract to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContractBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        checkByteStringIsUtf8(value);
+        contract_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmwasm.wasm.v1.MsgUpdateContractLabel)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmwasm.wasm.v1.MsgUpdateContractLabel)
+    private static final cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel();
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgUpdateContractLabel>
+        PARSER = new com.google.protobuf.AbstractParser<MsgUpdateContractLabel>() {
+      @java.lang.Override
+      public MsgUpdateContractLabel parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgUpdateContractLabel> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgUpdateContractLabel> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Tx.MsgUpdateContractLabel getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface MsgUpdateContractLabelResponseOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmwasm.wasm.v1.MsgUpdateContractLabelResponse)
+      com.google.protobuf.MessageOrBuilder {
+  }
+  /**
+   * <pre>
+   * MsgUpdateContractLabelResponse returns empty data
+   * </pre>
+   *
+   * Protobuf type {@code cosmwasm.wasm.v1.MsgUpdateContractLabelResponse}
+   */
+  public static final class MsgUpdateContractLabelResponse extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1.MsgUpdateContractLabelResponse)
+      MsgUpdateContractLabelResponseOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use MsgUpdateContractLabelResponse.newBuilder() to construct.
+    private MsgUpdateContractLabelResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private MsgUpdateContractLabelResponse() {
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new MsgUpdateContractLabelResponse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabelResponse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabelResponse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse.class, cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse)) {
+        return super.equals(obj);
+      }
+      cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse other = (cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * MsgUpdateContractLabelResponse returns empty data
+     * </pre>
+     *
+     * Protobuf type {@code cosmwasm.wasm.v1.MsgUpdateContractLabelResponse}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmwasm.wasm.v1.MsgUpdateContractLabelResponse)
+        cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabelResponse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabelResponse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse.class, cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse.Builder.class);
+      }
+
+      // Construct using cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmwasm.wasm.v1.Tx.internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabelResponse_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse getDefaultInstanceForType() {
+        return cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse build() {
+        cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse buildPartial() {
+        cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse result = new cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse) {
+          return mergeFrom((cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse other) {
+        if (other == cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse.getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmwasm.wasm.v1.MsgUpdateContractLabelResponse)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmwasm.wasm.v1.MsgUpdateContractLabelResponse)
+    private static final cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse();
+    }
+
+    public static cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<MsgUpdateContractLabelResponse>
+        PARSER = new com.google.protobuf.AbstractParser<MsgUpdateContractLabelResponse>() {
+      @java.lang.Override
+      public MsgUpdateContractLabelResponse parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<MsgUpdateContractLabelResponse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<MsgUpdateContractLabelResponse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Tx.MsgUpdateContractLabelResponse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmwasm_wasm_v1_MsgStoreCode_descriptor;
   private static final 
@@ -21312,6 +26772,46 @@ public final class Tx {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmwasm_wasm_v1_MsgStoreAndInstantiateContractResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddresses_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddresses_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddressesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddressesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddresses_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddresses_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddressesResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddressesResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContract_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContract_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContractResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContractResponse_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabel_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabel_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabelResponse_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabelResponse_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -21406,42 +26906,82 @@ public final class Tx {
       "\001(\t\022\021\n\tcode_hash\030\014 \001(\014:6\202\347\260*\tauthority\212\347" +
       "\260*#wasm/MsgStoreAndInstantiateContract\"G" +
       "\n&MsgStoreAndInstantiateContractResponse" +
-      "\022\017\n\007address\030\001 \001(\t\022\014\n\004data\030\002 \001(\0142\265\n\n\003Msg\022" +
-      "S\n\tStoreCode\022\036.cosmwasm.wasm.v1.MsgStore" +
-      "Code\032&.cosmwasm.wasm.v1.MsgStoreCodeResp" +
-      "onse\022q\n\023InstantiateContract\022(.cosmwasm.w" +
-      "asm.v1.MsgInstantiateContract\0320.cosmwasm" +
-      ".wasm.v1.MsgInstantiateContractResponse\022" +
-      "t\n\024InstantiateContract2\022).cosmwasm.wasm." +
-      "v1.MsgInstantiateContract2\0321.cosmwasm.wa" +
-      "sm.v1.MsgInstantiateContract2Response\022e\n" +
-      "\017ExecuteContract\022$.cosmwasm.wasm.v1.MsgE" +
-      "xecuteContract\032,.cosmwasm.wasm.v1.MsgExe" +
-      "cuteContractResponse\022e\n\017MigrateContract\022" +
-      "$.cosmwasm.wasm.v1.MsgMigrateContract\032,." +
-      "cosmwasm.wasm.v1.MsgMigrateContractRespo" +
-      "nse\022Y\n\013UpdateAdmin\022 .cosmwasm.wasm.v1.Ms" +
-      "gUpdateAdmin\032(.cosmwasm.wasm.v1.MsgUpdat" +
-      "eAdminResponse\022V\n\nClearAdmin\022\037.cosmwasm." +
-      "wasm.v1.MsgClearAdmin\032\'.cosmwasm.wasm.v1" +
-      ".MsgClearAdminResponse\022}\n\027UpdateInstanti" +
-      "ateConfig\022,.cosmwasm.wasm.v1.MsgUpdateIn" +
-      "stantiateConfig\0324.cosmwasm.wasm.v1.MsgUp" +
-      "dateInstantiateConfigResponse\022\\\n\014UpdateP" +
-      "arams\022!.cosmwasm.wasm.v1.MsgUpdateParams" +
-      "\032).cosmwasm.wasm.v1.MsgUpdateParamsRespo" +
-      "nse\022\\\n\014SudoContract\022!.cosmwasm.wasm.v1.M" +
-      "sgSudoContract\032).cosmwasm.wasm.v1.MsgSud" +
-      "oContractResponse\022P\n\010PinCodes\022\035.cosmwasm" +
-      ".wasm.v1.MsgPinCodes\032%.cosmwasm.wasm.v1." +
-      "MsgPinCodesResponse\022V\n\nUnpinCodes\022\037.cosm" +
-      "wasm.wasm.v1.MsgUnpinCodes\032\'.cosmwasm.wa" +
-      "sm.v1.MsgUnpinCodesResponse\022\211\001\n\033StoreAnd" +
-      "InstantiateContract\0220.cosmwasm.wasm.v1.M" +
-      "sgStoreAndInstantiateContract\0328.cosmwasm" +
-      ".wasm.v1.MsgStoreAndInstantiateContractR" +
-      "esponseB,Z&github.com/CosmWasm/wasmd/x/w" +
-      "asm/types\310\341\036\000b\006proto3"
+      "\022\017\n\007address\030\001 \001(\t\022\014\n\004data\030\002 \001(\014\"\260\001\n\037MsgA" +
+      "ddCodeUploadParamsAddresses\022+\n\tauthority" +
+      "\030\001 \001(\tB\030\322\264-\024cosmos.AddressString\022\'\n\taddr" +
+      "esses\030\002 \003(\tB\024\362\336\037\020yaml:\"addresses\":7\202\347\260*\t" +
+      "authority\212\347\260*$wasm/MsgAddCodeUploadParam" +
+      "sAddresses\")\n\'MsgAddCodeUploadParamsAddr" +
+      "essesResponse\"\266\001\n\"MsgRemoveCodeUploadPar" +
+      "amsAddresses\022+\n\tauthority\030\001 \001(\tB\030\322\264-\024cos" +
+      "mos.AddressString\022\'\n\taddresses\030\002 \003(\tB\024\362\336" +
+      "\037\020yaml:\"addresses\"::\202\347\260*\tauthority\212\347\260*\'w" +
+      "asm/MsgRemoveCodeUploadParamsAddresses\"," +
+      "\n*MsgRemoveCodeUploadParamsAddressesResp" +
+      "onse\"\236\002\n\032MsgStoreAndMigrateContract\022+\n\ta" +
+      "uthority\030\001 \001(\tB\030\322\264-\024cosmos.AddressString" +
+      "\022(\n\016wasm_byte_code\030\002 \001(\014B\020\342\336\037\014WASMByteCo" +
+      "de\022>\n\026instantiate_permission\030\003 \001(\0132\036.cos" +
+      "mwasm.wasm.v1.AccessConfig\022\020\n\010contract\030\004" +
+      " \001(\t\022#\n\003msg\030\005 \001(\014B\026\372\336\037\022RawContractMessag" +
+      "e:2\202\347\260*\tauthority\212\347\260*\037wasm/MsgStoreAndMi" +
+      "grateContract\"a\n\"MsgStoreAndMigrateContr" +
+      "actResponse\022\033\n\007code_id\030\001 \001(\004B\n\342\336\037\006CodeID" +
+      "\022\020\n\010checksum\030\002 \001(\014\022\014\n\004data\030\003 \001(\014\"\256\001\n\026Msg" +
+      "UpdateContractLabel\022(\n\006sender\030\001 \001(\tB\030\322\264-" +
+      "\024cosmos.AddressString\022\021\n\tnew_label\030\002 \001(\t" +
+      "\022*\n\010contract\030\003 \001(\tB\030\322\264-\024cosmos.AddressSt" +
+      "ring:+\202\347\260*\006sender\212\347\260*\033wasm/MsgUpdateCont" +
+      "ractLabel\" \n\036MsgUpdateContractLabelRespo" +
+      "nse2\316\016\n\003Msg\022S\n\tStoreCode\022\036.cosmwasm.wasm" +
+      ".v1.MsgStoreCode\032&.cosmwasm.wasm.v1.MsgS" +
+      "toreCodeResponse\022q\n\023InstantiateContract\022" +
+      "(.cosmwasm.wasm.v1.MsgInstantiateContrac" +
+      "t\0320.cosmwasm.wasm.v1.MsgInstantiateContr" +
+      "actResponse\022t\n\024InstantiateContract2\022).co" +
+      "smwasm.wasm.v1.MsgInstantiateContract2\0321" +
+      ".cosmwasm.wasm.v1.MsgInstantiateContract" +
+      "2Response\022e\n\017ExecuteContract\022$.cosmwasm." +
+      "wasm.v1.MsgExecuteContract\032,.cosmwasm.wa" +
+      "sm.v1.MsgExecuteContractResponse\022e\n\017Migr" +
+      "ateContract\022$.cosmwasm.wasm.v1.MsgMigrat" +
+      "eContract\032,.cosmwasm.wasm.v1.MsgMigrateC" +
+      "ontractResponse\022Y\n\013UpdateAdmin\022 .cosmwas" +
+      "m.wasm.v1.MsgUpdateAdmin\032(.cosmwasm.wasm" +
+      ".v1.MsgUpdateAdminResponse\022V\n\nClearAdmin" +
+      "\022\037.cosmwasm.wasm.v1.MsgClearAdmin\032\'.cosm" +
+      "wasm.wasm.v1.MsgClearAdminResponse\022}\n\027Up" +
+      "dateInstantiateConfig\022,.cosmwasm.wasm.v1" +
+      ".MsgUpdateInstantiateConfig\0324.cosmwasm.w" +
+      "asm.v1.MsgUpdateInstantiateConfigRespons" +
+      "e\022\\\n\014UpdateParams\022!.cosmwasm.wasm.v1.Msg" +
+      "UpdateParams\032).cosmwasm.wasm.v1.MsgUpdat" +
+      "eParamsResponse\022\\\n\014SudoContract\022!.cosmwa" +
+      "sm.wasm.v1.MsgSudoContract\032).cosmwasm.wa" +
+      "sm.v1.MsgSudoContractResponse\022P\n\010PinCode" +
+      "s\022\035.cosmwasm.wasm.v1.MsgPinCodes\032%.cosmw" +
+      "asm.wasm.v1.MsgPinCodesResponse\022V\n\nUnpin" +
+      "Codes\022\037.cosmwasm.wasm.v1.MsgUnpinCodes\032\'" +
+      ".cosmwasm.wasm.v1.MsgUnpinCodesResponse\022" +
+      "\211\001\n\033StoreAndInstantiateContract\0220.cosmwa" +
+      "sm.wasm.v1.MsgStoreAndInstantiateContrac" +
+      "t\0328.cosmwasm.wasm.v1.MsgStoreAndInstanti" +
+      "ateContractResponse\022\225\001\n\037RemoveCodeUpload" +
+      "ParamsAddresses\0224.cosmwasm.wasm.v1.MsgRe" +
+      "moveCodeUploadParamsAddresses\032<.cosmwasm" +
+      ".wasm.v1.MsgRemoveCodeUploadParamsAddres" +
+      "sesResponse\022\214\001\n\034AddCodeUploadParamsAddre" +
+      "sses\0221.cosmwasm.wasm.v1.MsgAddCodeUpload" +
+      "ParamsAddresses\0329.cosmwasm.wasm.v1.MsgAd" +
+      "dCodeUploadParamsAddressesResponse\022}\n\027St" +
+      "oreAndMigrateContract\022,.cosmwasm.wasm.v1" +
+      ".MsgStoreAndMigrateContract\0324.cosmwasm.w" +
+      "asm.v1.MsgStoreAndMigrateContractRespons" +
+      "e\022q\n\023UpdateContractLabel\022(.cosmwasm.wasm" +
+      ".v1.MsgUpdateContractLabel\0320.cosmwasm.wa" +
+      "sm.v1.MsgUpdateContractLabelResponseB,Z&" +
+      "github.com/CosmWasm/wasmd/x/wasm/types\310\341" +
+      "\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -21609,6 +27149,54 @@ public final class Tx {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmwasm_wasm_v1_MsgStoreAndInstantiateContractResponse_descriptor,
         new java.lang.String[] { "Address", "Data", });
+    internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddresses_descriptor =
+      getDescriptor().getMessageTypes().get(26);
+    internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddresses_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddresses_descriptor,
+        new java.lang.String[] { "Authority", "Addresses", });
+    internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddressesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(27);
+    internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddressesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmwasm_wasm_v1_MsgAddCodeUploadParamsAddressesResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddresses_descriptor =
+      getDescriptor().getMessageTypes().get(28);
+    internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddresses_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddresses_descriptor,
+        new java.lang.String[] { "Authority", "Addresses", });
+    internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddressesResponse_descriptor =
+      getDescriptor().getMessageTypes().get(29);
+    internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddressesResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmwasm_wasm_v1_MsgRemoveCodeUploadParamsAddressesResponse_descriptor,
+        new java.lang.String[] { });
+    internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContract_descriptor =
+      getDescriptor().getMessageTypes().get(30);
+    internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContract_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContract_descriptor,
+        new java.lang.String[] { "Authority", "WasmByteCode", "InstantiatePermission", "Contract", "Msg", });
+    internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContractResponse_descriptor =
+      getDescriptor().getMessageTypes().get(31);
+    internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContractResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmwasm_wasm_v1_MsgStoreAndMigrateContractResponse_descriptor,
+        new java.lang.String[] { "CodeId", "Checksum", "Data", });
+    internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabel_descriptor =
+      getDescriptor().getMessageTypes().get(32);
+    internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabel_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabel_descriptor,
+        new java.lang.String[] { "Sender", "NewLabel", "Contract", });
+    internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabelResponse_descriptor =
+      getDescriptor().getMessageTypes().get(33);
+    internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabelResponse_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmwasm_wasm_v1_MsgUpdateContractLabelResponse_descriptor,
+        new java.lang.String[] { });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(amino.Amino.dontOmitempty);

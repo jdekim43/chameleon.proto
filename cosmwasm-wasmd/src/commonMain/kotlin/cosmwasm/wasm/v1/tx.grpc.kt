@@ -40,6 +40,18 @@ public expect object Msg : GrpcService<Msg.Interface, Msg.Server, Msg.Client> {
 
     public suspend fun storeAndInstantiateContract(request: MsgStoreAndInstantiateContract):
         MsgStoreAndInstantiateContractResponse
+
+    public suspend fun removeCodeUploadParamsAddresses(request: MsgRemoveCodeUploadParamsAddresses):
+        MsgRemoveCodeUploadParamsAddressesResponse
+
+    public suspend fun addCodeUploadParamsAddresses(request: MsgAddCodeUploadParamsAddresses):
+        MsgAddCodeUploadParamsAddressesResponse
+
+    public suspend fun storeAndMigrateContract(request: MsgStoreAndMigrateContract):
+        MsgStoreAndMigrateContractResponse
+
+    public suspend fun updateContractLabel(request: MsgUpdateContractLabel):
+        MsgUpdateContractLabelResponse
   }
 
   public abstract class Server(

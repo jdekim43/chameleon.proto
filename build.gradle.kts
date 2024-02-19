@@ -1,6 +1,4 @@
 import com.google.protobuf.gradle.id
-import java.io.BufferedReader
-import java.io.InputStreamReader
 
 plugins {
     kotlin("multiplatform") version "1.8.20"
@@ -163,6 +161,7 @@ allprojects {
 
     val dokkaHtml by tasks.getting(org.jetbrains.dokka.gradle.DokkaTask::class)
     val javadocJar: TaskProvider<Jar> by tasks.registering(Jar::class) {
+        isZip64 = true
         dependsOn(dokkaHtml)
         archiveClassifier.set("javadoc")
         from(dokkaHtml.outputDirectory)

@@ -10,6 +10,7 @@ include(
     ":terra-classic-core",
     ":terra-alliance",
     ":sei-chain",
+    ":injective-core",
 )
 
 fun ProjectDescriptor.renameChildren() {

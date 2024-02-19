@@ -14,6 +14,876 @@ public final class Authz {
     registerAllExtensions(
         (com.google.protobuf.ExtensionRegistryLite) registry);
   }
+  public interface StoreCodeAuthorizationOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmwasm.wasm.v1.StoreCodeAuthorization)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * Grants for code upload
+     * </pre>
+     *
+     * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    java.util.List<cosmwasm.wasm.v1.Authz.CodeGrant> 
+        getGrantsList();
+    /**
+     * <pre>
+     * Grants for code upload
+     * </pre>
+     *
+     * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    cosmwasm.wasm.v1.Authz.CodeGrant getGrants(int index);
+    /**
+     * <pre>
+     * Grants for code upload
+     * </pre>
+     *
+     * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    int getGrantsCount();
+    /**
+     * <pre>
+     * Grants for code upload
+     * </pre>
+     *
+     * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    java.util.List<? extends cosmwasm.wasm.v1.Authz.CodeGrantOrBuilder> 
+        getGrantsOrBuilderList();
+    /**
+     * <pre>
+     * Grants for code upload
+     * </pre>
+     *
+     * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    cosmwasm.wasm.v1.Authz.CodeGrantOrBuilder getGrantsOrBuilder(
+        int index);
+  }
+  /**
+   * <pre>
+   * StoreCodeAuthorization defines authorization for wasm code upload.
+   * Since: wasmd 0.42
+   * </pre>
+   *
+   * Protobuf type {@code cosmwasm.wasm.v1.StoreCodeAuthorization}
+   */
+  public static final class StoreCodeAuthorization extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1.StoreCodeAuthorization)
+      StoreCodeAuthorizationOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use StoreCodeAuthorization.newBuilder() to construct.
+    private StoreCodeAuthorization(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private StoreCodeAuthorization() {
+      grants_ = java.util.Collections.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new StoreCodeAuthorization();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmwasm.wasm.v1.Authz.internal_static_cosmwasm_wasm_v1_StoreCodeAuthorization_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmwasm.wasm.v1.Authz.internal_static_cosmwasm_wasm_v1_StoreCodeAuthorization_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmwasm.wasm.v1.Authz.StoreCodeAuthorization.class, cosmwasm.wasm.v1.Authz.StoreCodeAuthorization.Builder.class);
+    }
+
+    public static final int GRANTS_FIELD_NUMBER = 1;
+    @SuppressWarnings("serial")
+    private java.util.List<cosmwasm.wasm.v1.Authz.CodeGrant> grants_;
+    /**
+     * <pre>
+     * Grants for code upload
+     * </pre>
+     *
+     * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public java.util.List<cosmwasm.wasm.v1.Authz.CodeGrant> getGrantsList() {
+      return grants_;
+    }
+    /**
+     * <pre>
+     * Grants for code upload
+     * </pre>
+     *
+     * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public java.util.List<? extends cosmwasm.wasm.v1.Authz.CodeGrantOrBuilder> 
+        getGrantsOrBuilderList() {
+      return grants_;
+    }
+    /**
+     * <pre>
+     * Grants for code upload
+     * </pre>
+     *
+     * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public int getGrantsCount() {
+      return grants_.size();
+    }
+    /**
+     * <pre>
+     * Grants for code upload
+     * </pre>
+     *
+     * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Authz.CodeGrant getGrants(int index) {
+      return grants_.get(index);
+    }
+    /**
+     * <pre>
+     * Grants for code upload
+     * </pre>
+     *
+     * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+     */
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Authz.CodeGrantOrBuilder getGrantsOrBuilder(
+        int index) {
+      return grants_.get(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      for (int i = 0; i < grants_.size(); i++) {
+        output.writeMessage(1, grants_.get(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      for (int i = 0; i < grants_.size(); i++) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(1, grants_.get(i));
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmwasm.wasm.v1.Authz.StoreCodeAuthorization)) {
+        return super.equals(obj);
+      }
+      cosmwasm.wasm.v1.Authz.StoreCodeAuthorization other = (cosmwasm.wasm.v1.Authz.StoreCodeAuthorization) obj;
+
+      if (!getGrantsList()
+          .equals(other.getGrantsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getGrantsCount() > 0) {
+        hash = (37 * hash) + GRANTS_FIELD_NUMBER;
+        hash = (53 * hash) + getGrantsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmwasm.wasm.v1.Authz.StoreCodeAuthorization prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * StoreCodeAuthorization defines authorization for wasm code upload.
+     * Since: wasmd 0.42
+     * </pre>
+     *
+     * Protobuf type {@code cosmwasm.wasm.v1.StoreCodeAuthorization}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmwasm.wasm.v1.StoreCodeAuthorization)
+        cosmwasm.wasm.v1.Authz.StoreCodeAuthorizationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmwasm.wasm.v1.Authz.internal_static_cosmwasm_wasm_v1_StoreCodeAuthorization_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmwasm.wasm.v1.Authz.internal_static_cosmwasm_wasm_v1_StoreCodeAuthorization_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmwasm.wasm.v1.Authz.StoreCodeAuthorization.class, cosmwasm.wasm.v1.Authz.StoreCodeAuthorization.Builder.class);
+      }
+
+      // Construct using cosmwasm.wasm.v1.Authz.StoreCodeAuthorization.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        if (grantsBuilder_ == null) {
+          grants_ = java.util.Collections.emptyList();
+        } else {
+          grants_ = null;
+          grantsBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000001);
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmwasm.wasm.v1.Authz.internal_static_cosmwasm_wasm_v1_StoreCodeAuthorization_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Authz.StoreCodeAuthorization getDefaultInstanceForType() {
+        return cosmwasm.wasm.v1.Authz.StoreCodeAuthorization.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Authz.StoreCodeAuthorization build() {
+        cosmwasm.wasm.v1.Authz.StoreCodeAuthorization result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Authz.StoreCodeAuthorization buildPartial() {
+        cosmwasm.wasm.v1.Authz.StoreCodeAuthorization result = new cosmwasm.wasm.v1.Authz.StoreCodeAuthorization(this);
+        buildPartialRepeatedFields(result);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartialRepeatedFields(cosmwasm.wasm.v1.Authz.StoreCodeAuthorization result) {
+        if (grantsBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)) {
+            grants_ = java.util.Collections.unmodifiableList(grants_);
+            bitField0_ = (bitField0_ & ~0x00000001);
+          }
+          result.grants_ = grants_;
+        } else {
+          result.grants_ = grantsBuilder_.build();
+        }
+      }
+
+      private void buildPartial0(cosmwasm.wasm.v1.Authz.StoreCodeAuthorization result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmwasm.wasm.v1.Authz.StoreCodeAuthorization) {
+          return mergeFrom((cosmwasm.wasm.v1.Authz.StoreCodeAuthorization)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmwasm.wasm.v1.Authz.StoreCodeAuthorization other) {
+        if (other == cosmwasm.wasm.v1.Authz.StoreCodeAuthorization.getDefaultInstance()) return this;
+        if (grantsBuilder_ == null) {
+          if (!other.grants_.isEmpty()) {
+            if (grants_.isEmpty()) {
+              grants_ = other.grants_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+            } else {
+              ensureGrantsIsMutable();
+              grants_.addAll(other.grants_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.grants_.isEmpty()) {
+            if (grantsBuilder_.isEmpty()) {
+              grantsBuilder_.dispose();
+              grantsBuilder_ = null;
+              grants_ = other.grants_;
+              bitField0_ = (bitField0_ & ~0x00000001);
+              grantsBuilder_ = 
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
+                   getGrantsFieldBuilder() : null;
+            } else {
+              grantsBuilder_.addAllMessages(other.grants_);
+            }
+          }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                cosmwasm.wasm.v1.Authz.CodeGrant m =
+                    input.readMessage(
+                        cosmwasm.wasm.v1.Authz.CodeGrant.parser(),
+                        extensionRegistry);
+                if (grantsBuilder_ == null) {
+                  ensureGrantsIsMutable();
+                  grants_.add(m);
+                } else {
+                  grantsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 10
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private java.util.List<cosmwasm.wasm.v1.Authz.CodeGrant> grants_ =
+        java.util.Collections.emptyList();
+      private void ensureGrantsIsMutable() {
+        if (!((bitField0_ & 0x00000001) != 0)) {
+          grants_ = new java.util.ArrayList<cosmwasm.wasm.v1.Authz.CodeGrant>(grants_);
+          bitField0_ |= 0x00000001;
+         }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmwasm.wasm.v1.Authz.CodeGrant, cosmwasm.wasm.v1.Authz.CodeGrant.Builder, cosmwasm.wasm.v1.Authz.CodeGrantOrBuilder> grantsBuilder_;
+
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<cosmwasm.wasm.v1.Authz.CodeGrant> getGrantsList() {
+        if (grantsBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(grants_);
+        } else {
+          return grantsBuilder_.getMessageList();
+        }
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public int getGrantsCount() {
+        if (grantsBuilder_ == null) {
+          return grants_.size();
+        } else {
+          return grantsBuilder_.getCount();
+        }
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmwasm.wasm.v1.Authz.CodeGrant getGrants(int index) {
+        if (grantsBuilder_ == null) {
+          return grants_.get(index);
+        } else {
+          return grantsBuilder_.getMessage(index);
+        }
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setGrants(
+          int index, cosmwasm.wasm.v1.Authz.CodeGrant value) {
+        if (grantsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGrantsIsMutable();
+          grants_.set(index, value);
+          onChanged();
+        } else {
+          grantsBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder setGrants(
+          int index, cosmwasm.wasm.v1.Authz.CodeGrant.Builder builderForValue) {
+        if (grantsBuilder_ == null) {
+          ensureGrantsIsMutable();
+          grants_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          grantsBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addGrants(cosmwasm.wasm.v1.Authz.CodeGrant value) {
+        if (grantsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGrantsIsMutable();
+          grants_.add(value);
+          onChanged();
+        } else {
+          grantsBuilder_.addMessage(value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addGrants(
+          int index, cosmwasm.wasm.v1.Authz.CodeGrant value) {
+        if (grantsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureGrantsIsMutable();
+          grants_.add(index, value);
+          onChanged();
+        } else {
+          grantsBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addGrants(
+          cosmwasm.wasm.v1.Authz.CodeGrant.Builder builderForValue) {
+        if (grantsBuilder_ == null) {
+          ensureGrantsIsMutable();
+          grants_.add(builderForValue.build());
+          onChanged();
+        } else {
+          grantsBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addGrants(
+          int index, cosmwasm.wasm.v1.Authz.CodeGrant.Builder builderForValue) {
+        if (grantsBuilder_ == null) {
+          ensureGrantsIsMutable();
+          grants_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          grantsBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder addAllGrants(
+          java.lang.Iterable<? extends cosmwasm.wasm.v1.Authz.CodeGrant> values) {
+        if (grantsBuilder_ == null) {
+          ensureGrantsIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(
+              values, grants_);
+          onChanged();
+        } else {
+          grantsBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder clearGrants() {
+        if (grantsBuilder_ == null) {
+          grants_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+        } else {
+          grantsBuilder_.clear();
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public Builder removeGrants(int index) {
+        if (grantsBuilder_ == null) {
+          ensureGrantsIsMutable();
+          grants_.remove(index);
+          onChanged();
+        } else {
+          grantsBuilder_.remove(index);
+        }
+        return this;
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmwasm.wasm.v1.Authz.CodeGrant.Builder getGrantsBuilder(
+          int index) {
+        return getGrantsFieldBuilder().getBuilder(index);
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmwasm.wasm.v1.Authz.CodeGrantOrBuilder getGrantsOrBuilder(
+          int index) {
+        if (grantsBuilder_ == null) {
+          return grants_.get(index);  } else {
+          return grantsBuilder_.getMessageOrBuilder(index);
+        }
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<? extends cosmwasm.wasm.v1.Authz.CodeGrantOrBuilder> 
+           getGrantsOrBuilderList() {
+        if (grantsBuilder_ != null) {
+          return grantsBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(grants_);
+        }
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmwasm.wasm.v1.Authz.CodeGrant.Builder addGrantsBuilder() {
+        return getGrantsFieldBuilder().addBuilder(
+            cosmwasm.wasm.v1.Authz.CodeGrant.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public cosmwasm.wasm.v1.Authz.CodeGrant.Builder addGrantsBuilder(
+          int index) {
+        return getGrantsFieldBuilder().addBuilder(
+            index, cosmwasm.wasm.v1.Authz.CodeGrant.getDefaultInstance());
+      }
+      /**
+       * <pre>
+       * Grants for code upload
+       * </pre>
+       *
+       * <code>repeated .cosmwasm.wasm.v1.CodeGrant grants = 1 [(.gogoproto.nullable) = false, (.amino.dont_omitempty) = true];</code>
+       */
+      public java.util.List<cosmwasm.wasm.v1.Authz.CodeGrant.Builder> 
+           getGrantsBuilderList() {
+        return getGrantsFieldBuilder().getBuilderList();
+      }
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+          cosmwasm.wasm.v1.Authz.CodeGrant, cosmwasm.wasm.v1.Authz.CodeGrant.Builder, cosmwasm.wasm.v1.Authz.CodeGrantOrBuilder> 
+          getGrantsFieldBuilder() {
+        if (grantsBuilder_ == null) {
+          grantsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
+              cosmwasm.wasm.v1.Authz.CodeGrant, cosmwasm.wasm.v1.Authz.CodeGrant.Builder, cosmwasm.wasm.v1.Authz.CodeGrantOrBuilder>(
+                  grants_,
+                  ((bitField0_ & 0x00000001) != 0),
+                  getParentForChildren(),
+                  isClean());
+          grants_ = null;
+        }
+        return grantsBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmwasm.wasm.v1.StoreCodeAuthorization)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmwasm.wasm.v1.StoreCodeAuthorization)
+    private static final cosmwasm.wasm.v1.Authz.StoreCodeAuthorization DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmwasm.wasm.v1.Authz.StoreCodeAuthorization();
+    }
+
+    public static cosmwasm.wasm.v1.Authz.StoreCodeAuthorization getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<StoreCodeAuthorization>
+        PARSER = new com.google.protobuf.AbstractParser<StoreCodeAuthorization>() {
+      @java.lang.Override
+      public StoreCodeAuthorization parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<StoreCodeAuthorization> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<StoreCodeAuthorization> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Authz.StoreCodeAuthorization getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface ContractExecutionAuthorizationOrBuilder extends
       // @@protoc_insertion_point(interface_extends:cosmwasm.wasm.v1.ContractExecutionAuthorization)
       com.google.protobuf.MessageOrBuilder {
@@ -1749,6 +2619,768 @@ public final class Authz {
 
     @java.lang.Override
     public cosmwasm.wasm.v1.Authz.ContractMigrationAuthorization getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface CodeGrantOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:cosmwasm.wasm.v1.CodeGrant)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <pre>
+     * CodeHash is the unique identifier created by wasmvm
+     * Wildcard "*" is used to specify any kind of grant.
+     * </pre>
+     *
+     * <code>bytes code_hash = 1;</code>
+     * @return The codeHash.
+     */
+    com.google.protobuf.ByteString getCodeHash();
+
+    /**
+     * <pre>
+     * InstantiatePermission is the superset access control to apply
+     * on contract creation.
+     * Optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+     * @return Whether the instantiatePermission field is set.
+     */
+    boolean hasInstantiatePermission();
+    /**
+     * <pre>
+     * InstantiatePermission is the superset access control to apply
+     * on contract creation.
+     * Optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+     * @return The instantiatePermission.
+     */
+    cosmwasm.wasm.v1.Types.AccessConfig getInstantiatePermission();
+    /**
+     * <pre>
+     * InstantiatePermission is the superset access control to apply
+     * on contract creation.
+     * Optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+     */
+    cosmwasm.wasm.v1.Types.AccessConfigOrBuilder getInstantiatePermissionOrBuilder();
+  }
+  /**
+   * <pre>
+   * CodeGrant a granted permission for a single code
+   * </pre>
+   *
+   * Protobuf type {@code cosmwasm.wasm.v1.CodeGrant}
+   */
+  public static final class CodeGrant extends
+      com.google.protobuf.GeneratedMessageV3 implements
+      // @@protoc_insertion_point(message_implements:cosmwasm.wasm.v1.CodeGrant)
+      CodeGrantOrBuilder {
+  private static final long serialVersionUID = 0L;
+    // Use CodeGrant.newBuilder() to construct.
+    private CodeGrant(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+    private CodeGrant() {
+      codeHash_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(
+        UnusedPrivateParameter unused) {
+      return new CodeGrant();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return cosmwasm.wasm.v1.Authz.internal_static_cosmwasm_wasm_v1_CodeGrant_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return cosmwasm.wasm.v1.Authz.internal_static_cosmwasm_wasm_v1_CodeGrant_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              cosmwasm.wasm.v1.Authz.CodeGrant.class, cosmwasm.wasm.v1.Authz.CodeGrant.Builder.class);
+    }
+
+    public static final int CODE_HASH_FIELD_NUMBER = 1;
+    private com.google.protobuf.ByteString codeHash_ = com.google.protobuf.ByteString.EMPTY;
+    /**
+     * <pre>
+     * CodeHash is the unique identifier created by wasmvm
+     * Wildcard "*" is used to specify any kind of grant.
+     * </pre>
+     *
+     * <code>bytes code_hash = 1;</code>
+     * @return The codeHash.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getCodeHash() {
+      return codeHash_;
+    }
+
+    public static final int INSTANTIATE_PERMISSION_FIELD_NUMBER = 2;
+    private cosmwasm.wasm.v1.Types.AccessConfig instantiatePermission_;
+    /**
+     * <pre>
+     * InstantiatePermission is the superset access control to apply
+     * on contract creation.
+     * Optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+     * @return Whether the instantiatePermission field is set.
+     */
+    @java.lang.Override
+    public boolean hasInstantiatePermission() {
+      return instantiatePermission_ != null;
+    }
+    /**
+     * <pre>
+     * InstantiatePermission is the superset access control to apply
+     * on contract creation.
+     * Optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+     * @return The instantiatePermission.
+     */
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Types.AccessConfig getInstantiatePermission() {
+      return instantiatePermission_ == null ? cosmwasm.wasm.v1.Types.AccessConfig.getDefaultInstance() : instantiatePermission_;
+    }
+    /**
+     * <pre>
+     * InstantiatePermission is the superset access control to apply
+     * on contract creation.
+     * Optional
+     * </pre>
+     *
+     * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+     */
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Types.AccessConfigOrBuilder getInstantiatePermissionOrBuilder() {
+      return instantiatePermission_ == null ? cosmwasm.wasm.v1.Types.AccessConfig.getDefaultInstance() : instantiatePermission_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!codeHash_.isEmpty()) {
+        output.writeBytes(1, codeHash_);
+      }
+      if (instantiatePermission_ != null) {
+        output.writeMessage(2, getInstantiatePermission());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!codeHash_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(1, codeHash_);
+      }
+      if (instantiatePermission_ != null) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeMessageSize(2, getInstantiatePermission());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+       return true;
+      }
+      if (!(obj instanceof cosmwasm.wasm.v1.Authz.CodeGrant)) {
+        return super.equals(obj);
+      }
+      cosmwasm.wasm.v1.Authz.CodeGrant other = (cosmwasm.wasm.v1.Authz.CodeGrant) obj;
+
+      if (!getCodeHash()
+          .equals(other.getCodeHash())) return false;
+      if (hasInstantiatePermission() != other.hasInstantiatePermission()) return false;
+      if (hasInstantiatePermission()) {
+        if (!getInstantiatePermission()
+            .equals(other.getInstantiatePermission())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + CODE_HASH_FIELD_NUMBER;
+      hash = (53 * hash) + getCodeHash().hashCode();
+      if (hasInstantiatePermission()) {
+        hash = (37 * hash) + INSTANTIATE_PERMISSION_FIELD_NUMBER;
+        hash = (53 * hash) + getInstantiatePermission().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseFrom(
+        java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseFrom(
+        java.nio.ByteBuffer data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input);
+    }
+    public static cosmwasm.wasm.v1.Authz.CodeGrant parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(cosmwasm.wasm.v1.Authz.CodeGrant prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * <pre>
+     * CodeGrant a granted permission for a single code
+     * </pre>
+     *
+     * Protobuf type {@code cosmwasm.wasm.v1.CodeGrant}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:cosmwasm.wasm.v1.CodeGrant)
+        cosmwasm.wasm.v1.Authz.CodeGrantOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return cosmwasm.wasm.v1.Authz.internal_static_cosmwasm_wasm_v1_CodeGrant_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return cosmwasm.wasm.v1.Authz.internal_static_cosmwasm_wasm_v1_CodeGrant_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                cosmwasm.wasm.v1.Authz.CodeGrant.class, cosmwasm.wasm.v1.Authz.CodeGrant.Builder.class);
+      }
+
+      // Construct using cosmwasm.wasm.v1.Authz.CodeGrant.newBuilder()
+      private Builder() {
+
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+
+      }
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        codeHash_ = com.google.protobuf.ByteString.EMPTY;
+        instantiatePermission_ = null;
+        if (instantiatePermissionBuilder_ != null) {
+          instantiatePermissionBuilder_.dispose();
+          instantiatePermissionBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return cosmwasm.wasm.v1.Authz.internal_static_cosmwasm_wasm_v1_CodeGrant_descriptor;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Authz.CodeGrant getDefaultInstanceForType() {
+        return cosmwasm.wasm.v1.Authz.CodeGrant.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Authz.CodeGrant build() {
+        cosmwasm.wasm.v1.Authz.CodeGrant result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public cosmwasm.wasm.v1.Authz.CodeGrant buildPartial() {
+        cosmwasm.wasm.v1.Authz.CodeGrant result = new cosmwasm.wasm.v1.Authz.CodeGrant(this);
+        if (bitField0_ != 0) { buildPartial0(result); }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(cosmwasm.wasm.v1.Authz.CodeGrant result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.codeHash_ = codeHash_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.instantiatePermission_ = instantiatePermissionBuilder_ == null
+              ? instantiatePermission_
+              : instantiatePermissionBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof cosmwasm.wasm.v1.Authz.CodeGrant) {
+          return mergeFrom((cosmwasm.wasm.v1.Authz.CodeGrant)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(cosmwasm.wasm.v1.Authz.CodeGrant other) {
+        if (other == cosmwasm.wasm.v1.Authz.CodeGrant.getDefaultInstance()) return this;
+        if (other.getCodeHash() != com.google.protobuf.ByteString.EMPTY) {
+          setCodeHash(other.getCodeHash());
+        }
+        if (other.hasInstantiatePermission()) {
+          mergeInstantiatePermission(other.getInstantiatePermission());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10: {
+                codeHash_ = input.readBytes();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
+              case 18: {
+                input.readMessage(
+                    getInstantiatePermissionFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+              default: {
+                if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                  done = true; // was an endgroup tag
+                }
+                break;
+              } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+      private int bitField0_;
+
+      private com.google.protobuf.ByteString codeHash_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <pre>
+       * CodeHash is the unique identifier created by wasmvm
+       * Wildcard "*" is used to specify any kind of grant.
+       * </pre>
+       *
+       * <code>bytes code_hash = 1;</code>
+       * @return The codeHash.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getCodeHash() {
+        return codeHash_;
+      }
+      /**
+       * <pre>
+       * CodeHash is the unique identifier created by wasmvm
+       * Wildcard "*" is used to specify any kind of grant.
+       * </pre>
+       *
+       * <code>bytes code_hash = 1;</code>
+       * @param value The codeHash to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCodeHash(com.google.protobuf.ByteString value) {
+        if (value == null) { throw new NullPointerException(); }
+        codeHash_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * CodeHash is the unique identifier created by wasmvm
+       * Wildcard "*" is used to specify any kind of grant.
+       * </pre>
+       *
+       * <code>bytes code_hash = 1;</code>
+       * @return This builder for chaining.
+       */
+      public Builder clearCodeHash() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        codeHash_ = getDefaultInstance().getCodeHash();
+        onChanged();
+        return this;
+      }
+
+      private cosmwasm.wasm.v1.Types.AccessConfig instantiatePermission_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmwasm.wasm.v1.Types.AccessConfig, cosmwasm.wasm.v1.Types.AccessConfig.Builder, cosmwasm.wasm.v1.Types.AccessConfigOrBuilder> instantiatePermissionBuilder_;
+      /**
+       * <pre>
+       * InstantiatePermission is the superset access control to apply
+       * on contract creation.
+       * Optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+       * @return Whether the instantiatePermission field is set.
+       */
+      public boolean hasInstantiatePermission() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+      /**
+       * <pre>
+       * InstantiatePermission is the superset access control to apply
+       * on contract creation.
+       * Optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+       * @return The instantiatePermission.
+       */
+      public cosmwasm.wasm.v1.Types.AccessConfig getInstantiatePermission() {
+        if (instantiatePermissionBuilder_ == null) {
+          return instantiatePermission_ == null ? cosmwasm.wasm.v1.Types.AccessConfig.getDefaultInstance() : instantiatePermission_;
+        } else {
+          return instantiatePermissionBuilder_.getMessage();
+        }
+      }
+      /**
+       * <pre>
+       * InstantiatePermission is the superset access control to apply
+       * on contract creation.
+       * Optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+       */
+      public Builder setInstantiatePermission(cosmwasm.wasm.v1.Types.AccessConfig value) {
+        if (instantiatePermissionBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          instantiatePermission_ = value;
+        } else {
+          instantiatePermissionBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * InstantiatePermission is the superset access control to apply
+       * on contract creation.
+       * Optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+       */
+      public Builder setInstantiatePermission(
+          cosmwasm.wasm.v1.Types.AccessConfig.Builder builderForValue) {
+        if (instantiatePermissionBuilder_ == null) {
+          instantiatePermission_ = builderForValue.build();
+        } else {
+          instantiatePermissionBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * InstantiatePermission is the superset access control to apply
+       * on contract creation.
+       * Optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+       */
+      public Builder mergeInstantiatePermission(cosmwasm.wasm.v1.Types.AccessConfig value) {
+        if (instantiatePermissionBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0) &&
+            instantiatePermission_ != null &&
+            instantiatePermission_ != cosmwasm.wasm.v1.Types.AccessConfig.getDefaultInstance()) {
+            getInstantiatePermissionBuilder().mergeFrom(value);
+          } else {
+            instantiatePermission_ = value;
+          }
+        } else {
+          instantiatePermissionBuilder_.mergeFrom(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * InstantiatePermission is the superset access control to apply
+       * on contract creation.
+       * Optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+       */
+      public Builder clearInstantiatePermission() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        instantiatePermission_ = null;
+        if (instantiatePermissionBuilder_ != null) {
+          instantiatePermissionBuilder_.dispose();
+          instantiatePermissionBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       * InstantiatePermission is the superset access control to apply
+       * on contract creation.
+       * Optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+       */
+      public cosmwasm.wasm.v1.Types.AccessConfig.Builder getInstantiatePermissionBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getInstantiatePermissionFieldBuilder().getBuilder();
+      }
+      /**
+       * <pre>
+       * InstantiatePermission is the superset access control to apply
+       * on contract creation.
+       * Optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+       */
+      public cosmwasm.wasm.v1.Types.AccessConfigOrBuilder getInstantiatePermissionOrBuilder() {
+        if (instantiatePermissionBuilder_ != null) {
+          return instantiatePermissionBuilder_.getMessageOrBuilder();
+        } else {
+          return instantiatePermission_ == null ?
+              cosmwasm.wasm.v1.Types.AccessConfig.getDefaultInstance() : instantiatePermission_;
+        }
+      }
+      /**
+       * <pre>
+       * InstantiatePermission is the superset access control to apply
+       * on contract creation.
+       * Optional
+       * </pre>
+       *
+       * <code>.cosmwasm.wasm.v1.AccessConfig instantiate_permission = 2;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+          cosmwasm.wasm.v1.Types.AccessConfig, cosmwasm.wasm.v1.Types.AccessConfig.Builder, cosmwasm.wasm.v1.Types.AccessConfigOrBuilder> 
+          getInstantiatePermissionFieldBuilder() {
+        if (instantiatePermissionBuilder_ == null) {
+          instantiatePermissionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
+              cosmwasm.wasm.v1.Types.AccessConfig, cosmwasm.wasm.v1.Types.AccessConfig.Builder, cosmwasm.wasm.v1.Types.AccessConfigOrBuilder>(
+                  getInstantiatePermission(),
+                  getParentForChildren(),
+                  isClean());
+          instantiatePermission_ = null;
+        }
+        return instantiatePermissionBuilder_;
+      }
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:cosmwasm.wasm.v1.CodeGrant)
+    }
+
+    // @@protoc_insertion_point(class_scope:cosmwasm.wasm.v1.CodeGrant)
+    private static final cosmwasm.wasm.v1.Authz.CodeGrant DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new cosmwasm.wasm.v1.Authz.CodeGrant();
+    }
+
+    public static cosmwasm.wasm.v1.Authz.CodeGrant getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CodeGrant>
+        PARSER = new com.google.protobuf.AbstractParser<CodeGrant>() {
+      @java.lang.Override
+      public CodeGrant parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        Builder builder = newBuilder();
+        try {
+          builder.mergeFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.setUnfinishedMessage(builder.buildPartial());
+        } catch (com.google.protobuf.UninitializedMessageException e) {
+          throw e.asInvalidProtocolBufferException().setUnfinishedMessage(builder.buildPartial());
+        } catch (java.io.IOException e) {
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(builder.buildPartial());
+        }
+        return builder.buildPartial();
+      }
+    };
+
+    public static com.google.protobuf.Parser<CodeGrant> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CodeGrant> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public cosmwasm.wasm.v1.Authz.CodeGrant getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6828,6 +8460,11 @@ public final class Authz {
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmwasm_wasm_v1_StoreCodeAuthorization_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmwasm_wasm_v1_StoreCodeAuthorization_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmwasm_wasm_v1_ContractExecutionAuthorization_descriptor;
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -6837,6 +8474,11 @@ public final class Authz {
   private static final 
     com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_cosmwasm_wasm_v1_ContractMigrationAuthorization_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_cosmwasm_wasm_v1_CodeGrant_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_cosmwasm_wasm_v1_CodeGrant_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_cosmwasm_wasm_v1_ContractGrant_descriptor;
   private static final 
@@ -6884,44 +8526,51 @@ public final class Authz {
       "\n\034cosmwasm/wasm/v1/authz.proto\022\020cosmwasm" +
       ".wasm.v1\032\024gogoproto/gogo.proto\032\031cosmos_p" +
       "roto/cosmos.proto\032\036cosmos/base/v1beta1/c" +
-      "oin.proto\032\031google/protobuf/any.proto\032\021am" +
-      "ino/amino.proto\"\254\001\n\036ContractExecutionAut" +
+      "oin.proto\032\034cosmwasm/wasm/v1/types.proto\032" +
+      "\031google/protobuf/any.proto\032\021amino/amino." +
+      "proto\"\230\001\n\026StoreCodeAuthorization\0226\n\006gran" +
+      "ts\030\001 \003(\0132\033.cosmwasm.wasm.v1.CodeGrantB\t\310" +
+      "\336\037\000\250\347\260*\001:F\312\264-\"cosmos.authz.v1beta1.Autho" +
+      "rization\212\347\260*\033wasm/StoreCodeAuthorization" +
+      "\"\254\001\n\036ContractExecutionAuthorization\022:\n\006g" +
+      "rants\030\001 \003(\0132\037.cosmwasm.wasm.v1.ContractG" +
+      "rantB\t\310\336\037\000\250\347\260*\001:N\312\264-\"cosmos.authz.v1beta" +
+      "1.Authorization\212\347\260*#wasm/ContractExecuti" +
+      "onAuthorization\"\254\001\n\036ContractMigrationAut" +
       "horization\022:\n\006grants\030\001 \003(\0132\037.cosmwasm.wa" +
       "sm.v1.ContractGrantB\t\310\336\037\000\250\347\260*\001:N\312\264-\"cosm" +
       "os.authz.v1beta1.Authorization\212\347\260*#wasm/" +
-      "ContractExecutionAuthorization\"\254\001\n\036Contr" +
-      "actMigrationAuthorization\022:\n\006grants\030\001 \003(" +
-      "\0132\037.cosmwasm.wasm.v1.ContractGrantB\t\310\336\037\000" +
-      "\250\347\260*\001:N\312\264-\"cosmos.authz.v1beta1.Authoriz" +
-      "ation\212\347\260*#wasm/ContractMigrationAuthoriz" +
-      "ation\"\301\001\n\rContractGrant\022\020\n\010contract\030\001 \001(" +
-      "\t\022M\n\005limit\030\002 \001(\0132\024.google.protobuf.AnyB(" +
+      "ContractMigrationAuthorization\"^\n\tCodeGr" +
+      "ant\022\021\n\tcode_hash\030\001 \001(\014\022>\n\026instantiate_pe" +
+      "rmission\030\002 \001(\0132\036.cosmwasm.wasm.v1.Access" +
+      "Config\"\301\001\n\rContractGrant\022\020\n\010contract\030\001 \001" +
+      "(\t\022M\n\005limit\030\002 \001(\0132\024.google.protobuf.AnyB" +
+      "(\312\264-$cosmwasm.wasm.v1.ContractAuthzLimit" +
+      "X\022O\n\006filter\030\003 \001(\0132\024.google.protobuf.AnyB" +
+      ")\312\264-%cosmwasm.wasm.v1.ContractAuthzFilte" +
+      "rX\"c\n\rMaxCallsLimit\022\021\n\tremaining\030\001 \001(\004:?" +
       "\312\264-$cosmwasm.wasm.v1.ContractAuthzLimitX" +
-      "\022O\n\006filter\030\003 \001(\0132\024.google.protobuf.AnyB)" +
+      "\212\347\260*\022wasm/MaxCallsLimit\"\263\001\n\rMaxFundsLimi" +
+      "t\022a\n\007amounts\030\001 \003(\0132\031.cosmos.base.v1beta1" +
+      ".CoinB5\310\336\037\000\252\337\037(github.com/cosmos/cosmos-" +
+      "sdk/types.Coins\250\347\260*\001:?\312\264-$cosmwasm.wasm." +
+      "v1.ContractAuthzLimitX\212\347\260*\022wasm/MaxFunds" +
+      "Limit\"\314\001\n\rCombinedLimit\022\027\n\017calls_remaini" +
+      "ng\030\001 \001(\004\022a\n\007amounts\030\002 \003(\0132\031.cosmos.base." +
+      "v1beta1.CoinB5\310\336\037\000\252\337\037(github.com/cosmos/" +
+      "cosmos-sdk/types.Coins\250\347\260*\001:?\312\264-$cosmwas" +
+      "m.wasm.v1.ContractAuthzLimitX\212\347\260*\022wasm/C" +
+      "ombinedLimit\"c\n\026AllowAllMessagesFilter:I" +
       "\312\264-%cosmwasm.wasm.v1.ContractAuthzFilter" +
-      "X\"c\n\rMaxCallsLimit\022\021\n\tremaining\030\001 \001(\004:?\312" +
-      "\264-$cosmwasm.wasm.v1.ContractAuthzLimitX\212" +
-      "\347\260*\022wasm/MaxCallsLimit\"\263\001\n\rMaxFundsLimit" +
-      "\022a\n\007amounts\030\001 \003(\0132\031.cosmos.base.v1beta1." +
-      "CoinB5\310\336\037\000\252\337\037(github.com/cosmos/cosmos-s" +
-      "dk/types.Coins\250\347\260*\001:?\312\264-$cosmwasm.wasm.v" +
-      "1.ContractAuthzLimitX\212\347\260*\022wasm/MaxFundsL" +
-      "imit\"\314\001\n\rCombinedLimit\022\027\n\017calls_remainin" +
-      "g\030\001 \001(\004\022a\n\007amounts\030\002 \003(\0132\031.cosmos.base.v" +
-      "1beta1.CoinB5\310\336\037\000\252\337\037(github.com/cosmos/c" +
-      "osmos-sdk/types.Coins\250\347\260*\001:?\312\264-$cosmwasm" +
-      ".wasm.v1.ContractAuthzLimitX\212\347\260*\022wasm/Co" +
-      "mbinedLimit\"c\n\026AllowAllMessagesFilter:I\312" +
-      "\264-%cosmwasm.wasm.v1.ContractAuthzFilterX" +
-      "\212\347\260*\033wasm/AllowAllMessagesFilter\"w\n\031Acce" +
-      "ptedMessageKeysFilter\022\014\n\004keys\030\001 \003(\t:L\312\264-" +
-      "%cosmwasm.wasm.v1.ContractAuthzFilterX\212\347" +
-      "\260*\036wasm/AcceptedMessageKeysFilter\"\215\001\n\026Ac" +
-      "ceptedMessagesFilter\022(\n\010messages\030\001 \003(\014B\026" +
-      "\372\336\037\022RawContractMessage:I\312\264-%cosmwasm.was" +
-      "m.v1.ContractAuthzFilterX\212\347\260*\033wasm/Accep" +
-      "tedMessagesFilterB,Z&github.com/CosmWasm" +
-      "/wasmd/x/wasm/types\310\341\036\000b\006proto3"
+      "X\212\347\260*\033wasm/AllowAllMessagesFilter\"w\n\031Acc" +
+      "eptedMessageKeysFilter\022\014\n\004keys\030\001 \003(\t:L\312\264" +
+      "-%cosmwasm.wasm.v1.ContractAuthzFilterX\212" +
+      "\347\260*\036wasm/AcceptedMessageKeysFilter\"\215\001\n\026A" +
+      "cceptedMessagesFilter\022(\n\010messages\030\001 \003(\014B" +
+      "\026\372\336\037\022RawContractMessage:I\312\264-%cosmwasm.wa" +
+      "sm.v1.ContractAuthzFilterX\212\347\260*\033wasm/Acce" +
+      "ptedMessagesFilterB,Z&github.com/CosmWas" +
+      "m/wasmd/x/wasm/types\310\341\036\000b\006proto3"
     };
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
@@ -6929,59 +8578,72 @@ public final class Authz {
           com.google.protobuf.GoGoProtos.getDescriptor(),
           cosmos_proto.Cosmos.getDescriptor(),
           cosmos.base.v1beta1.CoinOuterClass.getDescriptor(),
+          cosmwasm.wasm.v1.Types.getDescriptor(),
           com.google.protobuf.AnyProto.getDescriptor(),
           amino.Amino.getDescriptor(),
         });
-    internal_static_cosmwasm_wasm_v1_ContractExecutionAuthorization_descriptor =
+    internal_static_cosmwasm_wasm_v1_StoreCodeAuthorization_descriptor =
       getDescriptor().getMessageTypes().get(0);
+    internal_static_cosmwasm_wasm_v1_StoreCodeAuthorization_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmwasm_wasm_v1_StoreCodeAuthorization_descriptor,
+        new java.lang.String[] { "Grants", });
+    internal_static_cosmwasm_wasm_v1_ContractExecutionAuthorization_descriptor =
+      getDescriptor().getMessageTypes().get(1);
     internal_static_cosmwasm_wasm_v1_ContractExecutionAuthorization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmwasm_wasm_v1_ContractExecutionAuthorization_descriptor,
         new java.lang.String[] { "Grants", });
     internal_static_cosmwasm_wasm_v1_ContractMigrationAuthorization_descriptor =
-      getDescriptor().getMessageTypes().get(1);
+      getDescriptor().getMessageTypes().get(2);
     internal_static_cosmwasm_wasm_v1_ContractMigrationAuthorization_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmwasm_wasm_v1_ContractMigrationAuthorization_descriptor,
         new java.lang.String[] { "Grants", });
+    internal_static_cosmwasm_wasm_v1_CodeGrant_descriptor =
+      getDescriptor().getMessageTypes().get(3);
+    internal_static_cosmwasm_wasm_v1_CodeGrant_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+        internal_static_cosmwasm_wasm_v1_CodeGrant_descriptor,
+        new java.lang.String[] { "CodeHash", "InstantiatePermission", });
     internal_static_cosmwasm_wasm_v1_ContractGrant_descriptor =
-      getDescriptor().getMessageTypes().get(2);
+      getDescriptor().getMessageTypes().get(4);
     internal_static_cosmwasm_wasm_v1_ContractGrant_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmwasm_wasm_v1_ContractGrant_descriptor,
         new java.lang.String[] { "Contract", "Limit", "Filter", });
     internal_static_cosmwasm_wasm_v1_MaxCallsLimit_descriptor =
-      getDescriptor().getMessageTypes().get(3);
+      getDescriptor().getMessageTypes().get(5);
     internal_static_cosmwasm_wasm_v1_MaxCallsLimit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmwasm_wasm_v1_MaxCallsLimit_descriptor,
         new java.lang.String[] { "Remaining", });
     internal_static_cosmwasm_wasm_v1_MaxFundsLimit_descriptor =
-      getDescriptor().getMessageTypes().get(4);
+      getDescriptor().getMessageTypes().get(6);
     internal_static_cosmwasm_wasm_v1_MaxFundsLimit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmwasm_wasm_v1_MaxFundsLimit_descriptor,
         new java.lang.String[] { "Amounts", });
     internal_static_cosmwasm_wasm_v1_CombinedLimit_descriptor =
-      getDescriptor().getMessageTypes().get(5);
+      getDescriptor().getMessageTypes().get(7);
     internal_static_cosmwasm_wasm_v1_CombinedLimit_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmwasm_wasm_v1_CombinedLimit_descriptor,
         new java.lang.String[] { "CallsRemaining", "Amounts", });
     internal_static_cosmwasm_wasm_v1_AllowAllMessagesFilter_descriptor =
-      getDescriptor().getMessageTypes().get(6);
+      getDescriptor().getMessageTypes().get(8);
     internal_static_cosmwasm_wasm_v1_AllowAllMessagesFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmwasm_wasm_v1_AllowAllMessagesFilter_descriptor,
         new java.lang.String[] { });
     internal_static_cosmwasm_wasm_v1_AcceptedMessageKeysFilter_descriptor =
-      getDescriptor().getMessageTypes().get(7);
+      getDescriptor().getMessageTypes().get(9);
     internal_static_cosmwasm_wasm_v1_AcceptedMessageKeysFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmwasm_wasm_v1_AcceptedMessageKeysFilter_descriptor,
         new java.lang.String[] { "Keys", });
     internal_static_cosmwasm_wasm_v1_AcceptedMessagesFilter_descriptor =
-      getDescriptor().getMessageTypes().get(8);
+      getDescriptor().getMessageTypes().get(10);
     internal_static_cosmwasm_wasm_v1_AcceptedMessagesFilter_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_cosmwasm_wasm_v1_AcceptedMessagesFilter_descriptor,
@@ -7001,6 +8663,7 @@ public final class Authz {
     com.google.protobuf.GoGoProtos.getDescriptor();
     cosmos_proto.Cosmos.getDescriptor();
     cosmos.base.v1beta1.CoinOuterClass.getDescriptor();
+    cosmwasm.wasm.v1.Types.getDescriptor();
     com.google.protobuf.AnyProto.getDescriptor();
     amino.Amino.getDescriptor();
   }
