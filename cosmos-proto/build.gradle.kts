@@ -1,23 +1,26 @@
-import java.io.BufferedReader
-import java.io.InputStreamReader
-
-fun resolveVersion(): String {
-    val directory = File(projectDir, "target")
-    val process = ProcessBuilder("git", "describe", "--tags")
-        .directory(directory)
-        .start()
-    val input = BufferedReader(InputStreamReader(process.inputStream))
-    val noTimeout = process.waitFor(5, TimeUnit.SECONDS)
-    if (!noTimeout || process.exitValue() != 0) {
-        throw IllegalStateException("timeout or illegal exit value ${process.exitValue()}")
+fun isLegacyVersion(): Boolean {
+    return if (project.extra.has("targetVersion")) {
+        val targetVersion = project.extra["targetVersion"] as String
+        return !targetVersion.startsWith("1.")
+    } else {
+        false
     }
-
-    return input.use { it.readLine() }.removePrefix("v")
-        .also { println("Resolved cosmos-proto version : $it") }
 }
 
-version = resolveVersion()
+fun selectTargetDirectory(): String = if (isLegacyVersion()) "target-regen" else "target"
 
-dependencies {
-    protobuf(files("target/proto"))
+version = "${resolveVersion("cosmos-proto", selectTargetDirectory())}-$buildNumber"
+
+protobufArtifacts {
+    targetDirectory.set(File(projectDir, selectTargetDirectory()))
+
+    if (isLegacyVersion()) {
+        protobufPath.set(targetDirectory.get())
+    } else {
+        protobufPath.set(File(targetDirectory.get(), "proto"))
+    }
+}
+
+targetDependencies {
+    selectTargetDirectory.set { File(projectDir, selectTargetDirectory()) }
 }

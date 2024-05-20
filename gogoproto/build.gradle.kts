@@ -1,5 +1,5 @@
-version = "1.4.10"
+version = "1.4.10-$buildNumber"
 
-dependencies {
-    protobuf(files("target"))
+protobufArtifacts {
+    protobufPath.set(File(projectDir, "target"))
 }

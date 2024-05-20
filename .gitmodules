@@ -9,7 +9,7 @@
 	url = https://github.com/cosmwasm/wasmd
 [submodule "terra-classic-core/target"]
 	path = terra-classic-core/target
-	url = https://github.com/terra-money/classic-core
+	url = https://github.com/classic-terra/core.git
 [submodule "terra-alliance/target"]
 	path = terra-alliance/target
 	url = https://github.com/terra-money/alliance
@@ -22,3 +22,6 @@
 [submodule "injective-core/target"]
 	path = injective-core/target
 	url = https://github.com/OpenDeFiFoundation/injective-core
+[submodule "cosmos-proto/target-regen"]
+	path = cosmos-proto/target-regen
+	url = https://github.com/regen-network/cosmos-proto.git
