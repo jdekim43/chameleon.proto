@@ -8,7 +8,6 @@ fun isLegacyVersion(): Boolean {
 }
 
 fun selectTargetDirectory(): String = if (isLegacyVersion()) "target-regen" else "target"
-
 version = "${resolveVersion("cosmos-proto", selectTargetDirectory())}-$buildNumber"
 
 protobufArtifacts {

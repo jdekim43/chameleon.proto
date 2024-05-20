@@ -25,3 +25,6 @@
 [submodule "cosmos-proto/target-regen"]
 	path = cosmos-proto/target-regen
 	url = https://github.com/regen-network/cosmos-proto.git
+[submodule "initia/target"]
+	path = initia/target
+	url = https://github.com/initia-labs/initia.git

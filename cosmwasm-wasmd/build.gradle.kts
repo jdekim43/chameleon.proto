@@ -6,6 +6,16 @@ targetDependencies {
 }
 
 dependencies {
-    include(project(":chameleon-proto-cosmos-proto"))
-    include(project(":chameleon-proto-cosmos-sdk"))
+    implementation(project(":chameleon-proto-cosmos-proto"))
+    implementation(project(":chameleon-proto-cosmos-sdk"))
+}
+
+kotlin {
+    sourceSets {
+        val commonMain by getting {
+            dependencies {
+                api(project(":chameleon-proto-cosmos-sdk"))
+            }
+        }
+    }
 }

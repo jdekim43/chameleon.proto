@@ -1,7 +1,7 @@
 plugins {
+    id("dependency-manager")
     id("protobuf-artifacts")
     id("artifacts-publish")
-    id("dependency-manager")
 }
 
 allprojects {
@@ -11,11 +11,13 @@ allprojects {
     }
 
     group = "kr.jadekim"
+}
 
+subprojects {
     apply {
+        plugin("dependency-manager")
         plugin("protobuf-artifacts")
         plugin("artifacts-publish")
-        plugin("dependency-manager")
     }
 
     artifactsPublish {
@@ -29,9 +31,5 @@ allprojects {
     gradle.taskGraph.whenReady {
         allTasks.filter { it.name.contains("proto", true) }
             .forEach { it.outputs.upToDateWhen { false } }
-    }
-
-    tasks.create("printVersion") {
-        doLast { println(version) }
     }
 }

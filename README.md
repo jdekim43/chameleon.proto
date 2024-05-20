@@ -11,3 +11,5 @@ Blockchain Client SDK
   * terra
   * terra-classic
   * sei
+  * injective
+  * initia

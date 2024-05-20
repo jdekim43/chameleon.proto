@@ -6,16 +6,12 @@ import com.google.protobuf.gradle.id
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.Configuration
-import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Copy
-import org.gradle.kotlin.dsl.create
-import org.gradle.kotlin.dsl.dependencies
-import org.gradle.kotlin.dsl.getByType
-import org.gradle.kotlin.dsl.register
-import org.gradle.model.Mutate
+import org.gradle.api.tasks.compile.AbstractCompile
+import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
+import org.jetbrains.kotlin.gradle.tasks.BaseKotlinCompile
 import java.io.File
 
 interface ProtobufArtifactsExtension {
@@ -28,8 +24,8 @@ interface ProtobufArtifactsExtension {
     val protobufJvmTypeRegistry: Property<String>
     val protobufSerializersModules: Property<String>
 
-    val enableGrpc: Property<Boolean>
-    val enableGrpcGateway: Property<Boolean>
+//    val enableGrpc: Property<Boolean>
+//    val enableGrpcGateway: Property<Boolean>
 
     val copy: Property<Boolean>
 }
@@ -43,17 +39,16 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
             targetDirectory.convention(File(target.projectDir, "target"))
             protobufPath.convention(File(targetDirectory.get(), "proto"))
 
-            enableGrpc.convention(false)
-            enableGrpcGateway.convention(false)
+//            enableGrpc.convention(false)
+//            enableGrpcGateway.convention(false)
         }
 
         target.applyPlugins()
 
         val includeProjects = target.configurations.create("include") {
-            setVisible(false)
-
-            isCanBeConsumed = false
-            isCanBeResolved = false
+            isVisible = true
+            isCanBeConsumed = true
+            isCanBeResolved = true
         }
 
         target.configurations.getByName("compileProtoPath") {
@@ -95,7 +90,11 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
     }
 
     private fun Project.configureTaskDependent() {
-        tasks.getByName("compileJava") {
+        tasks.withType(AbstractCompile::class) {
+            dependsOn("generateProto")
+        }
+
+        tasks.withType(BaseKotlinCompile::class) {
             dependsOn("generateProto")
         }
     }
@@ -117,9 +116,9 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
         dependencies {
             "implementation"("com.google.protobuf:protobuf-java:${Versions.protobuf}")
 
-            if (extension.enableGrpc.get()) {
+//            if (extension.enableGrpc.get()) {
                 "implementation"("io.grpc:grpc-protobuf:${Versions.grpc}")
-            }
+//            }
         }
         extensions.getByType<KotlinMultiplatformExtension>().run {
             sourceSets.commonMain.dependencies {
@@ -128,26 +127,26 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
                 api("kr.jadekim:kotlin-protobuf-kotlinx:${Versions.kotlinProtobuf}")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.kotlinxSerialization}")
 
-                if (extension.enableGrpc.get()) {
+//                if (extension.enableGrpc.get()) {
                     api("kr.jadekim:kotlin-protobuf-grpc:${Versions.kotlinProtobuf}")
-                }
+//                }
 
-                if (extension.enableGrpcGateway.get()) {
+//                if (extension.enableGrpcGateway.get()) {
                     api("kr.jadekim:kotlin-protobuf-grpc-gateway:${Versions.kotlinProtobuf}")
-                }
+//                }
             }
             sourceSets.jvmMain.dependencies {
                 implementation("com.google.protobuf:protobuf-java:${Versions.protobuf}")
 
-                if (extension.enableGrpcGateway.get()) {
+//                if (extension.enableGrpcGateway.get()) {
                     implementation("com.google.protobuf:protobuf-java-util:${Versions.protobuf}")
-                }
+//                }
 
-                if (extension.enableGrpc.get()) {
+//                if (extension.enableGrpc.get()) {
                     implementation("io.grpc:grpc-protobuf:${Versions.grpc}")
                     implementation("io.grpc:grpc-stub:${Versions.grpc}")
                     implementation("io.grpc:grpc-kotlin-stub:${Versions.grpcKotlin}")
-                }
+//                }
             }
         }
     }
@@ -201,7 +200,7 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
                     }
                     it.plugins {
                         id("kotlin-protobuf-kotlinx") {
-                            outputSubDir = "commonMain/kotlin"
+                            outputSubDir = "commonMain"
                             extension.protobufTypeRegistry.orNull?.let {
                                 option("kotlin-protobuf.type_registry=$it")
                             }
@@ -210,7 +209,7 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
                             }
                         }
                         id("kotlin-protobuf-converter-multiplatform") {
-                            outputSubDir = "commonMain/kotlin"
+                            outputSubDir = "commonMain"
                         }
                         id("kotlin-protobuf-converter-multiplatform-jvm") {
                             outputSubDir = "jvmMain/kotlin"
@@ -219,23 +218,23 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
                             }
                         }
 
-                        if (extension.enableGrpc.get()) {
+//                        if (extension.enableGrpc.get()) {
                             id("grpc") {
                                 outputSubDir = "jvmMain/java"
                             }
                             id("kotlin-protobuf-grpc-multiplatform") {
-                                outputSubDir = "commonMain/kotlin"
+                                outputSubDir = "commonMain"
                             }
                             id("kotlin-protobuf-grpc-multiplatform-jvm") {
                                 outputSubDir = "jvmMain/kotlin"
                             }
-                        }
+//                        }
 
-                        if (extension.enableGrpcGateway.get()) {
+//                        if (extension.enableGrpcGateway.get()) {
                             id("kotlin-protobuf-grpc-gateway") {
-                                outputSubDir = "commonMain/kotlin"
+                                outputSubDir = "commonMain"
                             }
-                        }
+//                        }
                     }
                 }
             }
