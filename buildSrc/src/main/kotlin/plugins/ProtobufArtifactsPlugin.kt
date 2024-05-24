@@ -6,7 +6,6 @@ import com.google.protobuf.gradle.id
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.artifacts.Configuration
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Copy
 import org.gradle.api.tasks.compile.AbstractCompile
@@ -50,9 +49,9 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
 
         target.applyPlugins()
 
-        val includeProjects = target.configurations.create("include") {
+        val includeProjects = target.configurations.create("dependsOn") {
             isVisible = true
-            isCanBeConsumed = true
+            isCanBeConsumed = false
             isCanBeResolved = true
         }
 
@@ -60,7 +59,7 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
             extendsFrom(includeProjects)
         }
 
-        target.configurations.getByName("commonMainApi") {
+        target.configurations.getByName("commonMainImplementation") {
             extendsFrom(includeProjects)
         }
 
@@ -69,7 +68,6 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
 
         target.addLibraryDependencies(extension)
         target.addDependencies(extension)
-        target.configurePublishDependencies(includeProjects)
 
         target.configureProtobuf(extension)
         target.configureTaskDependent()
@@ -127,7 +125,7 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
             "implementation"("com.google.protobuf:protobuf-java:${Versions.protobuf}")
 
 //            if (extension.enableGrpc.get()) {
-                "implementation"("io.grpc:grpc-protobuf:${Versions.grpc}")
+            "implementation"("io.grpc:grpc-protobuf:${Versions.grpc}")
 //            }
         }
         extensions.getByType<KotlinMultiplatformExtension>().run {
@@ -138,24 +136,24 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:${Versions.kotlinxSerialization}")
 
 //                if (extension.enableGrpc.get()) {
-                    api("kr.jadekim:kotlin-protobuf-grpc:${Versions.kotlinProtobuf}")
+                api("kr.jadekim:kotlin-protobuf-grpc:${Versions.kotlinProtobuf}")
 //                }
 
 //                if (extension.enableGrpcGateway.get()) {
-                    api("kr.jadekim:kotlin-protobuf-grpc-gateway:${Versions.kotlinProtobuf}")
+                api("kr.jadekim:kotlin-protobuf-grpc-gateway:${Versions.kotlinProtobuf}")
 //                }
             }
             sourceSets.jvmMain.dependencies {
                 implementation("com.google.protobuf:protobuf-java:${Versions.protobuf}")
 
 //                if (extension.enableGrpcGateway.get()) {
-                    implementation("com.google.protobuf:protobuf-java-util:${Versions.protobuf}")
+                implementation("com.google.protobuf:protobuf-java-util:${Versions.protobuf}")
 //                }
 
 //                if (extension.enableGrpc.get()) {
-                    implementation("io.grpc:grpc-protobuf:${Versions.grpc}")
-                    implementation("io.grpc:grpc-stub:${Versions.grpc}")
-                    implementation("io.grpc:grpc-kotlin-stub:${Versions.grpcKotlin}")
+                implementation("io.grpc:grpc-protobuf:${Versions.grpc}")
+                implementation("io.grpc:grpc-stub:${Versions.grpc}")
+                implementation("io.grpc:grpc-kotlin-stub:${Versions.grpcKotlin}")
 //                }
             }
         }
@@ -164,22 +162,6 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
     private fun Project.addDependencies(extension: ProtobufArtifactsExtension) {
         dependencies {
             "protobuf"(files(extension.protobufPath))
-        }
-    }
-
-    private fun Project.configurePublishDependencies(includeProjects: Configuration) {
-        tasks.register("publishAllToMavenLocal") {
-            val dependencies = includeProjects.dependencies
-                .map { project(":${it.name}").tasks.getByName("publishAllToMavenLocal") }
-            dependsOn(dependencies)
-            finalizedBy("publishToMavenLocal")
-        }
-
-        tasks.register("publishAll") {
-            val dependencies = includeProjects.dependencies
-                .map { project(":${it.name}").tasks.getByName("publishAll") }
-            dependsOn(dependencies)
-            finalizedBy("publish")
         }
     }
 
@@ -245,21 +227,21 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
                         }
 
 //                        if (extension.enableGrpc.get()) {
-                            id("grpc") {
-                                outputSubDir = "jvmMain/java"
-                            }
-                            id("kotlin-protobuf-grpc-multiplatform") {
-                                outputSubDir = "commonMain/kotlin"
-                            }
-                            id("kotlin-protobuf-grpc-multiplatform-jvm") {
-                                outputSubDir = "jvmMain/kotlin"
-                            }
+                        id("grpc") {
+                            outputSubDir = "jvmMain/java"
+                        }
+                        id("kotlin-protobuf-grpc-multiplatform") {
+                            outputSubDir = "commonMain/kotlin"
+                        }
+                        id("kotlin-protobuf-grpc-multiplatform-jvm") {
+                            outputSubDir = "jvmMain/kotlin"
+                        }
 //                        }
 
 //                        if (extension.enableGrpcGateway.get()) {
-                            id("kotlin-protobuf-grpc-gateway") {
-                                outputSubDir = "commonMain/kotlin"
-                            }
+                        id("kotlin-protobuf-grpc-gateway") {
+                            outputSubDir = "commonMain/kotlin"
+                        }
 //                        }
                     }
                 }

@@ -18,6 +18,10 @@ protobufArtifacts {
     } else {
         protobufPath.set(File(targetDirectory.get(), "proto"))
     }
+
+    protobufTypeRegistry.set("cosmos.proto.TypeRegistry")
+    protobufJvmTypeRegistry.set("cosmos.proto.JvmTypeRegistry")
+    protobufSerializersModules.set("cosmos.proto.SerializersModules")
 }
 
 targetDependencies {

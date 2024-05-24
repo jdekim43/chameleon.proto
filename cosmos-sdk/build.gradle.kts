@@ -17,13 +17,19 @@ targetDependencies {
 }
 
 dependencies {
-    include(project(":chameleon-proto-google-api"))
-    include(project(":chameleon-proto-gogoproto"))
-    include(project(":chameleon-proto-cosmos-proto"))
+    dependsOn(project(":chameleon-proto-google-api"))
+    dependsOn(project(":chameleon-proto-gogoproto"))
+    dependsOn(project(":chameleon-proto-cosmos-proto"))
 
     if (isDependTendermint) {
-        include(project(":chameleon-proto-tendermint"))
+        dependsOn(project(":chameleon-proto-tendermint"))
     }
+}
+
+protobufArtifacts {
+    protobufTypeRegistry.set("cosmos.sdk.TypeRegistry")
+    protobufJvmTypeRegistry.set("cosmos.sdk.JvmTypeRegistry")
+    protobufSerializersModules.set("cosmos.sdk.SerializersModules")
 }
 
 tasks.withType<Jar> {

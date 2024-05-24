@@ -8,16 +8,13 @@ targetDependencies {
 }
 
 dependencies {
-    implementation(project(":chameleon-proto-cosmos-proto"))
-    implementation(project(":chameleon-proto-cosmos-sdk"))
+    dependsOn(project(":chameleon-proto-gogoproto"))
+    dependsOn(project(":chameleon-proto-cosmos-proto"))
+    dependsOn(project(":chameleon-proto-cosmos-sdk"))
 }
 
-kotlin {
-    sourceSets {
-        val commonMain by getting {
-            dependencies {
-                api(project(":chameleon-proto-cosmos-sdk"))
-            }
-        }
-    }
+protobufArtifacts {
+    protobufTypeRegistry.set("cosmwasm.wasmd.TypeRegistry")
+    protobufJvmTypeRegistry.set("cosmwasm.wasmd.JvmTypeRegistry")
+    protobufSerializersModules.set("cosmwasm.wasmd.SerializersModules")
 }

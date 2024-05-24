@@ -2,14 +2,23 @@ version = "${resolveVersion("initia")}-$buildNumber"
 
 targetDependencies {
     dependencies.set {
+        put("cosmos-proto", project(":chameleon-proto-cosmos-proto"))
         put("cosmos-sdk", project(":chameleon-proto-cosmos-sdk"))
         put("ibc-go/v8", project(":chameleon-proto-cosmos-ibc"))
     }
 }
 
 dependencies {
-    include(project(":chameleon-proto-cosmos-sdk"))
-    include(project(":chameleon-proto-cosmos-ibc"))
+    dependsOn(project(":chameleon-proto-gogoproto"))
+    dependsOn(project(":chameleon-proto-cosmos-proto"))
+    dependsOn(project(":chameleon-proto-cosmos-sdk"))
+    dependsOn(project(":chameleon-proto-cosmos-ibc"))
+}
+
+protobufArtifacts {
+    protobufTypeRegistry.set("initia.TypeRegistry")
+    protobufJvmTypeRegistry.set("initia.JvmTypeRegistry")
+    protobufSerializersModules.set("initia.SerializersModules")
 }
 
 val polishContents = tasks.create("polishContents") {

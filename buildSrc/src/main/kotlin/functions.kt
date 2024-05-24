@@ -61,7 +61,7 @@ fun Project.isPublished(taskName: String, artifactId: String, version: String): 
     val publishedVersions = history.readLines()
 
     if (publishedVersions.contains(version)) {
-        println("Already published version $version of $artifactId")
+        println("Already published $taskName/$artifactId@$version")
         return true
     }
 
@@ -78,7 +78,7 @@ fun Project.setPublished(taskName: String, artifactId: String, version: String) 
         history.createNewFile()
     }
 
-    history.appendText(version)
+    history.appendText("$version\n")
 }
 
 fun String.deleteStringBytesMethods(fieldNumber: Int, fieldName: String, fieldBit: String): String {

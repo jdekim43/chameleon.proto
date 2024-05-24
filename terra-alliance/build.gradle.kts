@@ -8,6 +8,13 @@ targetDependencies {
 }
 
 dependencies {
-    include(project(":chameleon-proto-cosmos-proto"))
-    include(project(":chameleon-proto-cosmos-sdk"))
+    dependsOn(project(":chameleon-proto-gogoproto"))
+    dependsOn(project(":chameleon-proto-cosmos-proto"))
+    dependsOn(project(":chameleon-proto-cosmos-sdk"))
+}
+
+protobufArtifacts {
+    protobufTypeRegistry.set("terra.alliance.TypeRegistry")
+    protobufJvmTypeRegistry.set("terra.alliance.JvmTypeRegistry")
+    protobufSerializersModules.set("terra.alliance.SerializersModules")
 }

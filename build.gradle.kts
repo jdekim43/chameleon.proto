@@ -28,8 +28,8 @@ subprojects {
         developerEmail.set("me@jade.kim")
     }
 
-    gradle.taskGraph.whenReady {
-        allTasks.filter { it.name.contains("proto", true) }
-            .forEach { it.outputs.upToDateWhen { false } }
-    }
+//    gradle.taskGraph.whenReady {
+//        allTasks.filter { it.name.contains("proto", true) }
+//            .forEach { it.outputs.upToDateWhen { false } }
+//    }
 }

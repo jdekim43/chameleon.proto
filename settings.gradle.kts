@@ -23,7 +23,6 @@ fun ProjectDescriptor.renameChildren() {
         if (it.parent != null) {
             it.name = it.parent!!.name + "-" + it.name
         }
-        println("$origin to ${it.name} : ${it.path}")
         it.renameChildren()
     }
 }

@@ -1,6 +1,12 @@
 version = "${resolveVersion("tendermint")}-$buildNumber"
 
 dependencies {
-    include(project(":chameleon-proto-google-api"))
-    include(project(":chameleon-proto-gogoproto"))
+    dependsOn(project(":chameleon-proto-google-api"))
+    dependsOn(project(":chameleon-proto-gogoproto"))
+}
+
+protobufArtifacts {
+    protobufTypeRegistry.set("tendermint.TypeRegistry")
+    protobufJvmTypeRegistry.set("tendermint.JvmTypeRegistry")
+    protobufSerializersModules.set("tendermint.SerializersModules")
 }

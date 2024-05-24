@@ -9,7 +9,14 @@ targetDependencies {
 }
 
 dependencies {
-    include(project(":chameleon-proto-cosmos-proto"))
-    include(project(":chameleon-proto-cosmos-sdk"))
-    include(project(":chameleon-proto-cosmwasm-wasmd"))
+    dependsOn(project(":chameleon-proto-gogoproto"))
+    dependsOn(project(":chameleon-proto-cosmos-proto"))
+    dependsOn(project(":chameleon-proto-cosmos-sdk"))
+    dependsOn(project(":chameleon-proto-cosmwasm-wasmd"))
+}
+
+protobufArtifacts {
+    protobufTypeRegistry.set("injective.core.TypeRegistry")
+    protobufJvmTypeRegistry.set("injective.core.JvmTypeRegistry")
+    protobufSerializersModules.set("injective.core.SerializersModules")
 }

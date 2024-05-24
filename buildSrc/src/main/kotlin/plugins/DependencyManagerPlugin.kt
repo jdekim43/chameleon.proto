@@ -1,14 +1,18 @@
 package plugins
 
 import checkoutTarget
+import isPublished
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.artifacts.ProjectDependency
 import org.gradle.api.provider.ListProperty
 import org.gradle.api.provider.Property
 import org.gradle.kotlin.dsl.create
 import org.gradle.kotlin.dsl.extra
+import org.gradle.kotlin.dsl.withType
 import resolveDependencyVersion
 import resolveVersion
+import setPublished
 import java.io.File
 
 interface TargetDependenciesExtension {
@@ -79,6 +83,40 @@ class DependencyManagerPlugin : Plugin<Project> {
                 }
             }
             finalizedBy(":clean", checkoutDependenciesTask)
+        }
+
+        val publishAllToMavenLocal = target.tasks.register("publishAllToMavenLocal") {
+            doLast {
+                target.setPublished("publishAllToMavenLocal", target.name, target.version.toString())
+            }
+
+            finalizedBy("publishToMavenLocal")
+        }
+
+        val publishAll = target.tasks.register("publishAll") {
+            doLast {
+                target.setPublished("publishAll", target.name, target.version.toString())
+            }
+
+            finalizedBy("publish")
+        }
+
+        target.afterEvaluate {
+            val includeProjects = target.configurations.getByName("dependsOn")
+
+            publishAllToMavenLocal.configure {
+                val dependencies = includeProjects.dependencies.withType<ProjectDependency>()
+                    .map { it.dependencyProject }
+                    .map { it.tasks.getByName("publishAllToMavenLocal") }
+                dependsOn(dependencies)
+            }
+
+            publishAll.configure {
+                val dependencies = includeProjects.dependencies.withType<ProjectDependency>()
+                    .map { it.dependencyProject }
+                    .map { it.tasks.getByName("publishAll") }
+                dependsOn(dependencies)
+            }
         }
     }
 }
