@@ -1,7 +1,6 @@
+import net.pearx.kasechange.toPascalCase
 import org.gradle.api.Project
-import java.io.BufferedReader
 import java.io.File
-import java.io.InputStreamReader
 import java.util.concurrent.TimeUnit
 
 private fun runCommand(timeout: Long = 5, builder: ProcessBuilder.() -> Unit): Process {
@@ -19,20 +18,21 @@ private fun runCommand(timeout: Long = 5, builder: ProcessBuilder.() -> Unit): P
 
 private fun Process.readText(): String = inputReader().use { it.readText() }.trim()
 
-fun Project.resolveVersion(name: String? = null, subDirectory: String = "target"): String {
+fun Project.resolveVersion(name: String? = null, subDirectory: String = "target", prefix: String = "v"): String {
     val result = runCommand {
         directory(File(projectDir, subDirectory))
-        command("git", "describe", "--tags")
+        command("git", "tag", "--points-at", "HEAD")
     }.readText()
 
-    return result.removePrefix("v")
+    return (result.split('\n').find { it.startsWith(prefix) } ?: "")
+        .removePrefix(prefix)
         .also { name?.let { n -> println("Resolved $n version : $it") } }
 }
 
 fun Project.resolveDependencyVersion(name: String, subDirectory: String = "target"): String {
     val result = runCommand {
         directory(File(projectDir, subDirectory))
-        command("/bin/sh", "-c", "go mod graph | awk -F '@' '/$name@/{ print $2; exit; }'")
+        command("/bin/sh", "-c", "go mod graph | awk -F '@' '/${name.replace("/", "\\/")}@/{ print $2; exit; }'")
     }.readText()
 
     return result.removePrefix("v")
@@ -43,7 +43,7 @@ fun Project.checkoutTarget(tag: String, subDirectory: String = "target") {
 
     runCommand {
         directory(File(projectDir, subDirectory))
-        command("git", "fetch", "--all", "--tags")
+        command("git", "fetch", "--all", "--tags", "--force")
     }
     runCommand {
         directory(File(projectDir, subDirectory))
@@ -51,8 +51,8 @@ fun Project.checkoutTarget(tag: String, subDirectory: String = "target") {
     }
 }
 
-fun Project.isPublished(artifactId: String, version: String): Boolean {
-    val history = File(projectDir, ".publish/$artifactId")
+fun Project.isPublished(taskName: String, artifactId: String, version: String): Boolean {
+    val history = File(projectDir, ".publish-history/$taskName/$artifactId")
 
     if (!history.exists()) {
         return false
@@ -68,8 +68,8 @@ fun Project.isPublished(artifactId: String, version: String): Boolean {
     return false
 }
 
-fun Project.setPublished(artifactId: String, version: String) {
-    val history = File(projectDir, ".publish/$artifactId")
+fun Project.setPublished(taskName: String, artifactId: String, version: String) {
+    val history = File(projectDir, ".publish-history/$taskName/$artifactId")
 
     if (!history.exists()) {
         if (!history.parentFile.exists()) {
@@ -79,4 +79,65 @@ fun Project.setPublished(artifactId: String, version: String) {
     }
 
     history.appendText(version)
+}
+
+fun String.deleteStringBytesMethods(fieldNumber: Int, fieldName: String, fieldBit: String): String {
+    return replace("""
+    |    /**
+    |     * <code>string $fieldName = $fieldNumber;</code>
+    |     * @return The bytes for $fieldName.
+    |     */
+    |    com.google.protobuf.ByteString
+    |        get${fieldName.toPascalCase()}Bytes();
+    |""".trimMargin(), "").replace("""
+    |    /**
+    |     * <code>string $fieldName = $fieldNumber;</code>
+    |     * @return The bytes for $fieldName.
+    |     */
+    |    @java.lang.Override
+    |    public com.google.protobuf.ByteString
+    |        get${fieldName.toPascalCase()}Bytes() {
+    |      java.lang.Object ref = ${fieldName}_;
+    |      if (ref instanceof java.lang.String) {
+    |        com.google.protobuf.ByteString b = 
+    |            com.google.protobuf.ByteString.copyFromUtf8(
+    |                (java.lang.String) ref);
+    |        ${fieldName}_ = b;
+    |        return b;
+    |      } else {
+    |        return (com.google.protobuf.ByteString) ref;
+    |      }
+    |    }
+    |""".trimMargin(), "").replace("""
+    |      /**
+    |       * <code>string $fieldName = $fieldNumber;</code>
+    |       * @return The bytes for $fieldName.
+    |       */
+    |      public com.google.protobuf.ByteString
+    |          get${fieldName.toPascalCase()}Bytes() {
+    |        java.lang.Object ref = ${fieldName}_;
+    |        if (ref instanceof String) {
+    |          com.google.protobuf.ByteString b = 
+    |              com.google.protobuf.ByteString.copyFromUtf8(
+    |                  (java.lang.String) ref);
+    |          ${fieldName}_ = b;
+    |          return b;
+    |        } else {
+    |          return (com.google.protobuf.ByteString) ref;
+    |        }
+    |      }""".trimMargin(), "").replace("""
+    |      /**
+    |       * <code>string $fieldName = $fieldNumber;</code>
+    |       * @param value The bytes for $fieldName to set.
+    |       * @return This builder for chaining.
+    |       */
+    |      public Builder set${fieldName.toPascalCase()}Bytes(
+    |          com.google.protobuf.ByteString value) {
+    |        if (value == null) { throw new NullPointerException(); }
+    |        checkByteStringIsUtf8(value);
+    |        ${fieldName}_ = value;
+    |        bitField0_ |= $fieldBit;
+    |        onChanged();
+    |        return this;
+    |      }""".trimMargin(), "")
 }

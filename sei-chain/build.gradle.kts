@@ -1,9 +1,13 @@
-version = "${resolveVersion("sei-chain")}-$buildNumber"
+version = "${resolveVersion("sei-chain", prefix = "")}-$buildNumber"
 
 targetDependencies {
-    dependencies.add("cosmos-proto" to project(":chameleon-proto-cosmos-proto"))
-    dependencies.add("cosmos-sdk" to project(":chameleon-proto-cosmos-sdk"))
-    dependencies.add("wasmd" to project(":chameleon-proto-cosmwasm-wasmd"))
+    checkoutTagPrefix.set("")
+
+    dependencies.set {
+        put("cosmos-proto", project(":chameleon-proto-cosmos-proto"))
+        put("cosmos-sdk", project(":chameleon-proto-cosmos-sdk"))
+        put("wasmd", project(":chameleon-proto-cosmwasm-wasmd"))
+    }
 }
 
 dependencies {

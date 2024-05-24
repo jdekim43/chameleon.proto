@@ -126,11 +126,11 @@ class ArtifactsPublishPlugin : Plugin<Project> {
     private fun Project.configurePreventDoublePublication() {
         tasks.withType<AbstractPublishToMaven> {
             onlyIf {
-                return@onlyIf !isPublished(publication.artifactId, publication.version)
+                return@onlyIf !isPublished(name, publication.artifactId, publication.version)
             }
 
             doLast {
-                setPublished(publication.artifactId, publication.version)
+                setPublished(name, publication.artifactId, publication.version)
             }
         }
     }

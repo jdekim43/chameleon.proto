@@ -1,8 +1,10 @@
 version = "${resolveVersion("terra-alliance")}-$buildNumber"
 
 targetDependencies {
-    dependencies.add("cosmos-proto" to project(":chameleon-proto-cosmos-proto"))
-    dependencies.add("cosmos-sdk" to project(":chameleon-proto-cosmos-sdk"))
+    dependencies.set {
+        put("cosmos-proto", project(":chameleon-proto-cosmos-proto"))
+        put("cosmos-sdk", project(":chameleon-proto-cosmos-sdk"))
+    }
 }
 
 dependencies {

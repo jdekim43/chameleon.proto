@@ -41,4 +41,4 @@ echo "Clean All"
 ./gradlew -q cleanProto
 
 echo "Publish $PROJECT"
-./gradlew -q :chameleon-proto-$PROJECT:publishAll
+./gradlew -q :chameleon-proto-$PROJECT:publishAllToMavenLocal

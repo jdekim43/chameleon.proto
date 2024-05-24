@@ -28,3 +28,12 @@
 [submodule "initia/target"]
 	path = initia/target
 	url = https://github.com/initia-labs/initia.git
+[submodule "cometbft/target"]
+	path = cometbft/target
+	url = https://github.com/cometbft/cometbft.git
+[submodule "cosmos-ibc/target"]
+	path = cosmos-ibc/target
+	url = https://github.com/cosmos/ibc-go.git
+[submodule "cosmos-ics23/target"]
+	path = cosmos-ics23/target
+	url = https://github.com/cosmos/ics23.git

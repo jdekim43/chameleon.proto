@@ -6,6 +6,7 @@ import com.google.protobuf.gradle.id
 import org.gradle.api.JavaVersion
 import org.gradle.api.Plugin
 import org.gradle.api.Project
+import org.gradle.api.artifacts.Configuration
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Copy
 import org.gradle.api.tasks.compile.AbstractCompile
@@ -13,6 +14,8 @@ import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
 import org.jetbrains.kotlin.gradle.tasks.BaseKotlinCompile
 import java.io.File
+import java.nio.file.Files
+import java.nio.file.attribute.BasicFileAttributes
 
 interface ProtobufArtifactsExtension {
     val jvmVersion: Property<JavaVersion>
@@ -41,6 +44,8 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
 
 //            enableGrpc.convention(false)
 //            enableGrpcGateway.convention(false)
+
+            copy.convention(true)
         }
 
         target.applyPlugins()
@@ -60,15 +65,16 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
         }
 
         target.configureJvmVersion(extension.jvmVersion.get())
-        target.configureSourceDirectory()
+        target.configureSourceDirectory(extension)
 
         target.addLibraryDependencies(extension)
         target.addDependencies(extension)
+        target.configurePublishDependencies(includeProjects)
 
         target.configureProtobuf(extension)
         target.configureTaskDependent()
 
-        if (extension.copy.getOrElse(false)) {
+        if (extension.copy.get()) {
             target.addCopyTasks()
         }
     }
@@ -99,15 +105,19 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
         }
     }
 
-    private fun Project.configureSourceDirectory() {
+    private fun Project.configureSourceDirectory(extension: ProtobufArtifactsExtension) {
         extensions.getByType<KotlinMultiplatformExtension>().run {
             sourceSets.commonMain {
-                kotlin.srcDir(File(buildDir, "generated/source/proto/main/commonMain"))
+                if (!extension.copy.get()) {
+                    kotlin.srcDir(File(buildDir, "generated/source/proto/main/commonMain/kotlin"))
+                }
                 resources.srcDir(File(buildDir, "extracted-protos/main"))
             }
             sourceSets.jvmMain {
-                kotlin.srcDir(File(buildDir, "generated/source/proto/main/jvmMain/java"))
-                kotlin.srcDir(File(buildDir, "generated/source/proto/main/jvmMain/kotlin"))
+                if (!extension.copy.get()) {
+                    kotlin.srcDir(File(buildDir, "generated/source/proto/main/jvmMain/java"))
+                    kotlin.srcDir(File(buildDir, "generated/source/proto/main/jvmMain/kotlin"))
+                }
             }
         }
     }
@@ -157,6 +167,22 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
         }
     }
 
+    private fun Project.configurePublishDependencies(includeProjects: Configuration) {
+        tasks.register("publishAllToMavenLocal") {
+            val dependencies = includeProjects.dependencies
+                .map { project(":${it.name}").tasks.getByName("publishAllToMavenLocal") }
+            dependsOn(dependencies)
+            finalizedBy("publishToMavenLocal")
+        }
+
+        tasks.register("publishAll") {
+            val dependencies = includeProjects.dependencies
+                .map { project(":${it.name}").tasks.getByName("publishAll") }
+            dependsOn(dependencies)
+            finalizedBy("publish")
+        }
+    }
+
     private fun Project.configureProtobuf(extension: ProtobufArtifactsExtension) {
         extensions.getByType<ProtobufExtension>().run {
             protoc {
@@ -200,7 +226,7 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
                     }
                     it.plugins {
                         id("kotlin-protobuf-kotlinx") {
-                            outputSubDir = "commonMain"
+                            outputSubDir = "commonMain/kotlin"
                             extension.protobufTypeRegistry.orNull?.let {
                                 option("kotlin-protobuf.type_registry=$it")
                             }
@@ -209,7 +235,7 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
                             }
                         }
                         id("kotlin-protobuf-converter-multiplatform") {
-                            outputSubDir = "commonMain"
+                            outputSubDir = "commonMain/kotlin"
                         }
                         id("kotlin-protobuf-converter-multiplatform-jvm") {
                             outputSubDir = "jvmMain/kotlin"
@@ -223,7 +249,7 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
                                 outputSubDir = "jvmMain/java"
                             }
                             id("kotlin-protobuf-grpc-multiplatform") {
-                                outputSubDir = "commonMain"
+                                outputSubDir = "commonMain/kotlin"
                             }
                             id("kotlin-protobuf-grpc-multiplatform-jvm") {
                                 outputSubDir = "jvmMain/kotlin"
@@ -232,7 +258,7 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
 
 //                        if (extension.enableGrpcGateway.get()) {
                             id("kotlin-protobuf-grpc-gateway") {
-                                outputSubDir = "commonMain"
+                                outputSubDir = "commonMain/kotlin"
                             }
 //                        }
                     }
@@ -243,13 +269,26 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
 
     private fun Project.addCopyTasks() {
         val copyTask = tasks.register<Copy>("moveProtoResults") {
-            from(File(buildDir, "generated/source/proto/main"))
-            into(File(projectDir, "src"))
+            group = "protobuf"
+
+            val inputDirectory = File(buildDir, "generated/source/proto/main")
+            val outputDirectory = File(projectDir, "src")
+            from(inputDirectory)
+            into(outputDirectory)
+
+            outputs.upToDateWhen {
+                File(buildDir, "generated/source/proto/main").listFiles()
+                val input = inputDirectory.listFiles()?.firstOrNull() ?: return@upToDateWhen false
+                val output = outputDirectory.listFiles()?.firstOrNull() ?: return@upToDateWhen false
+
+                val inputAttributes = Files.readAttributes(input.toPath(), BasicFileAttributes::class.java)
+                val outputAttributes = Files.readAttributes(output.toPath(), BasicFileAttributes::class.java)
+
+                return@upToDateWhen inputAttributes.lastModifiedTime() == outputAttributes.lastModifiedTime()
+            }
         }
 
-        val cleanProtoTask = tasks.create("cleanProto") {
-            group = "other"
-
+        val cleanProtoTask = tasks.register("cleanProto") {
             doLast {
                 delete(File(projectDir, "src/commonMain"))
                 delete(File(projectDir, "src/jvmMain"))
@@ -259,6 +298,10 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
         tasks.getByName("generateProto") {
             dependsOn(cleanProtoTask)
             finalizedBy(copyTask)
+        }
+
+        tasks.filter { it.name.endsWith("Proto") }.forEach {
+            it.group = "protobuf"
         }
     }
 }

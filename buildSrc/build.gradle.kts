@@ -16,6 +16,8 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-serialization:1.9.23")
     implementation("org.jetbrains.dokka:dokka-gradle-plugin:1.9.20")
     implementation("com.google.protobuf:protobuf-gradle-plugin:0.9.4")
+
+    implementation("net.pearx.kasechange:kasechange:1.4.1")
 }
 
 gradlePlugin {
