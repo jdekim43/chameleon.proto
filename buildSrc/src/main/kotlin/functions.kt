@@ -3,12 +3,27 @@ import org.gradle.api.Project
 import java.io.File
 import java.util.concurrent.TimeUnit
 
-private fun runCommand(timeout: Long = 5, builder: ProcessBuilder.() -> Unit): Process {
-    val process = ProcessBuilder()
-        .apply(builder)
-        .start()
-    val noTimeout = process.waitFor(timeout, TimeUnit.SECONDS)
-    if (!noTimeout || process.exitValue() != 0) {
+private fun runCommand(
+    timeout: Long? = null,
+    builder: ProcessBuilder.() -> Unit = {},
+): Process {
+    val processBuilder = ProcessBuilder().apply(builder)
+//    val command = processBuilder.command()
+//    val directory = processBuilder.directory()
+    val process = processBuilder.start()
+
+//    println("Execute command `${command.joinToString(" ")}` at `${directory?.path ?: "./"}`")
+
+    if (timeout == null) {
+        process.waitFor()
+    } else {
+        val noTimeout = process.waitFor(timeout, TimeUnit.SECONDS)
+        if (!noTimeout) {
+            throw IllegalStateException("timeout command")
+        }
+    }
+
+    if (process.exitValue() != 0) {
         val error = process.errorReader().readText()
         throw IllegalStateException("timeout or illegal exit value ${process.exitValue()}\n$error")
     }
@@ -82,14 +97,17 @@ fun Project.setPublished(taskName: String, artifactId: String, version: String) 
 }
 
 fun String.deleteStringBytesMethods(fieldNumber: Int, fieldName: String, fieldBit: String): String {
-    return replace("""
+    return replace(
+        """
     |    /**
     |     * <code>string $fieldName = $fieldNumber;</code>
     |     * @return The bytes for $fieldName.
     |     */
     |    com.google.protobuf.ByteString
     |        get${fieldName.toPascalCase()}Bytes();
-    |""".trimMargin(), "").replace("""
+    |""".trimMargin(), ""
+    ).replace(
+        """
     |    /**
     |     * <code>string $fieldName = $fieldNumber;</code>
     |     * @return The bytes for $fieldName.
@@ -108,7 +126,9 @@ fun String.deleteStringBytesMethods(fieldNumber: Int, fieldName: String, fieldBi
     |        return (com.google.protobuf.ByteString) ref;
     |      }
     |    }
-    |""".trimMargin(), "").replace("""
+    |""".trimMargin(), ""
+    ).replace(
+        """
     |      /**
     |       * <code>string $fieldName = $fieldNumber;</code>
     |       * @return The bytes for $fieldName.
@@ -125,7 +145,9 @@ fun String.deleteStringBytesMethods(fieldNumber: Int, fieldName: String, fieldBi
     |        } else {
     |          return (com.google.protobuf.ByteString) ref;
     |        }
-    |      }""".trimMargin(), "").replace("""
+    |      }""".trimMargin(), ""
+    ).replace(
+        """
     |      /**
     |       * <code>string $fieldName = $fieldNumber;</code>
     |       * @param value The bytes for $fieldName to set.
@@ -139,5 +161,6 @@ fun String.deleteStringBytesMethods(fieldNumber: Int, fieldName: String, fieldBi
     |        bitField0_ |= $fieldBit;
     |        onChanged();
     |        return this;
-    |      }""".trimMargin(), "")
+    |      }""".trimMargin(), ""
+    )
 }

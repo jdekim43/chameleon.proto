@@ -12,6 +12,7 @@ include(
     ":cosmwasm-wasmd",
     ":terra-classic-core",
     ":terra-alliance",
+    ":terra-core",
     ":sei-chain",
     ":injective-core",
     ":initia",

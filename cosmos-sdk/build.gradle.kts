@@ -1,8 +1,9 @@
 val resolvedVersion = resolveVersion("cosmos-sdk")
-val isDependTendermint: Boolean = resolvedVersion.split('.')
-    .take(2)
-    .map(String::toInt)
-    .let { (major, minor) -> major == 0 && minor < 46 }
+val isDependTendermint: Boolean
+    get() = resolvedVersion.split('.')
+        .take(2)
+        .map(String::toInt)
+        .let { (major, minor) -> major == 0 && minor < 46 }
 
 version = "$resolvedVersion-$buildNumber"
 

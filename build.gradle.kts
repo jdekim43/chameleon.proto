@@ -5,20 +5,16 @@ plugins {
 }
 
 allprojects {
+    apply {
+        plugin("artifacts-publish")
+    }
+
     repositories {
         mavenCentral()
         mavenLocal()
     }
 
     group = "kr.jadekim"
-}
-
-subprojects {
-    apply {
-        plugin("dependency-manager")
-        plugin("protobuf-artifacts")
-        plugin("artifacts-publish")
-    }
 
     artifactsPublish {
         description.set("Crypto Wallet SDK")
@@ -26,6 +22,13 @@ subprojects {
         repositoryUrl.set("https://github.com/jdekim43/chameleon.git")
         developerName.set("Jade Kim")
         developerEmail.set("me@jade.kim")
+    }
+}
+
+subprojects {
+    apply {
+        plugin("dependency-manager")
+        plugin("protobuf-artifacts")
     }
 
 //    gradle.taskGraph.whenReady {

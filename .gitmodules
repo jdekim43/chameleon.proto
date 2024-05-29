@@ -37,3 +37,6 @@
 [submodule "cosmos-ics23/target"]
 	path = cosmos-ics23/target
 	url = https://github.com/cosmos/ics23.git
+[submodule "terra-core/target"]
+	path = terra-core/target
+	url = https://github.com/terra-money/core.git

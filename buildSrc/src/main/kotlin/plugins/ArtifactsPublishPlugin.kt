@@ -66,28 +66,6 @@ class ArtifactsPublishPlugin : Plugin<Project> {
         extensions.getByType<PublishingExtension>().run {
             publications.withType<MavenPublication> {
                 artifact(javadocJar)
-                pom {
-                    name.set(extension.name.get())
-                    description.set(extension.description.orNull)
-                    url.set(extension.projectUrl.orNull)
-                    licenses {
-                        license {
-                            name.set("The Apache License, Version 2.0")
-                            url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
-                        }
-                    }
-                    developers {
-                        developer {
-                            id.set(extension.developerId.orNull)
-                            name.set(extension.developerName.orNull)
-                            email.set(extension.developerEmail.orNull)
-                        }
-                    }
-                    scm {
-                        connection.set(extension.gitScmUrl)
-                        url.set(extension.repositoryUrl.orNull)
-                    }
-                }
             }
 
             repositories {
@@ -110,6 +88,35 @@ class ArtifactsPublishPlugin : Plugin<Project> {
                         credentials {
                             username = ossrhUsername
                             password = ossrhPassword
+                        }
+                    }
+                }
+            }
+        }
+
+        afterEvaluate {
+            extensions.getByType<PublishingExtension>().run {
+                publications.withType<MavenPublication> {
+                    pom {
+                        name.set(extension.name.get())
+                        description.set(extension.description.get())
+                        url.set(extension.projectUrl.get())
+                        licenses {
+                            license {
+                                name.set("The Apache License, Version 2.0")
+                                url.set("http://www.apache.org/licenses/LICENSE-2.0.txt")
+                            }
+                        }
+                        developers {
+                            developer {
+                                id.set(extension.developerId.orNull)
+                                name.set(extension.developerName.orNull)
+                                email.set(extension.developerEmail.orNull)
+                            }
+                        }
+                        scm {
+                            connection.set(extension.gitScmUrl)
+                            url.set(extension.repositoryUrl.get())
                         }
                     }
                 }

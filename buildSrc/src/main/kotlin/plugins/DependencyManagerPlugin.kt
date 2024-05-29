@@ -53,10 +53,14 @@ class DependencyManagerPlugin : Plugin<Project> {
                     }
                 }
             }
+        }
 
-            val checkoutDependencies = extension.getDependencies()
-                .map { it.value.tasks.getByName("checkout") }
-            finalizedBy(checkoutDependencies)
+        target.afterEvaluate {
+            checkoutDependenciesTask.configure {
+                val checkoutDependencies = extension.getDependencies()
+                    .map { it.value.tasks.getByName("checkout") }
+                finalizedBy(checkoutDependencies)
+            }
         }
 
         target.tasks.register("checkout") {
@@ -86,6 +90,8 @@ class DependencyManagerPlugin : Plugin<Project> {
         }
 
         val publishAllToMavenLocal = target.tasks.register("publishAllToMavenLocal") {
+            group = "publishing"
+
             doLast {
                 target.setPublished("publishAllToMavenLocal", target.name, target.version.toString())
             }
@@ -94,6 +100,8 @@ class DependencyManagerPlugin : Plugin<Project> {
         }
 
         val publishAll = target.tasks.register("publishAll") {
+            group = "publishing"
+
             doLast {
                 target.setPublished("publishAll", target.name, target.version.toString())
             }

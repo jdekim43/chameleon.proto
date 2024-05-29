@@ -1,8 +1,6 @@
-version = "${resolveVersion("sei-chain", prefix = "")}-$buildNumber"
+version = "${resolveVersion("sei-chain")}-$buildNumber"
 
 targetDependencies {
-    checkoutTagPrefix.set("")
-
     dependencies.set {
         put("cosmos-proto", project(":chameleon-proto-cosmos-proto"))
         put("cosmos-sdk", project(":chameleon-proto-cosmos-sdk"))

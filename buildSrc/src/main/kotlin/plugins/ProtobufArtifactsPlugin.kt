@@ -8,10 +8,10 @@ import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Copy
-import org.gradle.api.tasks.compile.AbstractCompile
+import org.gradle.api.tasks.SourceTask
 import org.gradle.kotlin.dsl.*
 import org.jetbrains.kotlin.gradle.dsl.KotlinMultiplatformExtension
-import org.jetbrains.kotlin.gradle.tasks.BaseKotlinCompile
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompileTool
 import java.io.File
 import java.nio.file.Files
 import java.nio.file.attribute.BasicFileAttributes
@@ -94,12 +94,12 @@ class ProtobufArtifactsPlugin : Plugin<Project> {
     }
 
     private fun Project.configureTaskDependent() {
-        tasks.withType(AbstractCompile::class) {
-            dependsOn("generateProto")
+        tasks.withType<KotlinCompileTool> {
+            dependsOn("generateProto", "moveProtoResults")
         }
 
-        tasks.withType(BaseKotlinCompile::class) {
-            dependsOn("generateProto")
+        tasks.withType<SourceTask> {
+            dependsOn("generateProto", "moveProtoResults")
         }
     }
 
