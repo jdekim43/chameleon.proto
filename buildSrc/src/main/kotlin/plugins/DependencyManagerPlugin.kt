@@ -92,6 +92,10 @@ class DependencyManagerPlugin : Plugin<Project> {
         val publishAllToMavenLocal = target.tasks.register("publishAllToMavenLocal") {
             group = "publishing"
 
+            onlyIf {
+                target.isPublished("publishAllToMavenLocal", target.name, target.version.toString())
+            }
+
             doLast {
                 target.setPublished("publishAllToMavenLocal", target.name, target.version.toString())
             }
@@ -101,6 +105,10 @@ class DependencyManagerPlugin : Plugin<Project> {
 
         val publishAll = target.tasks.register("publishAll") {
             group = "publishing"
+
+            onlyIf {
+                target.isPublished("publishAll", target.name, target.version.toString())
+            }
 
             doLast {
                 target.setPublished("publishAll", target.name, target.version.toString())
